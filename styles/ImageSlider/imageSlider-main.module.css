@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Rebeqa Regular';
+  src: url(../../cms/fonts/RebeqaFont/Rebeqa-Regular.ttf);
+}
+
+.main {
+  position: relative;
+  height: 85vh;
+  width: 80%;
+  border-radius: 15px;
+}
+.main img {
+  object-fit: cover;
+  z-index: -1;
+}
+.subcontainer {
+  height: 100%;
+  width: 100%;
+}
+.subcontainer h2 {
+  color: white;
+  font-size: 5em !important;
+  font-family: 'Rebeqa Regular' !important;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+.subcontainerFirst h2 {
+  width: 50%;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+}
+.subcontainerSecond h2 {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+}
+.subcontainerThird h2 {
+  position: absolute;
+  top: 50%;
+  right: -20%;
+  transform: translate(-50%, 0%) rotate(90deg);
+}
+.subcontainerFourth h2 {
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  text-shadow: 0 0 10px darkslategray;
+  transform: translate(-50%, -50%);
+}
+.subcontainerFifth h2 {
+  position: absolute;
+  top: 80%;
+  left: 4%;
+  text-shadow: 0 0 10px darkslategray;
+}
+.paginationBullet {
+  position: relative;
+  top: -20px;
+  margin: 0 10px;
+  padding: 0px 10px;
+  background-color: white;
+  box-shadow: 0 0 5px white;
+  border: solid 4px white;
+  border-radius: 999px;
+  clip-path: polygon(0 40%, 35% 40%, 52% 40%, 72% 40%, 85% 50%, 100% 50%, 100% 60%, 85% 60%, 72% 70%, 58% 70%, 35% 70%, 0 70%);
+  cursor: pointer;
+  transition: all ease .5s;
+}
+.paginationBulletActive {
+  position: relative;
+  top: -20px;
+  margin: 0 10px;
+  padding: 0px 10px;
+  background-color: white;
+  box-shadow: 0 0 10px white;
+  border: solid 4px white;
+  border-radius: 999px;
+  clip-path: polygon(35% 41%, 47% 10%, 47% 0, 53% 0, 53% 11%, 65% 40%, 65% 54%, 65% 73%, 65% 100%, 35% 100%, 35% 74%, 35% 55%);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1050px) {
+  .main {
+    height: 35vh;
+  }
+  .subcontainer h2 {
+    font-size: 2em !important;
+  }
+  .subcontainerThird h2 {
+    right: -50%;
+  }
+  .subcontainerFifth h2 {
+    top: 75%;
+  }
+  .paginationBullet, .paginationBulletActive {
+    display: none;
+  }
+}

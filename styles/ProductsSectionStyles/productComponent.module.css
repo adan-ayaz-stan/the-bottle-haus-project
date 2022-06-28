@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Avenir Medium";
+  src: url(../../cms/fonts/Avenir\ Medium.ttf);
+}
+@font-face {
+  font-family: "Avenir Light";
+  src: url(../../cms/fonts/Avenir\ Light.ttf);
+}
+
+.main {
+  position: relative;
+  max-width: 21%;
+  height: fit-content;
+  margin: 2% 0;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.main div:first-child {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  border: solid 1px #ededed;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.main div:nth-child(2) {
+  margin-bottom: 1em;
+}
+.main div:nth-child(2) img {
+  min-height: 100px;
+  min-width: 100px;
+}
+.main img {
+  border-radius: 15px;
+}
+.main div:nth-child(3) {
+  display: flex;
+  flex-flow: column;
+  height: fit-content;
+}
+.main div:nth-child(3) div {
+  display: flex;
+  flex-flow: row;
+  margin-top: 5px;
+}
+
+.main p {
+  display: inline;
+}
+.main p:first-child {
+  font-family: "Avenir Medium";
+  font-weight: 600;
+}
+.main p:last-child {
+  font-family: "Avenir Light";
+  color: gray;
+  text-decoration: line-through;
+}
+
+.main h4 {
+  font-family: "Avenir Light";
+  text-align: left;
+}
+
+
+@media only screen and (max-width: 1050px) {
+ .main {
+   max-height: 40%;
+   max-width: 45%;
+ }
+ .main h4 {
+   font-size: .7em;
+ }
+ .main p {
+   font-size: .7em;
+ }
+}

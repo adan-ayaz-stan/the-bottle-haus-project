@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Avenir Black";
+  src: url(../../cms/fonts/Avenir-Black.otf);
+}
+
+.main {
+  margin: 4em auto;
+  padding: 6em 10%;
+  background-image: url(../../cms/product-section-images/background.jpg);
+  background-size: 20%;
+  background-repeat: repeat;
+  clip-path: polygon(
+    50% 0%,
+    100% 8%,
+    100% 92%,
+    50% 100%,
+    50% 100%,
+    0 92%,
+    0 8%
+  );
+}
+
+.main h1 {
+  line-height: 150%;
+  font-size: 3em;
+  font-family: "Avenir Black";
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px silver solid;
+}
+
+.main div {
+  display: flex;
+  gap: 5%;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 1050px) {
+  .main {
+    padding: 25% 2em 25% 2em;
+  }
+  .main h1 {
+    line-height: 100%;
+    font-size: 1.7em;
+    margin-bottom: 10px;
+  }
+}
