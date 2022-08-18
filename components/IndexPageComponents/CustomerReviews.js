@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-import styles from "../../styles/CustomerReviewsStyles/main.module.css";
-import reviewCardStyle from "../../styles/CustomerReviewsStyles/customer-review-component.module.css";
+import styles from "../../styles/IndexPageComponents/CustomerReviewsStyles/main.module.css";
+import reviewCardStyle from "../../styles/IndexPageComponents/CustomerReviewsStyles/customer-review-component.module.css";
 
 import sampleBottleImage from "../../cms/rare-to-find-images/sample-image-main.png";
 

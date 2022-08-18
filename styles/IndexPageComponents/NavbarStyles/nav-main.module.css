@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Avenir Light";
+  src: url(../../../cms/fonts/Avenir\ Light.ttf);
+}
+
+.main {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  min-height: 80px;
+  max-height: 100px;
+
+  padding: 0 10%;
+  background-color: #ededed;
+}
+
+/* LOGO CSS */
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+/* PROFILE CSS */
+
+.profile {
+  display: none;
+
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translate(-50%, -50%);
+}
+.profileCheckbox {
+  display: none;
+}
+
+/* SUB MENU CSS */
+
+.submenu {
+  position: absolute;
+  top: 50%;
+  right: 150px;
+  transform: translate(0%, -50%);
+
+  width: 350px;
+  font-size: 0.8em;
+  color: black;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.submenu div:first-child {
+  height: fit-content;
+  width: fit-content;
+
+  padding: 3px 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+
+  font-family: "Avenir Light";
+}
+.submenu div:first-child a {
+  font-size: 1.2em;
+  padding: 3px 8px;
+}
+
+.submenu div:first-child a:first-child {
+  border-right: solid 1px gray;
+}
+
+.submenu div:nth-child(2) {
+  background-color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.submenu div:last-child {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background-color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1050px) {
+  .main {
+    min-height: 80px;
+  }
+
+  .profile {
+    display: block;
+  }
+  .profileCheckbox {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 45px;
+    transform: translate(-50%, -50%) scale(2);
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .profileCheckbox:checked ~ .submenu {
+    display: flex !important;
+  }
+
+  .submenu {
+    display: none;
+
+    position: absolute;
+    top: 170%;
+    right: 1%;
+    width: fit-content;
+
+    padding: 10px 10px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px #00000074;
+
+    animation: fade-in 0.4s ease;
+  }
+
+  .submenu div:first-child {
+    flex-flow: column;
+    border: solid 1px #ededed;
+  }
+  .submenu div:first-child a:first-child {
+    border-right: none;
+  }
+  .submenu div:first-child a:nth-child(1) {
+    border-bottom: solid 1px black;
+  }
+
+  .submenu div:nth-child(2) {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

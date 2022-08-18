@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import styles from "../../styles/FooterStyles/main.module.css";
+import styles from "../../styles/IndexPageComponents/FooterStyles/main.module.css";
 
 import sampleImage from "../../cms/footer-images/sample-image.jpg";
 import americanExpressIcon from "../../cms/payment-methods-icons/american-express-icon.png";
@@ -126,9 +126,7 @@ export default function Footer() {
             </p>
           </div>
           <div>Please Drink Responsibly</div>
-          <div>
-            © 2021, The Bottle Haus
-          </div>
+          <div>© 2021, The Bottle Haus</div>
         </div>
         <div className={styles.thirdDiv}>
           <h3>Resources</h3>

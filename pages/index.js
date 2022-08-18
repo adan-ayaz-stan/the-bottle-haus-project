@@ -4,23 +4,24 @@ import CallToActionCardComponent from "../components/IndexPageComponents/CallToA
 import ImageSlider from "../components/IndexPageComponents/ImageSlider";
 import ProductsSection from "../components/IndexPageComponents/ProductsSection";
 import RareAndHardToFindSection from "../components/IndexPageComponents/RareAndHardToFindSection";
+import CustomerReviews from "../components/IndexPageComponents/CustomerReviews";
+import GridOfLinks from "../components/IndexPageComponents/GridOfLinks";
 
 import searchImage from "../cms/call-to-action-card-images/search-image.jpg";
 import tapImage from "../cms/call-to-action-card-images/tap-image.jpg";
 import drinkImage from "../cms/call-to-action-card-images/drink-image.jpg";
 
 import styles from "../styles/Home.module.css";
-import CustomerReviews from "../components/IndexPageComponents/CustomerReviews";
 
 export default function Home() {
-
-  
-
   return (
     <div className={styles.container}>
       <Head>
         <title>The Bottle Haus | Home</title>
-        <meta name="description" content="Get the best of the best liqour from your top rated liqour platform online" />
+        <meta
+          name="description"
+          content="Get the best of the best liqour from your top rated liqour platform online"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -51,6 +52,7 @@ export default function Home() {
       <ProductsSection />
       <RareAndHardToFindSection />
       <CustomerReviews />
+      <GridOfLinks />
     </div>
   );
 }

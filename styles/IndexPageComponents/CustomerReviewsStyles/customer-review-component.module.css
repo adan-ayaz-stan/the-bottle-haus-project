@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Avenir Light";
+  src: url(../../../cms/fonts/Avenir\ Light.ttf);
+}
+@font-face {
+  font-family: "Avenir Regular";
+  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
+}
+
+.main {
+  height: 350px;
+  display: flex;
+  flex-flow: column;
+  background-color: #ededed;
+  border-radius: 25px;
+  padding: 20px;
+  font-family: "Avenir Regular";
+}
+
+.review_heading {
+  font-size: 1em;
+  font-weight: 600;
+  color: #006647;
+}
+
+.customer_review {
+  font-size: 0.8em;
+  font-family: "Avenir Light";
+}
+
+.customer_name {
+  text-align: right;
+  color: #aeaeae;
+  font-size: 0.9em;
+}
+
+.image_container {
+  position: fixed;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%, 0);
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 25px;
+}

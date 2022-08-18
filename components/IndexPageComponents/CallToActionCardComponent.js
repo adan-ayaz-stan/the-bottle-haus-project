@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import styles from "../../styles/CallToActionCardStyles/CallToActionCardStyleMain.module.css";
+import styles from "../../styles/IndexPageComponents/CallToActionCardStyles/CallToActionCardStyleMain.module.css";
 
 export default function CallToActionCardComponent(props) {
   return (

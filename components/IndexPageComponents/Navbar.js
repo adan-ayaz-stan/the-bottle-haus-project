@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import styles from "../../styles/NavbarStyles/nav-main.module.css";
+import styles from "../../styles/IndexPageComponents/NavbarStyles/nav-main.module.css";
 import logo from "../../cms/logo.svg";
 import searchIcon from "../../cms/icons/search.svg";
 import cartIcon from "../../cms/icons/cart.svg";

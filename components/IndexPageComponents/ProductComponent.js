@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-import styles from "../../styles/ProductsSectionStyles/productComponent.module.css";
+import styles from "../../styles/IndexPageComponents/ProductsSectionStyles/productComponent.module.css";
 
 import sampleImage from "../../cms/product-section-images/sample-bottle.jpg";
 import plusIcon from "../../cms/icons/plus.png";

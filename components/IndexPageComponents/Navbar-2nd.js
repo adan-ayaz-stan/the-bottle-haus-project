@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../../styles/NavbarStyles/2nd-nav-main.module.css";
+import styles from "../../styles/IndexPageComponents/NavbarStyles/2nd-nav-main.module.css";
 
 export default function Navbar2nd() {
   return (

@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Avenir Medium";
+  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
+}
+@font-face {
+  font-family: "Avenir Light";
+  src: url(../../../cms/fonts/Avenir\ Light.ttf);
+}
+
+.main {
+  min-height: 100vh;
+  height: fit-content;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column;
+}
+
+.middleSection {
+  height: fit-content;
+
+  display: flex;
+  flex-flow: row;
+  gap: 1%;
+
+  padding: 50px 10%;
+  background-color: lightcyan;
+}
+.middleSection .pointerText {
+  display: flex;
+  flex-flow: column;
+  padding: 10px 15px 0px 15px;
+  flex: 16%;
+}
+.middleSection .pointerText h4 {
+  flex: 20%;
+  font-size: 1.3em;
+  font-family: "Avenir Medium";
+}
+.middleSection .pointerText p {
+  flex: 70%;
+  font-family: "Avenir Light";
+  font-size: 0.75em;
+  color: gray;
+}
+.middleSection .pointerText a {
+  flex: 10%;
+  display: block;
+  font-family: "Avenir Medium";
+  text-align: center;
+  justify-self: flex-end;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: orange;
+  color: black;
+}
+.middleSection .blogLink {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  flex: 27%;
+  border-radius: 15px;
+}
+.middleSection .blogLink .blogLinkImage {
+  position: relative;
+  flex: 80%;
+}
+.middleSection .blogLink .blogLinkImage img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+.middleSection .blogLink h4 {
+  flex: 10%;
+  margin-top: 0.8em;
+  line-height: 1.2em;
+  font-size: 1.1em;
+  font-family: "Avenir Medium";
+}
+.middleSection .blogLink p {
+  flex: 10%;
+  font-family: "Avenir Light";
+  font-size: 0.8em;
+  color: gray;
+}
+
+.lastSection {
+  display: flex;
+  flex-flow: row;
+  padding: 5% 10%;
+  height: 50vh;
+  font-family: "Avenir Light";
+  background-color: rgb(23, 98, 90);
+}
+.lastSection .firstDiv {
+  flex: 25%;
+  color: white;
+}
+.lastSection .firstDiv h3 {
+  display: inline-block;
+  font-family: "Avenir Medium";
+  font-size: 1.1em;
+}
+.lastSection .firstDiv p {
+  display: inline-block;
+  font-family: "Avenir Medium";
+  font-size: 0.8em;
+}
+
+.lastSection .secondDiv {
+  flex: 50%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.lastSection .secondDiv div:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.lastSection .secondDiv div:first-child h3 {
+  font-size: 1.2em;
+  font-family: "Avenir Light";
+  font-weight: 600;
+  color: white;
+}
+.lastSection .secondDiv div:first-child p {
+  padding: 10px;
+  color: white;
+  font-size: 0.8em;
+}
+.lastSection .secondDiv div:first-child form {
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 3%;
+}
+.lastSection .secondDiv div:first-child form input {
+  flex: 77%;
+  padding: 15px 15px;
+  border-radius: 8px;
+  background-color: white;
+  color: green;
+  outline: none;
+  border: none;
+}
+
+.lastSection .secondDiv div:first-child form button {
+  flex: 20%;
+  background-color: orange;
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+.lastSection .secondDiv div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+.lastSection .secondDiv div:nth-child(2) h3 {
+  color: white;
+  font-family: "Avenir Light";
+  font-size: 1.2em;
+}
+.lastSection .secondDiv div:nth-child(2) p {
+  display: flex;
+  flex-flow: row;
+  gap: 10px;
+}
+.lastSection .secondDiv div:nth-child(2) p img {
+  background-color: white;
+  border-radius: 4px;
+  padding: 0 8px !important;
+}
+.lastSection .secondDiv div:nth-child(3) {
+  color: white;
+  margin: 0.7em 0;
+  font-size: 1.2em;
+  font-family: "Avenir Light";
+  font-weight: 600;
+  font-size: 1em;
+}
+.lastSection .secondDiv div:nth-child(4) {
+  color: white;
+  font-family: "Avenir Light";
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.lastSection .thirdDiv {
+  flex: 25%;
+  text-align: right;
+  color: white;
+}
+.lastSection .thirdDiv h3 {
+  display: inline-block;
+}
+.lastSection .thirdDiv ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.lastSection .thirdDiv ul li a {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1050px) {
+  .main {
+    height: fit-content;
+  }
+  .middleSection {
+    flex-flow: column;
+  }
+  .middleSection .pointerText p {
+    margin-bottom: 1em;
+  }
+  .middleSection .pointerText {
+    margin-bottom: 2em;
+  }
+  .middleSection .blogLink {
+    min-height: 25vh;
+    margin-bottom: 1em;
+  }
+  .middleSection .blogLink h4 {
+    margin: 0;
+  }
+  .pointerText,
+  .blogLink {
+    flex: 25%;
+  }
+  .lastSection {
+    height: fit-content;
+    flex-flow: column;
+  }
+}

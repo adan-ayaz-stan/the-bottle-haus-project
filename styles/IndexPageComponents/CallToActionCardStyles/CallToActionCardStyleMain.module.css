@@ -1,0 +1,51 @@
+@font-face {
+  font-family: "Avenir Medium";
+  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
+}
+@font-face {
+  font-family: "Avenir Light";
+  src: url(../../../cms/fonts/Avenir\ Light.ttf);
+}
+
+.main {
+  flex: 30%;
+  position: relative;
+  height: fit-content;
+  aspect-ratio: 16 / 9;
+  background-color: #ededed;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
+
+.main div:last-child {
+  margin-top: -40px;
+}
+
+.main a h3 {
+  text-align: left;
+  font-family: "Avenir Medium";
+}
+
+.main p {
+  font-family: "Avenir Light";
+  font-weight: 600;
+}
+
+.image {
+  position: relative;
+  left: 100%;
+  transform: translate(-100%, 0);
+  display: inline-block;
+}
+
+.image img {
+  border-radius: 999px;
+}
+
+@media only screen and (max-width: 660px) {
+  .main {
+    height: fit-content;
+    width: 100%;
+  }
+}

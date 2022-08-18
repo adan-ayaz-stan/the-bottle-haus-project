@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../../styles/RareAndHardToFindStyles/main.module.css";
+import styles from "../../styles/IndexPageComponents/RareAndHardToFindStyles/main.module.css";
 
 import sampleImageMain from "../../cms/rare-to-find-images/sample-image-main.png";
 import Image from "next/image";

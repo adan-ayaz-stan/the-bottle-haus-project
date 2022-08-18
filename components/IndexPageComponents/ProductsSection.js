@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "../../styles/ProductsSectionStyles/main.module.css";
+import styles from "../../styles/IndexPageComponents/ProductsSectionStyles/main.module.css";
 import ProductComponent from "./ProductComponent";
 
 export default function ProductsSection() {
