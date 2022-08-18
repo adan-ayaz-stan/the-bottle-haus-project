@@ -10,12 +10,16 @@
 .main {
   flex: 30%;
   position: relative;
-  height: 200px;
+  height: fit-content;
   aspect-ratio: 16 / 9;
   background-color: #ededed;
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 15px;
+}
+
+.main div:last-child {
+  margin-top: -40px;
 }
 
 .main a h3 {
@@ -28,20 +32,20 @@
   font-weight: 600;
 }
 
-.main div:last-child {
-  position: absolute;
-  bottom: 20%;
-  left: 5%;
-}
-
 .image {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-
+  position: relative;
+  left: 100%;
+  transform: translate(-100%, 0);
   display: inline-block;
 }
 
 .image img {
   border-radius: 999px;
+}
+
+@media only screen and (max-width: 660px) {
+  .main {
+    height: fit-content;
+    width: 100%;
+  }
 }

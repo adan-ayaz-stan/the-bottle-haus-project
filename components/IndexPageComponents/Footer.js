@@ -4,14 +4,14 @@ import React from "react";
 import styles from "../../styles/FooterStyles/main.module.css";
 
 import sampleImage from "../../cms/footer-images/sample-image.jpg";
-import americanExpressIcon from '../../cms/payment-methods-icons/american-express-icon.png';
-import applePayIcon from '../../cms/payment-methods-icons/apple-pay-icon.png';
-import discoverIcon from '../../cms/payment-methods-icons/discover-icon.png';
-import jcbIcon from '../../cms/payment-methods-icons/jcb-icon.png';
-import googlePayIcon from '../../cms/payment-methods-icons/google-pay-icon.png';
-import mastercardIcon from '../../cms/payment-methods-icons/mastercard-icon.png';
-import paypalIcon from '../../cms/payment-methods-icons/paypal-icon.png';
-import visaIcon from '../../cms/payment-methods-icons/visa-icon.png';
+import americanExpressIcon from "../../cms/payment-methods-icons/american-express-icon.png";
+import applePayIcon from "../../cms/payment-methods-icons/apple-pay-icon.png";
+import discoverIcon from "../../cms/payment-methods-icons/discover-icon.png";
+import jcbIcon from "../../cms/payment-methods-icons/jcb-icon.png";
+import googlePayIcon from "../../cms/payment-methods-icons/google-pay-icon.png";
+import mastercardIcon from "../../cms/payment-methods-icons/mastercard-icon.png";
+import paypalIcon from "../../cms/payment-methods-icons/paypal-icon.png";
+import visaIcon from "../../cms/payment-methods-icons/visa-icon.png";
 
 export default function Footer() {
   return (
@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
         <a className={styles.blogLink} href="/">
           <div className={styles.blogLinkImage}>
-            <Image src={sampleImage}  height={150} width={320}></Image>
+            <Image src={sampleImage} height={150} width={320}></Image>
           </div>
           <h4>Enjoy $10 off on $50 subtotal</h4>
           <p>01.03.22</p>
@@ -75,18 +75,60 @@ export default function Footer() {
           <div>
             <h3>Accepted Payments</h3>
             <p>
-              <Image src={applePayIcon} alt="payment-method-icon" height={45} width={45}></Image>
-              <Image src={americanExpressIcon} alt="payment-method-icon" height={45} width={45}></Image>
-              <Image src={discoverIcon} alt="payment-method-icon" height={45} width={45}></Image>
-              <Image src={googlePayIcon} alt="payment-method-icon" height={45} width={45}></Image>
-              <Image src={jcbIcon} alt="payment-method-icon" height={45} width={45}></Image>
-              <Image src={mastercardIcon} alt="payment-method-icon" height={45} width={45}></Image>
-              <Image src={paypalIcon} alt="payment-method-icon" height={45} width={45}></Image>
-              <Image src={visaIcon} alt="payment-method-icon" height={45} width={45}></Image>
+              <Image
+                src={applePayIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
+              <Image
+                src={americanExpressIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
+              <Image
+                src={discoverIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
+              <Image
+                src={googlePayIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
+              <Image
+                src={jcbIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
+              <Image
+                src={mastercardIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
+              <Image
+                src={paypalIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
+              <Image
+                src={visaIcon}
+                alt="payment-method-icon"
+                height={45}
+                width={45}
+              ></Image>
             </p>
           </div>
           <div>Please Drink Responsibly</div>
-          <div>© 2021, The Bottle Haus</div>
+          <div>
+            © 2021, The Bottle Haus
+          </div>
         </div>
         <div className={styles.thirdDiv}>
           <h3>Resources</h3>

@@ -4,12 +4,12 @@
 }
 
 .main {
+  min-height: fit-content;
   position: relative;
   display: flex;
+  gap: 10px;
   flex-flow: column;
-  height: 100vh;
   padding: 5% 10%;
-  border: solid 2px green;
 }
 .main .submain:first-child {
   flex: 40%;
@@ -18,21 +18,23 @@
   width: 100%;
   flex: 60%;
   padding: 10px;
-  border: solid 2px black;
 }
-.main h2 {
+.main .first_heading {
   text-align: left;
-  font-size: 4em;
+  font-size: 4.5em;
   font-family: "Avenir Regular";
   line-height: 110%;
   font-weight: 1000;
-}
-.main h2:first-child {
-  color: transparent;
-  -webkit-text-stroke: rgb(0, 102, 71) 2px;
-}
-.main h2:nth-child(2) {
   color: rgb(0, 102, 71);
+}
+.main .second_heading {
+  text-align: left;
+  font-size: 4.5em;
+  font-family: "Avenir Regular";
+  line-height: 110%;
+  font-weight: 500;
+  color: transparent;
+  -webkit-text-stroke: rgb(0, 102, 71) 1.5px;
 }
 
 .card {
@@ -130,4 +132,11 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+@media screen and (max-width: 660px) {
+  .main .first_heading,
+  .main .second_heading {
+    font-size: 3em;
+  }
 }

@@ -17,13 +17,13 @@
   align-items: center;
 } */
 
-.container h2 {
+.textAfterSlider h2 {
   font-size: 3em;
   text-align: center;
   font-family: "Avenir Black";
 }
 
-.container h3 {
+.textAfterSlider h3 {
   font-size: 1.5em;
   text-align: center;
   font-family: "Avenir Medium";
@@ -45,13 +45,14 @@
 }
 
 @media only screen and (max-width: 1050px) {
- .container h3 {
-   margin-top: 15px;
- }
- .callToActionCardsContainer {
-   justify-content: center;
- }
- .callToActionCardsContainer div {
-   margin-bottom: 15px;
- }
+  .container h3 {
+    margin-top: 15px;
+  }
+  .callToActionCardsContainer {
+    flex-flow: column;
+    justify-content: center;
+  }
+  .callToActionCardsContainer div {
+    margin-bottom: 15px;
+  }
 }

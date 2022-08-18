@@ -8,7 +8,8 @@
 }
 
 .main {
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
 
   display: flex;
   justify-content: flex-end;
@@ -16,7 +17,7 @@
 }
 
 .middleSection {
-  height:fit-content;
+  height: fit-content;
 
   display: flex;
   flex-flow: row;
@@ -175,7 +176,7 @@
 }
 .lastSection .secondDiv div:nth-child(3) {
   color: white;
-  margin: .7em 0;
+  margin: 0.7em 0;
   font-size: 1.2em;
   font-family: "Avenir Light";
   font-weight: 600;
@@ -225,7 +226,8 @@
   .middleSection .blogLink h4 {
     margin: 0;
   }
-  .pointerText, .blogLink {
+  .pointerText,
+  .blogLink {
     flex: 25%;
   }
   .lastSection {
