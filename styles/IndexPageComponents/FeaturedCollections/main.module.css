@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "Avenir Medium";
+  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
+}
+@font-face {
+  font-family: "Avenir Regular";
+  src: url(../../../cms/fonts/Avenir-Black.otf);
+}
+
+.main {
+  position: relative;
+  height: fit-content;
+  padding: 20px 0 40px 0;
+  margin: auto 10%;
+  border-radius: 14px;
+}
+
+.container_one {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 2.5em;
+  font-family: "Avenir Medium";
+  margin: 0;
+  padding: 0;
+  line-height: 1.8em;
+}
+.container_one h2:first-child {
+  color: #006647;
+}
+.container_one h2:last-child {
+  color: white;
+  -webkit-text-stroke: rgb(0, 102, 71) 1.5px;
+}
+
+.container_two div {
+  font-family: "Avenir Black";
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+
+.container_two {
+  height: 500px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "item_1 item_1 item_1 item_1 item_4 item_4 item_7 item_7 item_7"
+    "item_1 item_1 item_1 item_1 item_4 item_4 item_7 item_7 item_7"
+    "item_1 item_1 item_1 item_1 item_4 item_4 item_8 item_8 item_8"
+    "item_1 item_1 item_1 item_1 item_5 item_5 item_8 item_8 item_8"
+    "item_1 item_1 item_1 item_1 item_5 item_5 item_9 item_9 item_9"
+    "item_2 item_2 item_3 item_3 item_6 item_6 item_9 item_9 item_9"
+    "item_2 item_2 item_3 item_3 item_6 item_6 item_9 item_9 item_9";
+}
+
+.item_1 {
+  grid-area: item_1;
+  border-radius: 14px;
+  background: url("https://images.pexels.com/photos/1719793/pexels-photo-1719793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: 110%;
+  background-repeat: no-repeat;
+  transition: background-size ease 0.4s;
+}
+
+.item_2 {
+  background: url("https://images.pexels.com/photos/370984/pexels-photo-370984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+  grid-area: item_2;
+  border-radius: 14px;
+}
+
+.item_3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: rgb(246, 153, 169);
+  grid-area: item_3;
+  border-radius: 14px;
+}
+
+.item_4 {
+  grid-area: item_4;
+  background: url("https://images.pexels.com/photos/3461205/pexels-photo-3461205.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: 110%;
+  border-radius: 14px;
+}
+
+.item_5 {
+  grid-area: item_5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: orangered;
+  border-radius: 14px;
+}
+
+.item_6 {
+  background: url("https://images.pexels.com/photos/5320336/pexels-photo-5320336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: 110%;
+  grid-area: item_6;
+  border-radius: 14px;
+}
+
+.item_7 {
+  background: url("https://images.pexels.com/photos/1170599/pexels-photo-1170599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: 110%;
+  grid-area: item_7;
+  border-radius: 14px;
+}
+
+.item_8 {
+  background: url("https://images.pexels.com/photos/1611560/pexels-photo-1611560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: 110%;
+  grid-area: item_8;
+  border-radius: 14px;
+}
+
+.item_9 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #006647;
+  grid-area: item_9;
+  border-radius: 14px;
+}
+
+.item_3:hover {
+  background-color: rgb(0, 176, 164);
+}
+.item_5:hover {
+  background-color: rgb(211, 201, 0);
+}
+.item_9:hover {
+  background-color: rgb(229, 119, 1);
+}
+
+.container_two a {
+  transition: all ease 0.4s;
+}
+.container_two a:hover {
+  background-size: 115%;
+  transition: all ease 0.4s;
+}
+
+@media only screen and (max-width: 660px) {
+  .container_one h2 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2em;
+  }
+
+  .container_two {
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "item_1 item_1 item_1 item_4 item_4 item_4"
+      "item_1 item_1 item_1 item_4 item_4 item_4"
+      "item_1 item_1 item_1 item_4 item_4 item_4"
+      "item_2 item_2 item_2 item_2 item_3 item_3"
+      "item_2 item_2 item_2 item_2 item_3 item_3"
+      "item_2 item_2 item_2 item_2 item_3 item_3"
+      "item_5 item_5 item_6 item_6 item_7 item_7"
+      "item_5 item_5 item_6 item_6 item_7 item_7"
+      "item_8 item_8 item_8 item_9 item_9 item_9"
+      "item_8 item_8 item_8 item_9 item_9 item_9";
+  }
+  .container_two a {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    padding: 10px;
+    background-size: 120% !important;
+  }
+  .item_1 {
+    background-color: black;
+  }
+}

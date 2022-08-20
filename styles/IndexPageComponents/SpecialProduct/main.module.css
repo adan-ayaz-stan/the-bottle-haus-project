@@ -1,0 +1,159 @@
+@font-face {
+  font-family: "Avenir Light";
+  src: url(../../../cms/fonts/Avenir\ Light.ttf);
+}
+@font-face {
+  font-family: "Avenir Medium";
+  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
+}
+
+.main {
+  height: 700px;
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  padding: 20px 0 20px 10%;
+}
+
+.product_image {
+  display: block;
+  position: relative;
+  flex: 40%;
+}
+.product_image img {
+  object-fit: contain !important;
+}
+
+.product_info {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  flex: 60%;
+  padding: 0 10% 0 25px;
+  background-color: #eeeeee;
+}
+.product_info__name {
+  margin: 1em 0;
+}
+.product_info__name p {
+  color: gray;
+  font-weight: 700;
+  font-family: "Avenir Light";
+}
+.product_info__name h2 {
+  width: 60%;
+  line-height: 1em;
+  font-family: "Avenir Medium";
+  font-weight: 400;
+}
+
+.product_info__buy_section {
+  width: 60%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product_info__items_crementer {
+  width: fit-content;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  font-family: "Avenir Medium";
+  border: solid 1px lightgray;
+  background-color: #eeeeee;
+  border-radius: 8px;
+}
+.product_info__items_crementer p {
+  padding: 5px 10px;
+}
+.product_info__items_crementer button {
+  padding: 5px 10px;
+  background-color: #eeeeee;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product_info__price_info {
+  width: fit-content;
+  display: flex;
+  flex-flow: row;
+  align-items: baseline;
+  font-family: "Avenir Medium";
+}
+.product_info__price_info p:first-child {
+  font-size: 1.5em;
+  font-weight: 1000;
+  padding: 5px;
+}
+.product_info__price_info p:last-child {
+  font-size: 1em;
+  font-weight: 1000;
+  text-decoration: line-through;
+  color: gray;
+  padding: 5px;
+}
+
+.product_info__review_box {
+  width: fit-content;
+  display: flex;
+  flex-flow: row;
+  padding: 10px 0;
+}
+.product_info__rating {
+  display: flex;
+  flex-flow: row;
+  padding: 0 5px;
+}
+.product_info__rating span {
+  height: 20px;
+  width: 20px;
+  margin-right: 1px;
+  border: 1px solid rgba(128, 128, 128, 0.214);
+  border-radius: 9999px;
+}
+.product_info__rating .checked {
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  border: none;
+}
+
+.product_info__review_box a {
+  text-decoration: underline;
+}
+
+.product_info__description {
+  height: fit-content;
+  width: 75%;
+  font-size: 0.8em;
+  color: gray;
+  text-overflow: ellipsis;
+}
+
+.product_info__add_to_cart {
+  padding: 15px 0;
+}
+.product_info__add_to_cart button {
+  color: white;
+  background-color: orange;
+  padding: 10px 15px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.product_info__add_to_cart svg {
+  filter: invert(1);
+}
+
+@media only screen and (max-width: 660px) {
+  .main {
+    height: fit-content;
+    flex-flow: column;
+  }
+}

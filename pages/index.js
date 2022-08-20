@@ -5,13 +5,14 @@ import ImageSlider from "../components/IndexPageComponents/ImageSlider";
 import ProductsSection from "../components/IndexPageComponents/ProductsSection";
 import RareAndHardToFindSection from "../components/IndexPageComponents/RareAndHardToFindSection";
 import CustomerReviews from "../components/IndexPageComponents/CustomerReviews";
-import GridOfLinks from "../components/IndexPageComponents/GridOfLinks";
+import FeaturedCollections from "../components/IndexPageComponents/FeaturedCollections";
 
 import searchImage from "../cms/call-to-action-card-images/search-image.jpg";
 import tapImage from "../cms/call-to-action-card-images/tap-image.jpg";
 import drinkImage from "../cms/call-to-action-card-images/drink-image.jpg";
 
 import styles from "../styles/Home.module.css";
+import SpecialProduct from "../components/IndexPageComponents/SpecialProduct";
 
 export default function Home() {
   return (
@@ -52,7 +53,8 @@ export default function Home() {
       <ProductsSection />
       <RareAndHardToFindSection />
       <CustomerReviews />
-      <GridOfLinks />
+      <SpecialProduct />
+      <FeaturedCollections />
     </div>
   );
 }

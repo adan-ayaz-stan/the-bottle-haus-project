@@ -4,7 +4,7 @@
 }
 
 .main {
-  min-height: fit-content;
+  height: fit-content;
   position: relative;
   display: flex;
   gap: 10px;
@@ -35,6 +35,7 @@
   font-weight: 500;
   color: transparent;
   -webkit-text-stroke: rgb(0, 102, 71) 1.5px;
+  margin-bottom: 1em;
 }
 
 .card {
