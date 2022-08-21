@@ -1,7 +1,8 @@
 import Head from "next/head";
 
-import CallToActionCardComponent from "../components/IndexPageComponents/CallToActionCardComponent";
+import Navbar2nd from "../components/IndexPageComponents/Navbar-2nd";
 import ImageSlider from "../components/IndexPageComponents/ImageSlider";
+import CallToActionCardComponent from "../components/IndexPageComponents/CallToActionCardComponent";
 import ProductsSection from "../components/IndexPageComponents/ProductsSection";
 import RareAndHardToFindSection from "../components/IndexPageComponents/RareAndHardToFindSection";
 import CustomerReviews from "../components/IndexPageComponents/CustomerReviews";
@@ -25,6 +26,8 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar2nd />
 
       <ImageSlider />
 

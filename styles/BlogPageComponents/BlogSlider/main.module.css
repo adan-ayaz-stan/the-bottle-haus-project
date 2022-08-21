@@ -1,0 +1,13 @@
+.main {
+  height: 400px;
+  padding: 50px 20%;
+  border: solid 1px black;
+}
+
+.slider {
+  height: 100%;
+}
+
+.slider_slide {
+  border: solid 1px black;
+}
