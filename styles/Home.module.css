@@ -49,6 +49,7 @@
     margin-top: 15px;
   }
   .callToActionCardsContainer {
+    height: fit-content;
     flex-flow: column;
     justify-content: center;
   }

@@ -45,3 +45,6 @@
   background-color: white;
   border-radius: 25px;
 }
+.image_container img {
+  object-fit: contain;
+}
