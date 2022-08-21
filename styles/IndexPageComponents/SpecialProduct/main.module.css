@@ -19,6 +19,8 @@
   display: block;
   position: relative;
   flex: 40%;
+  background: url(../../../cms/product-section-images/background.jpg);
+  background-size: 50%;
 }
 .product_image img {
   object-fit: contain !important;
@@ -155,5 +157,6 @@
   .main {
     height: fit-content;
     flex-flow: column;
+    padding: 100px 0 50px 0;
   }
 }
