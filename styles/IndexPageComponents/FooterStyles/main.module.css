@@ -8,8 +8,7 @@
 }
 
 .main {
-  min-height: 100vh;
-  height: fit-content;
+  height: 100vh;
 
   display: flex;
   justify-content: flex-end;
@@ -88,7 +87,7 @@
   display: flex;
   flex-flow: row;
   padding: 5% 10%;
-  height: 50vh;
+  height: fit-content;
   font-family: "Avenir Light";
   background-color: rgb(23, 98, 90);
 }

@@ -24,6 +24,7 @@ export default function ImageSlider() {
       autoplay={{
         delay: 2500,
       }}
+      loop={true}
       pagination={{
         clickable: true,
         type: "bullets",

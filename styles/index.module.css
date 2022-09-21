@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Avenir Medium";
+  src: url(../cms/fonts/Avenir\ Medium.ttf);
+}
+@font-face {
+  font-family: "Avenir Black";
+  src: url(../cms/fonts/Avenir-Black.otf);
+}
+
+.main {
+ margin-bottom: 50px; 
+}
+
+.textAfterSlider h2 {
+  font-size: 3em;
+  text-align: center;
+  font-family: "Avenir Black";
+}
+
+.textAfterSlider h3 {
+  font-size: 1.5em;
+  text-align: center;
+  font-family: "Avenir Medium";
+}
+
+.textAfterSlider {
+  margin: 2em 0;
+}
+
+.callToActionCardsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3%;
+  flex-flow: row;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 2em auto;
+}
+
+@media only screen and (max-width: 1050px) {
+  .container h3 {
+    margin-top: 15px;
+  }
+  .callToActionCardsContainer {
+    height: fit-content;
+    flex-flow: column;
+    justify-content: center;
+  }
+  .callToActionCardsContainer div {
+    margin-bottom: 15px;
+  }
+}

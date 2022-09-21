@@ -1,5 +1,6 @@
 import Head from "next/head";
 
+import Navbar from "../components/IndexPageComponents/Navbar";
 import Navbar2nd from "../components/IndexPageComponents/Navbar-2nd";
 import ImageSlider from "../components/IndexPageComponents/ImageSlider";
 import CallToActionCardComponent from "../components/IndexPageComponents/CallToActionCardComponent";
@@ -7,12 +8,13 @@ import ProductsSection from "../components/IndexPageComponents/ProductsSection";
 import RareAndHardToFindSection from "../components/IndexPageComponents/RareAndHardToFindSection";
 import CustomerReviews from "../components/IndexPageComponents/CustomerReviews";
 import FeaturedCollections from "../components/IndexPageComponents/FeaturedCollections";
+import Footer from "../components/IndexPageComponents/Footer";
 
 import searchImage from "../cms/call-to-action-card-images/search-image.jpg";
 import tapImage from "../cms/call-to-action-card-images/tap-image.jpg";
 import drinkImage from "../cms/call-to-action-card-images/drink-image.jpg";
 
-import styles from "../styles/Home.module.css";
+import styles from "../styles/index.module.css";
 import SpecialProduct from "../components/IndexPageComponents/SpecialProduct";
 
 export default function Home() {
@@ -27,6 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       <Navbar2nd />
 
       <ImageSlider />
@@ -58,6 +61,7 @@ export default function Home() {
       <CustomerReviews />
       <SpecialProduct />
       <FeaturedCollections />
+      <Footer />
     </div>
   );
 }

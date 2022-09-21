@@ -1,5 +1,19 @@
+@font-face {
+  font-family: "Avenir Medium";
+  src: url(../cms/fonts/Avenir\ Medium.ttf);
+}
+@font-face {
+  font-family: "Avenir Regular";
+  src: url(../cms/fonts/Avenir-Black.otf);
+}
+@font-face {
+  font-family: "Avenir Light";
+  src: url(../cms/fonts/Avenir\ Light.ttf);
+}
+
 html,
 body {
+  border: 0;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -13,7 +27,7 @@ a {
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  border: none;
+  border: 0;
   padding: 0;
+  margin: 0;
 }
