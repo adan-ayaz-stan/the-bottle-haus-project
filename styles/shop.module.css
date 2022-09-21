@@ -1,0 +1,7 @@
+.submain {
+  min-height: 500px; /* CHANGE HEIGHT TO FIT CONTENT */
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  padding: 50px 10%;
+}

@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Avenir Black";
-  src: url(../../../cms/fonts/Avenir-Black.otf);
-}
-
 .main {
   margin: 4em auto;
   padding: 6em 10%;
@@ -23,7 +18,7 @@
 .main h1 {
   line-height: 150%;
   font-size: 3em;
-  font-family: "Avenir Black";
+  font-family: "Avenir Medium";
   text-align: center;
   text-transform: uppercase;
   border-bottom: 1px silver solid;

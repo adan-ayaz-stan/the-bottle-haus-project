@@ -8,7 +8,7 @@
 }
 
 .main {
-  height: 100vh;
+  height: fit-content;
 
   display: flex;
   justify-content: flex-end;

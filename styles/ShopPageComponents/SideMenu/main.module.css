@@ -1,0 +1,30 @@
+.main {
+  min-width: 200px;
+  height: 100%;
+  width: 25%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+
+.heading {
+  width: 100%;
+  font-size: 1em;
+  padding: 15px;
+  font-family: "Avenir Medium";
+  text-transform: uppercase;
+  background-color: #ededed;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.category {
+  width: 100%;
+  font-size: 1em;
+  padding: 15px;
+  font-family: "Avenir Medium";
+  background-color: #ededed;
+  border-radius: 12px;
+}

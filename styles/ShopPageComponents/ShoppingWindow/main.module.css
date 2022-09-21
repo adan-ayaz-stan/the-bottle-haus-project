@@ -1,0 +1,29 @@
+.main {
+  flex: 100%;
+  border: solid 1px black;
+}
+
+.topbar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 1.5em;
+}
+.topbar h2 {
+  font-size: 2em;
+  color: #17625a;
+}
+
+.filters_container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+}
+
+.filter_box {
+  padding: 15px 2em;
+  border-radius: 12px;
+  border: solid 1px black;
+  cursor: pointer;
+}

@@ -16,9 +16,9 @@ export default function Navbar() {
 
       {/* LOGO */}
 
-      <div className={styles.logo}>
+      <a href="/" alt="logo" className={styles.logo}>
         <Image src={logo} height={150} width={150}></Image>
-      </div>
+      </a>
 
       {/* OTHER LINKS */}
 
