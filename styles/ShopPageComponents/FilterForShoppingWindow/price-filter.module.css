@@ -1,0 +1,55 @@
+.main {
+  position: relative;
+  border-radius: 12px;
+  border: solid 1px #dae0e4;
+  cursor: pointer;
+}
+
+.dropdown {
+  min-width: 150px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+
+  width: fit-content;
+
+  border: solid 1px #e7e5e7;
+  background-color: #fff;
+  border-radius: 5%;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.heading,
+.range_in_text,
+.price_limit_label {
+  width: 100%;
+  margin: 3px 0;
+}
+
+.heading {
+  font-family: "Avenir Medium";
+}
+
+.range_in_text {
+  font-family: "Avenir Light";
+}
+
+.price_limit_label {
+  font-size: 0.6em;
+  font-family: "Avenir Light";
+}
+
+.dropdown button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: #17625a;
+  border-radius: 5%;
+  margin-top: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,121 @@
+.main {
+  min-height: 400px;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  margin: 50px 0;
+}
+
+.product_image {
+  flex: 50%;
+  position: relative;
+}
+
+.product_image img {
+  object-fit: contain;
+}
+
+.product_details {
+  flex: 45%;
+  position: relative;
+  padding: 5%;
+  background-color: #f6f5f7;
+}
+
+.company_label {
+  color: #d6d5d6;
+}
+
+.product_heading {
+  color: #282828;
+  font-family: "Avenir Medium";
+}
+
+.cremention_and_price {
+  width: 50%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  gap: 10%;
+  margin: 12px 0;
+}
+.cremention_box {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border: solid 1px #e9e8e9;
+  border-radius: 12px;
+  gap: 10px;
+}
+.cremention_box p {
+  padding: 10px;
+}
+.cremention_box :nth-child(2):hover {
+  pointer-events: none;
+}
+.cremention_box :nth-child(1):hover,
+.cremention_box :nth-child(3):hover {
+  background-color: #ededed;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.price_box {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 10%;
+}
+.price_box p:first-child {
+  font-family: "Avenir Regular";
+  font-size: 1.5em;
+}
+.price_box p:nth-child(2) {
+  color: #b7b6b8;
+  text-decoration: line-through;
+  font-family: "Avenir Regular";
+}
+
+.reviews_link {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  text-decoration: underline;
+  gap: 2%;
+}
+
+.product_description {
+  color: #aba9ab;
+  font-size: 0.8em;
+  font-family: "Avenir Light";
+  margin: 15px 0;
+}
+
+.add_to_cart_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 25px;
+  padding-right: 50px;
+  font-size: 1em;
+  color: white;
+  background-color: #f47428;
+  font-family: "Avenir Medium";
+  clip-path: polygon(
+    0 20%,
+    10% 0,
+    70% 0,
+    88% 41%,
+    99% 41%,
+    100% 48%,
+    100% 53%,
+    99% 59%,
+    88% 59%,
+    70% 100%,
+    10% 100%,
+    0 80%
+  );
+  border-radius: 20px;
+  cursor: pointer;
+}

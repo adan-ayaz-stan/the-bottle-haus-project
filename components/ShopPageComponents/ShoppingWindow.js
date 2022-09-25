@@ -1,6 +1,11 @@
 import React from "react";
 
+import ProductComponent from "../IndexPageComponents/ProductComponent";
+
 import styles from "../../styles/ShopPageComponents/ShoppingWindow/main.module.css";
+import PriceFilter from "./FiltersForShoppingWindow/PriceFilter";
+import BrandFilter from "./FiltersForShoppingWindow/BrandFilter";
+import SortbyFilter from "./FiltersForShoppingWindow/SortbyFilter";
 
 function ShoppingWindow({ query }) {
   const categories = [
@@ -44,6 +49,7 @@ function ShoppingWindow({ query }) {
 
   return (
     <div className={styles.main}>
+      {/* TOPBAR */}
       <div className={styles.topbar}>
         <h2>
           {categories.map((ele) => {
@@ -55,10 +61,21 @@ function ShoppingWindow({ query }) {
           })}
         </h2>
         <div className={styles.filters_container}>
-          <div className={styles.filter_box}>Price</div>
-          <div className={styles.filter_box}>Brand</div>
-          <div className={styles.filter_box}>Sort By</div>
+          <PriceFilter query={query} />
+          <BrandFilter query={query} />
+          <SortbyFilter query={query} />
         </div>
+      </div>
+      {/* PRODUCTS LISTING */}
+      <div className={styles.product_listing}>
+        <ProductComponent />
+        <ProductComponent />
+        <ProductComponent />
+        <ProductComponent />
+        <ProductComponent />
+        <ProductComponent />
+        <ProductComponent />
+        <ProductComponent />
       </div>
     </div>
   );

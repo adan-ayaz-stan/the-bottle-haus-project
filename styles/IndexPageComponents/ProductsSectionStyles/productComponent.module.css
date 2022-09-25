@@ -63,6 +63,7 @@
   font-family: "Avenir Light";
   color: gray;
   text-decoration: line-through;
+  margin-left: 10px;
 }
 
 .main h4 {
@@ -70,16 +71,15 @@
   text-align: left;
 }
 
-
 @media only screen and (max-width: 1050px) {
- .main {
-   max-height: 40%;
-   max-width: 45%;
- }
- .main h4 {
-   font-size: .7em;
- }
- .main p {
-   font-size: .7em;
- }
+  .main {
+    max-height: 40%;
+    max-width: 45%;
+  }
+  .main h4 {
+    font-size: 0.7em;
+  }
+  .main p {
+    font-size: 0.7em;
+  }
 }

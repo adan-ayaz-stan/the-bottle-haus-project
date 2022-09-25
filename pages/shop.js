@@ -9,11 +9,12 @@ import SideMenu from "../components/ShopPageComponents/SideMenu";
 import ShoppingWindow from "../components/ShopPageComponents/ShoppingWindow";
 
 function Shop({ query }) {
-
   return (
     <div>
       <Navbar />
-      <Navbar2nd />
+      <div style={{ backgroundColor: "#f6f5f7" }}>
+        <Navbar2nd />
+      </div>
       <div className={styles.submain}>
         <SideMenu query={query} />
         <ShoppingWindow query={query} />
