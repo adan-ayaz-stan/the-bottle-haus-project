@@ -4,7 +4,7 @@ import styles from "../../styles/ProductPageComponents/ProductReview/main.module
 
 function ProductReview() {
   return (
-    <div>
+    <div className={styles.main}>
       <div>
         <p>What our customers</p>
         <h2>Are Saying</h2>

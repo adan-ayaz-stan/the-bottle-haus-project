@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa/index";
 
 import sampleImage from "../../cms/images-slider/image-06.jpg";
 
-import styles from "../../styles/ProductPageComponents/main.module.css";
+import styles from "../../styles/ProductPageComponents/ProductSection/main.module.css";
 
 function ProductSection() {
   return (
