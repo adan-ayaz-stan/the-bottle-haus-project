@@ -6,8 +6,6 @@ import ProductSection from "../../components/ProductPageComponents/ProductSectio
 import ProductReview from "../../components/ProductPageComponents/ProductReview";
 import Footer from "../../components/IndexPageComponents/Footer";
 
-import styles from "../../styles/product-page.module.css";
-
 function ProductPage() {
   return (
     <div>

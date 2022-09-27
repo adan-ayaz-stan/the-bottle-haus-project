@@ -6,7 +6,7 @@ import styles from "../../styles/IndexPageComponents/CallToActionCardStyles/Call
 export default function CallToActionCardComponent(props) {
   return (
     <div className={styles.main}>
-      <a href="/">
+      <a href="/shop">
         <div className={styles.image}>
           <Image src={props.imageSource} height={105} width={105}></Image>
         </div>

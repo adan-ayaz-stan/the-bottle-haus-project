@@ -5,11 +5,14 @@
   display: flex;
   flex-flow: row;
   margin: 50px 0;
+  gap: 50px;
+  padding-left: 50px;
 }
 
 .product_image {
-  flex: 50%;
+  flex: 40%;
   position: relative;
+  margin-left: 50px;
 }
 
 .product_image img {
@@ -58,6 +61,7 @@
 .cremention_box :nth-child(3):hover {
   background-color: #ededed;
   border-radius: 12px;
+  user-select: none;
   cursor: pointer;
 }
 .price_box {

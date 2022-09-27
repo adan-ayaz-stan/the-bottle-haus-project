@@ -1,6 +1,6 @@
 import { Rating } from "@mui/material";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa/index";
 
 import sampleImage from "../../cms/images-slider/image-06.jpg";
@@ -8,6 +8,19 @@ import sampleImage from "../../cms/images-slider/image-06.jpg";
 import styles from "../../styles/ProductPageComponents/ProductSection/main.module.css";
 
 function ProductSection() {
+  const [totalValue, setTotalValue] = useState(1);
+
+  const incrementValue = () => {
+    if (totalValue < 10) {
+      setTotalValue(totalValue + 1);
+    }
+  };
+  const decrementValue = () => {
+    if (totalValue > 1) {
+      setTotalValue(totalValue - 1);
+    }
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.product_image}>
@@ -20,13 +33,13 @@ function ProductSection() {
         </h2>
         <div className={styles.cremention_and_price}>
           <div className={styles.cremention_box}>
-            <p>-</p>
-            <p>0</p>
-            <p>+</p>
+            <p onClick={decrementValue}>-</p>
+            <p>{totalValue}</p>
+            <p onClick={incrementValue}>+</p>
           </div>
           <div className={styles.price_box}>
-            <p>$54.95</p>
-            <p>$84.95</p>
+            <p>${(totalValue * 94.99).toFixed(2)}</p>
+            <p>${(totalValue * 114.99).toFixed(2)}</p>
           </div>
         </div>
         <div className={styles.reviews_link}>

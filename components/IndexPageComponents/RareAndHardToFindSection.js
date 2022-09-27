@@ -2,9 +2,28 @@ import React from "react";
 
 import styles from "../../styles/IndexPageComponents/RareAndHardToFindStyles/main.module.css";
 
+import sampleImage from "../../cms/product-section-images/sample-bottle.jpg";
+import plusIcon from "../../cms/icons/plus.png";
 import sampleImageMain from "../../cms/rare-to-find-images/sample-image-main.png";
 import Image from "next/image";
-import ProductComponent from "./ProductComponent";
+
+const dummyData = [
+  {
+    name: "Hendricks Lunar Gin Limited Edition",
+    newPrice: 35.49,
+    oldPrice: 48.29,
+  },
+  {
+    name: "Smirnoff vodka",
+    newPrice: 45.09,
+    oldPrice: 47.29,
+  },
+  {
+    name: "Captain Morgan rum",
+    newPrice: 39.99,
+    oldPrice: 43.29,
+  },
+];
 
 export default function RareAndHardToFindSection() {
   return (
@@ -29,9 +48,27 @@ export default function RareAndHardToFindSection() {
 
       <div className={styles.specialProductsListingContainer}>
         <div className={styles.productListing}>
-          <ProductComponent />
-          <ProductComponent />
-          <ProductComponent />
+          {dummyData.map((ele, ind) => {
+            return (
+              <div className={styles.product}>
+                <div>
+                  <Image src={plusIcon} width={35} height={35}></Image>
+                </div>
+
+                <div>
+                  <Image src={sampleImage} height={250} width={250}></Image>
+                </div>
+
+                <div>
+                  <h4>{ele.name}</h4>
+                  <div>
+                    <p>${ele.newPrice}</p>
+                    <p>${ele.oldPrice}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
         <div className={styles.comment}>
           <span>I TOLD</span>

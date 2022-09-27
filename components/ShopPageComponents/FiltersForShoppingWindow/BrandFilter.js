@@ -10,36 +10,32 @@ import styles from "../../../styles/ShopPageComponents/FilterForShoppingWindow/b
 
 const dummyData = [
   {
-    repName: "Brand PH",
-    codeName: "brandph",
+    repName: "Hendrick's",
+    codeName: "hendricks",
   },
   {
-    repName: "Brand RV",
-    codeName: "brandrv",
+    repName: "Smirnoff",
+    codeName: "smirnoff",
   },
   {
-    repName: "Brand AB",
-    codeName: "brandab",
+    repName: "Captain Morgan",
+    codeName: "captainmorgan",
   },
   {
-    repName: "Brand AH",
-    codeName: "brandah",
+    repName: "Jack Daniel's",
+    codeName: "jackdaniels",
   },
   {
-    repName: "Brand IOC",
-    codeName: "brandioc",
+    repName: "Bacardi",
+    codeName: "bacardi",
   },
   {
-    repName: "Brand YC",
-    codeName: "brandyc",
-  },
-  {
-    repName: "Brand QZ",
-    codeName: "brandqz",
+    repName: "Fireball",
+    codeName: "fireball",
   },
 ];
 
-function BrandFilter({ query }) {
+function BrandFilter({ query, brands }) {
   const [pagedropdownValue, setPagedropdownValue] =
     useRecoilState(dropdownOpen);
 

@@ -1,0 +1,122 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.submain {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5px;
+  padding: 10px !important;
+}
+
+.cart_container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.cart_heading {
+  font-family: "Avenir Medium";
+  font-size: 1.5em;
+}
+
+.products_list {
+  max-height: 350px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+  margin: 15px 0;
+  overflow-y: auto;
+}
+
+.product {
+  height: 100px;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+  background-color: white;
+}
+.product_image {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+}
+.product_image img {
+  object-fit: contain;
+  border-radius: 8px;
+}
+.product_details {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.product_details h2 {
+  font-family: "Avenir Regular";
+  font-size: 1.5em;
+  margin: 5px;
+}
+.product_details label {
+  color: gray;
+}
+
+.cart_status {
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+  margin: 10px auto;
+  background-color: #fcf8fa;
+  border-radius: 8px;
+}
+
+.cart_total {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.cart_total p {
+  font-family: "Avenir Medium";
+}
+.cart_total h2 {
+  font-family: "Avenir Regular";
+  font-size: 1.5em;
+}
+
+.cart_actions {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  gap: 20px;
+  padding: 0 50px;
+}
+
+.cart_actions button {
+  flex: 50%;
+  font-family: "Avenir Medium";
+  font-size: 1em;
+  padding: 15px 0;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.cart_actions button:first-child {
+  color: #7d7c7d;
+  border: solid 2px #7d7c7d;
+  background-color: white;
+}
+.cart_actions button:last-child {
+  color: white;
+  background-color: #f47428;
+}

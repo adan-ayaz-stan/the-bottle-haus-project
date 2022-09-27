@@ -4,9 +4,9 @@ import React from "react";
 import styles from "../../styles/IndexPageComponents/NavbarStyles/nav-main.module.css";
 import logo from "../../cms/logo.svg";
 import searchIcon from "../../cms/icons/search.svg";
-import cartIcon from "../../cms/icons/cart.svg";
 import profileIcon from "../../cms/icons/profile.svg";
 import Hamburger from "./Hamburger";
+import ShoppingCartNavbar from "../ShoppingCartComponents/ShoppingCartNavbar";
 
 export default function Navbar() {
   return (
@@ -37,10 +37,7 @@ export default function Navbar() {
           <Image src={searchIcon} width={23} height={23}></Image>
         </div>
 
-        <div>
-          <Image src={cartIcon} width={23} height={23}></Image>
-          <p>$0.00</p>
-        </div>
+        <ShoppingCartNavbar />
       </div>
     </div>
   );

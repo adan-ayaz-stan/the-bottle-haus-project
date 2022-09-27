@@ -46,9 +46,12 @@ export default function Navbar2nd() {
   return (
     <>
       <div className={styles.main}>
-        {categories.map((ele) => {
+        {categories.map((ele, ind) => {
           return (
-            <Link href={`shop?category=${ele.type}`}>
+            <Link
+              href={`/shop?category=${ele.type}`}
+              key={ind + Math.random() * ind}
+            >
               <a>{ele.name}</a>
             </Link>
           );

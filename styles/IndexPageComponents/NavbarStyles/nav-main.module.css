@@ -88,20 +88,6 @@
   cursor: pointer;
 }
 
-.submenu div:last-child {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-
-  color: black;
-  padding: 10px 12px;
-
-  border-radius: 8px;
-
-  background-color: white;
-  cursor: pointer;
-}
 
 @media only screen and (max-width: 1050px) {
   .main {
