@@ -61,6 +61,7 @@ export async function getServerSideProps(context) {
         query,
         brands: [],
         categories: [],
+        products: []
       },
     };
   }
