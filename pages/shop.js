@@ -32,17 +32,17 @@ export async function getServerSideProps(context) {
 
     // Fetching brands
     const brands = await fetch(
-      "http://localhost:3000/api/brands/getbrands"
+      "https://adan-ayaz-project-03.vercel.app/api/brands/getbrands"
     ).then((data) => data.json());
 
     // Fetching categories
     const categories = await fetch(
-      "http://localhost:3000/api/categories/getcategories"
+      "https://adan-ayaz-project-03.vercel.app/api/categories/getcategories"
     ).then((data) => data.json());
 
     // Fetching all products
     const products = await fetch(
-      "http://localhost:3000/api/products/getproducts"
+      "https://adan-ayaz-project-03.vercel.app/api/products/getproducts"
     ).then((data) => data.json());
 
     return {
