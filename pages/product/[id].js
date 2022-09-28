@@ -1,12 +1,11 @@
 import React from "react";
+import dbclient from "../../prisma/client";
 
 import Navbar from "../../components/IndexPageComponents/Navbar";
 import Navbar2nd from "../../components/IndexPageComponents/Navbar-2nd";
 import ProductSection from "../../components/ProductPageComponents/ProductSection";
 import ProductReview from "../../components/ProductPageComponents/ProductReview";
 import Footer from "../../components/IndexPageComponents/Footer";
-
-import { prisma } from "../../prisma/client";
 
 function ProductPage({ product }) {
   console.log(product);
@@ -27,7 +26,7 @@ export async function getServerSideProps(context) {
   const productId = params.id;
 
   // Getting the product
-  const productData = await prisma.products.findUnique({
+  const productData = await dbclient.products.findUnique({
     where: {
       id: productId,
     },

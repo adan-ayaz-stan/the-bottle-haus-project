@@ -1,5 +1,7 @@
 import React from "react";
 
+import dbclient from '../prisma/client'
+
 import Navbar from "../components/IndexPageComponents/Navbar";
 import Navbar2nd from "../components/IndexPageComponents/Navbar-2nd";
 import Footer from "../components/IndexPageComponents/Footer";
@@ -7,8 +9,6 @@ import Footer from "../components/IndexPageComponents/Footer";
 import styles from "../styles/shop.module.css";
 import SideMenu from "../components/ShopPageComponents/SideMenu";
 import ShoppingWindow from "../components/ShopPageComponents/ShoppingWindow";
-
-import { prisma } from "../prisma/client";
 
 function Shop({ query, brands, categories, products}) {
 
@@ -39,13 +39,13 @@ export async function getServerSideProps(context) {
     const query = context.query;
 
     // Fetching brands
-    const brands = await prisma.brands.findMany({});
+    const brands = await dbclient.brands.findMany({});
 
     // Fetching categories
-    const categories = await prisma.category.findMany({});
+    const categories = await dbclient.category.findMany({});
 
     // Fetching all products
-    const products = await prisma.products.findMany({});
+    const products = await dbclient.products.findMany({});
 
     return {
       props: {

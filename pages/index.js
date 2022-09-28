@@ -1,4 +1,5 @@
 import Head from "next/head";
+import dbclient from "../prisma/client";
 
 import Navbar from "../components/IndexPageComponents/Navbar";
 import Navbar2nd from "../components/IndexPageComponents/Navbar-2nd";
@@ -17,7 +18,6 @@ import drinkImage from "../cms/call-to-action-card-images/drink-image.jpg";
 
 import styles from "../styles/index.module.css";
 
-import { prisma } from "../prisma/client";
 
 export default function Home({ products, RATHFproducts }) {
   return (
@@ -70,7 +70,7 @@ export default function Home({ products, RATHFproducts }) {
 
 export async function getServerSideProps(context) {
   // Gettings products
-  const products = await prisma.products.findMany({
+  const products = await dbclient.products.findMany({
     where: {
       price: {
         is: {
@@ -84,7 +84,7 @@ export async function getServerSideProps(context) {
   });
 
   // Getting rare and hard to find products
-  const RATHFproducts = await prisma.products.findMany({
+  const RATHFproducts = await dbclient.products.findMany({
     take: 3,
   });
 
