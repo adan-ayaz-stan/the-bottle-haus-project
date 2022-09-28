@@ -95,6 +95,7 @@
   border-radius: 15px;
 }
 .specialProductsListingContainer .productListing {
+  position: relative;
   flex: 75%;
   display: flex;
   align-items: center;
@@ -168,66 +169,103 @@
 
 .product {
   position: relative;
-  max-width: 21%;
-  height: fit-content;
-  margin: 2% 0;
-  padding: 0 10px;
+  min-height: fit-content;
+  height: 100%;
+  width: 30%;
+
   display: flex;
-  justify-content: center;
-  flex-flow: column;
-  flex-wrap: nowrap;
+  flex-flow: column nowrap;
   align-items: center;
-  background-color: white;
+  justify-content: space-evenly;
+  gap: 10px;
+
   border-radius: 15px;
+  background-color: white;
+
+  padding: 15px;
+  margin: 10px 0;
+
+  transform: scale(0.8);
 }
 
-.product div:first-child {
-  position: absolute;
-  top: 2%;
-  right: 2%;
+.add_to_cart_icon {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  align-self: flex-end;
   border: solid 1px #ededed;
   border-radius: 5px;
-  z-index: 10;
+  cursor: pointer;
+}
+.add_to_cart_icon img {
+  object-fit: contain;
 }
 
-.product div:nth-child(2) {
-  margin-bottom: 1em;
+.product_image {
+  position: relative;
+  min-height: 200px;
+  min-width: 150px;
+  height: 80%;
+  width: 80%;
 }
-.product div:nth-child(2) img {
-  min-height: 100px;
-  min-width: 100px;
+.product_image img {
+  object-fit: contain;
 }
 .product img {
   border-radius: 15px;
 }
-.product div:nth-child(3) {
+.product_details {
   display: flex;
   flex-flow: column;
   height: fit-content;
 }
-.product div:nth-child(3) div {
+.product_details div {
   display: flex;
   flex-flow: row;
   margin-top: 5px;
 }
 
-.product p {
-  display: inline;
+.product_price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
 }
-.product p:first-child {
+
+.product_price p {
+  display: inline;
+  text-align: center;
+}
+.product_price p:first-child {
   font-family: "Avenir Medium";
   font-weight: 600;
 }
-.product p:last-child {
+.product_price p:last-child {
   font-family: "Avenir Light";
   color: gray;
   text-decoration: line-through;
-  margin-left: 10px;
 }
 
-.product h4 {
+.product_name {
+  max-width: 210px;
   font-family: "Avenir Light";
-  text-align: left;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 1050px) {
+  .product {
+    max-height: 40%;
+    max-width: 45%;
+  }
+  .product h4 {
+    font-size: 0.7em;
+  }
+  .product p {
+    font-size: 0.7em;
+  }
 }
 
 @media only screen and (max-width: 1050px) {

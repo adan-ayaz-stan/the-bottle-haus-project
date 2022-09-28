@@ -1,107 +1,58 @@
 import React from "react";
 import Image from "next/image";
+import { useRecoilState } from "recoil";
 
 import sampleImage from "../../cms/product-section-images/sample-bottle.jpg";
 import plusIcon from "../../cms/icons/plus.png";
 
+import { shoppingCart } from "../../atoms/shopping-cart";
+
 import styles from "../../styles/IndexPageComponents/ProductsSectionStyles/main.module.css";
 
-const dummyData = [
-  {
-    name: "Hendricks Lunar Gin Limited Edition",
-    price: {
-      new: 35.49,
-      old: 48.29,
-    },
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    category: "gin",
-    img: "Image Link",
-    brand: "BrandVH",
-  },
-  {
-    name: "Smirnoff vodka",
-    price: {
-      new: 45.09,
-      old: 47.19,
-    },
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    category: "gin",
-    img: "Image Link",
-    brand: "BrandVH",
-  },
-  {
-    name: "Captain Morgan rum",
-    price: {
-      new: 39.99,
-      old: 43.29,
-    },
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    category: "gin",
-    img: "Image Link",
-    brand: "BrandVH",
-  },
-  {
-    name: "Jack Daniel's whiskey",
-    price: {
-      new: 32.59,
-      old: 38.19,
-    },
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    category: "gin",
-    img: "Image Link",
-    brand: "BrandVH",
-  },
-  {
-    name: "Bacardi rum",
-    price: {
-      new: 42.0,
-      old: 46.99,
-    },
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    category: "gin",
-    img: "Image Link",
-    brand: "BrandVH",
-  },
-  {
-    name: "Fireball Cinnamon Whisky",
-    price: {
-      new: 34.19,
-      old: 35.59,
-    },
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    category: "gin",
-    img: "Image Link",
-    brand: "BrandVH",
-  },
-];
+export default function ProductsSection({ products }) {
+  const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
 
-export default function ProductsSection() {
   return (
     <div className={styles.main}>
       <h1>Bottles below $50</h1>
       <div className={styles.product_listing}>
-        {dummyData.map((ele, ind) => {
+        {products.map((ele, ind) => {
+          function addToCart() {
+            const oldCart = shoppingCartValue;
+            const newItem = [
+              {
+                name: ele.name,
+                price: ele.price.new,
+              },
+            ];
+            setShoppingCart(oldCart.concat(newItem));
+          }
+
           return (
-            <div className={styles.product}>
-              <div className={styles.add_to_cart_icon}>
-                <Image src={plusIcon} width={35} height={35}></Image>
+            <div className={styles.product} key={ind + Math.random() * ind}>
+              <div onClick={addToCart} className={styles.add_to_cart_icon}>
+                <Image src={plusIcon} layout="fill"></Image>
               </div>
 
-              <div className={styles.product_image}>
+              <a
+                href={`/product/${ele.id}`}
+                alt="product-page-link"
+                className={styles.product_image}
+              >
                 <Image src={sampleImage} layout="fill"></Image>
-              </div>
+              </a>
 
               <div className={styles.product_details}>
-                <h4 className={styles.product_name}>{ele.name}</h4>
+                <a
+                  href={`/product/${ele.id}`}
+                  alt="product-page-link"
+                  className={styles.product_name}
+                >
+                  {ele.name}
+                </a>
                 <div className={styles.product_price}>
-                  <p>${ele.newPrice}</p>
-                  <p>${ele.oldPrice}</p>
+                  <p>${ele.price.new}</p>
+                  <p>${ele.price.old}</p>
                 </div>
               </div>
             </div>

@@ -49,7 +49,7 @@ function ShoppingWindow({ query, brands, products, categories }) {
           }
 
           return (
-            <div className={styles.product}>
+            <div className={styles.product} key={ind + Math.random() * ind}>
               <div onClick={addToCart} className={styles.add_to_cart_icon}>
                 <Image src={plusIcon} layout="fill"></Image>
               </div>

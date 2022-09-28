@@ -7,7 +7,10 @@ import sampleImage from "../../cms/images-slider/image-06.jpg";
 
 import styles from "../../styles/ProductPageComponents/ProductSection/main.module.css";
 
-function ProductSection() {
+function ProductSection({ product }) {
+  const newPrice = +product.price.new;
+  const oldPrice = +product.price.old;
+
   const [totalValue, setTotalValue] = useState(1);
 
   const incrementValue = () => {
@@ -28,9 +31,7 @@ function ProductSection() {
       </div>
       <div className={styles.product_details}>
         <label className={styles.company_label}>The Bottle Haus</label>
-        <h2 className={styles.product_heading}>
-          Balcones Brimstone Texas Scrub Oak Smoked Whiskey 750ml
-        </h2>
+        <h2 className={styles.product_heading}>{product.name}</h2>
         <div className={styles.cremention_and_price}>
           <div className={styles.cremention_box}>
             <p onClick={decrementValue}>-</p>
@@ -38,20 +39,20 @@ function ProductSection() {
             <p onClick={incrementValue}>+</p>
           </div>
           <div className={styles.price_box}>
-            <p>${(totalValue * 94.99).toFixed(2)}</p>
-            <p>${(totalValue * 114.99).toFixed(2)}</p>
+            <p>${+(totalValue * newPrice).toFixed(2)}</p>
+            <p>${+(totalValue * oldPrice).toFixed(2)}</p>
           </div>
         </div>
         <div className={styles.reviews_link}>
-          <Rating name="read-only" value={3.5} precision={0.5} readOnly />{" "}
+          <Rating
+            name="read-only"
+            value={+product.rating}
+            precision={0.5}
+            readOnly
+          />{" "}
           <a href="/">28 reviews</a>
         </div>
-        <div className={styles.product_description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </div>
+        <div className={styles.product_description}>{product.description}</div>
         <button className={styles.add_to_cart_button}>
           {" "}
           <FaShoppingCart /> Add to Cart

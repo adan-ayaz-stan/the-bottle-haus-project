@@ -9,6 +9,7 @@ import Hamburger from "./Hamburger";
 import ShoppingCartNavbar from "../ShoppingCartComponents/ShoppingCartNavbar";
 
 export default function Navbar() {
+
   return (
     <div className={styles.main}>
       {/* HAMBURGER */}

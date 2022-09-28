@@ -32,4 +32,5 @@ model products {
   img         String
   name        String
   price       ProductsPrice
+  rating      Float
 }

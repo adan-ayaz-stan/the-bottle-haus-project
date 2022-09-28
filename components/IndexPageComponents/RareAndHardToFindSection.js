@@ -1,31 +1,18 @@
 import React from "react";
+import Image from "next/image";
+import { useRecoilState } from "recoil";
+
+import { shoppingCart } from "../../atoms/shopping-cart";
 
 import styles from "../../styles/IndexPageComponents/RareAndHardToFindStyles/main.module.css";
 
 import sampleImage from "../../cms/product-section-images/sample-bottle.jpg";
 import plusIcon from "../../cms/icons/plus.png";
 import sampleImageMain from "../../cms/rare-to-find-images/sample-image-main.png";
-import Image from "next/image";
 
-const dummyData = [
-  {
-    name: "Hendricks Lunar Gin Limited Edition",
-    newPrice: 35.49,
-    oldPrice: 48.29,
-  },
-  {
-    name: "Smirnoff vodka",
-    newPrice: 45.09,
-    oldPrice: 47.29,
-  },
-  {
-    name: "Captain Morgan rum",
-    newPrice: 39.99,
-    oldPrice: 43.29,
-  },
-];
+export default function RareAndHardToFindSection({ RATHFproducts }) {
+  const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
 
-export default function RareAndHardToFindSection() {
   return (
     <div className={styles.main}>
       <h1>RARE & HARD TO FIND</h1>
@@ -48,22 +35,43 @@ export default function RareAndHardToFindSection() {
 
       <div className={styles.specialProductsListingContainer}>
         <div className={styles.productListing}>
-          {dummyData.map((ele, ind) => {
+          {RATHFproducts.map((ele, ind) => {
+            function addToCart() {
+              const oldCart = shoppingCartValue;
+              const newItem = [
+                {
+                  name: ele.name,
+                  price: ele.price.new,
+                },
+              ];
+              setShoppingCart(oldCart.concat(newItem));
+            }
+
             return (
-              <div className={styles.product}>
-                <div>
-                  <Image src={plusIcon} width={35} height={35}></Image>
+              <div className={styles.product} key={ind + Math.random() * ind}>
+                <div onClick={addToCart} className={styles.add_to_cart_icon}>
+                  <Image src={plusIcon} layout="fill"></Image>
                 </div>
 
-                <div>
-                  <Image src={sampleImage} height={250} width={250}></Image>
-                </div>
+                <a
+                  href={`/product/${ele.id}`}
+                  alt="product-page-link"
+                  className={styles.product_image}
+                >
+                  <Image src={sampleImage} layout="fill"></Image>
+                </a>
 
-                <div>
-                  <h4>{ele.name}</h4>
-                  <div>
-                    <p>${ele.newPrice}</p>
-                    <p>${ele.oldPrice}</p>
+                <div className={styles.product_details}>
+                  <a
+                    href={`/product/${ele.id}`}
+                    alt="product-page-link"
+                    className={styles.product_name}
+                  >
+                    {ele.name}
+                  </a>
+                  <div className={styles.product_price}>
+                    <p>${ele.price.new}</p>
+                    <p>${ele.price.old}</p>
                   </div>
                 </div>
               </div>

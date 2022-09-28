@@ -7,6 +7,7 @@ import CallToActionCardComponent from "../components/IndexPageComponents/CallToA
 import ProductsSection from "../components/IndexPageComponents/ProductsSection";
 import RareAndHardToFindSection from "../components/IndexPageComponents/RareAndHardToFindSection";
 import CustomerReviews from "../components/IndexPageComponents/CustomerReviews";
+import SpecialProduct from "../components/IndexPageComponents/SpecialProduct";
 import FeaturedCollections from "../components/IndexPageComponents/FeaturedCollections";
 import Footer from "../components/IndexPageComponents/Footer";
 
@@ -15,9 +16,10 @@ import tapImage from "../cms/call-to-action-card-images/tap-image.jpg";
 import drinkImage from "../cms/call-to-action-card-images/drink-image.jpg";
 
 import styles from "../styles/index.module.css";
-import SpecialProduct from "../components/IndexPageComponents/SpecialProduct";
 
-export default function Home() {
+import { prisma } from "../prisma/client";
+
+export default function Home({ products, RATHFproducts }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -56,12 +58,40 @@ export default function Home() {
           p={"Delivered to your door within days.."}
         ></CallToActionCardComponent>
       </div>
-      <ProductsSection />
-      <RareAndHardToFindSection />
+      <ProductsSection products={products} />
+      <RareAndHardToFindSection RATHFproducts={RATHFproducts} />
       <CustomerReviews />
       <SpecialProduct />
       <FeaturedCollections />
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  // Gettings products
+  const products = await prisma.products.findMany({
+    where: {
+      price: {
+        is: {
+          new: {
+            lt: 50,
+          },
+        },
+      },
+    },
+    take: 9,
+  });
+
+  // Getting rare and hard to find products
+  const RATHFproducts = await prisma.products.findMany({
+    take: 3,
+  });
+
+  return {
+    props: {
+      products,
+      RATHFproducts
+    },
+  };
 }

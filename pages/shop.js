@@ -8,7 +8,10 @@ import styles from "../styles/shop.module.css";
 import SideMenu from "../components/ShopPageComponents/SideMenu";
 import ShoppingWindow from "../components/ShopPageComponents/ShoppingWindow";
 
-function Shop({ query, brands, categories, products }) {
+import { prisma } from "../prisma/client";
+
+function Shop({ query, brands, categories, products}) {
+
   return (
     <div>
       <Navbar />
@@ -17,7 +20,12 @@ function Shop({ query, brands, categories, products }) {
       </div>
       <div className={styles.submain}>
         <SideMenu query={query} categories={categories} />
-        <ShoppingWindow query={query} brands={brands} products={products} categories={categories} />
+        <ShoppingWindow
+          query={query}
+          brands={brands}
+          products={products}
+          categories={categories}
+        />
       </div>
       <Footer />
     </div>
@@ -31,19 +39,13 @@ export async function getServerSideProps(context) {
     const query = context.query;
 
     // Fetching brands
-    const brands = await fetch(
-      "https://adan-ayaz-project-03.vercel.app/api/brands/getbrands"
-    ).then((data) => data.json());
+    const brands = await prisma.brands.findMany({});
 
     // Fetching categories
-    const categories = await fetch(
-      "https://adan-ayaz-project-03.vercel.app/api/categories/getcategories"
-    ).then((data) => data.json());
+    const categories = await prisma.category.findMany({});
 
     // Fetching all products
-    const products = await fetch(
-      "https://adan-ayaz-project-03.vercel.app/api/products/getproducts"
-    ).then((data) => data.json());
+    const products = await prisma.products.findMany({});
 
     return {
       props: {
@@ -61,7 +63,10 @@ export async function getServerSideProps(context) {
         query,
         brands: [],
         categories: [],
-        products: []
+        products: [],
+        error: {
+          ...e,
+        },
       },
     };
   }

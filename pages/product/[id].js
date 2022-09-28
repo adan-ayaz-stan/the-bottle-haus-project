@@ -6,16 +6,38 @@ import ProductSection from "../../components/ProductPageComponents/ProductSectio
 import ProductReview from "../../components/ProductPageComponents/ProductReview";
 import Footer from "../../components/IndexPageComponents/Footer";
 
-function ProductPage() {
+import { prisma } from "../../prisma/client";
+
+function ProductPage({ product }) {
+  console.log(product);
+
   return (
     <div>
       <Navbar />
       <Navbar2nd />
-      <ProductSection />
+      <ProductSection product={product} />
       <ProductReview />
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const params = context.params;
+  const productId = params.id;
+
+  // Getting the product
+  const productData = await prisma.products.findUnique({
+    where: {
+      id: productId,
+    },
+  });
+
+  return {
+    props: {
+      product: productData,
+    },
+  };
 }
 
 export default ProductPage;

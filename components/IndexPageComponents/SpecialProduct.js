@@ -1,11 +1,29 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 
 import { GrCart } from "react-icons/gr";
+
+import { shoppingCart } from "../../atoms/shopping-cart";
 
 import styles from "../../styles/IndexPageComponents/SpecialProduct/main.module.css";
 
 function SpecialProduct() {
+  const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
+
+  const [totalValue, setTotalValue] = useState(1);
+
+  const incrementValue = () => {
+    if (totalValue < 3) {
+      setTotalValue(totalValue + 1);
+    }
+  };
+  const decrementValue = () => {
+    if (totalValue > 1) {
+      setTotalValue(totalValue - 1);
+    }
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.product_image}>
@@ -25,9 +43,9 @@ function SpecialProduct() {
         </div>
         <div className={styles.product_info__buy_section}>
           <div className={styles.product_info__items_crementer}>
-            <button>-</button>
-            <p>0</p>
-            <button>+</button>
+            <button onClick={decrementValue}>-</button>
+            <p>{totalValue}</p>
+            <button onClick={incrementValue}>+</button>
           </div>
           <div className={styles.product_info__price_info}>
             <p>$89.95</p>
@@ -51,7 +69,21 @@ function SpecialProduct() {
           used as a placeholder before final copy is available.
         </div>
         <div className={styles.product_info__add_to_cart}>
-          <button>
+          <button
+            onClick={() => {
+              function addToCart() {
+                const oldCart = shoppingCartValue;
+                const newItem = [
+                  {
+                    name: "Alberta Sauvicnon Blanc Rye Canadian Whiskey 750ml",
+                    price: 89.95,
+                  },
+                ];
+                setShoppingCart(oldCart.concat(newItem));
+              }
+              addToCart();
+            }}
+          >
             <GrCart /> Add to Cart
           </button>
         </div>
