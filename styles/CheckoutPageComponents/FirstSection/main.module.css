@@ -1,0 +1,58 @@
+.main {
+  padding: 20px 10%;
+}
+
+.heading {
+  width: fit-content;
+  font-family: "Avenir Regular";
+  font-size: 3em;
+  padding: 10px 50px 10px 0;
+  letter-spacing: 2px;
+  border-bottom: solid 2px black;
+}
+
+.product_listing {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 25px 0;
+  gap: 10px;
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px 5%;
+}
+
+.product_image {
+  position: relative;
+  min-height: 100px;
+  min-width: 100px;
+}
+.product_image img {
+  object-fit: contain;
+}
+
+.product_name {
+  width: 40%;
+  font-family: "Avenir Medium";
+}
+
+.product_price {
+  width: 30%;
+  font-family: "Avenir Medium";
+  font-size: 1.5em;
+}
+
+.empty_cart_message {
+  width: 50%;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #f6f5f7;
+  border-radius: 8px;
+}

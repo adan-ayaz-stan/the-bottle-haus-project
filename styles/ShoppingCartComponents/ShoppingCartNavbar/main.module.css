@@ -55,8 +55,12 @@
   border-radius: 8px;
 }
 .product_details {
+  width: 100%;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px 0 0;
 }
 .product_details h2 {
   font-family: "Avenir Regular";
@@ -65,6 +69,17 @@
 }
 .product_details label {
   color: gray;
+}
+
+.remove_from_cart_icon {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.remove_from_cart_icon svg {
+  height: 100%;
+  width: 100%;
+  color: #f47428;
 }
 
 .cart_status {

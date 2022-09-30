@@ -1,13 +1,20 @@
-import { Rating } from "@mui/material";
+import { useRecoilState } from "recoil";
 import Image from "next/image";
 import React, { useState } from "react";
+
+import { shoppingCart } from "../../atoms/shopping-cart";
+
 import { FaShoppingCart } from "react-icons/fa/index";
+
+import { Rating } from "@mui/material";
 
 import sampleImage from "../../cms/images-slider/image-06.jpg";
 
 import styles from "../../styles/ProductPageComponents/ProductSection/main.module.css";
 
 function ProductSection({ product }) {
+  const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
+
   const newPrice = +product.price.new;
   const oldPrice = +product.price.old;
 
@@ -23,6 +30,19 @@ function ProductSection({ product }) {
       setTotalValue(totalValue - 1);
     }
   };
+
+  function addToCart() {
+    const oldCart = shoppingCartValue;
+    const newItem = [];
+    for (let i = 0; i < totalValue; i++) {
+      newItem.push({
+        name: product.name,
+        price: newPrice,
+      });
+    }
+    setShoppingCart(oldCart.concat(newItem));
+    setTotalValue(1);
+  }
 
   return (
     <div className={styles.main}>
@@ -53,7 +73,7 @@ function ProductSection({ product }) {
           <a href="/">28 reviews</a>
         </div>
         <div className={styles.product_description}>{product.description}</div>
-        <button className={styles.add_to_cart_button}>
+        <button className={styles.add_to_cart_button} onClick={addToCart}>
           {" "}
           <FaShoppingCart /> Add to Cart
         </button>

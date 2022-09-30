@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
+import { useRouter } from "next/router";
 
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
 import Modal from "@mui/material/Modal";
+
+import { GiCrossMark } from "react-icons/gi/index";
 
 import sampleImage from "../../cms/images-slider/image-06.jpg";
 import cartIcon from "../../cms/icons/cart.svg";
@@ -13,57 +16,6 @@ import cartIcon from "../../cms/icons/cart.svg";
 import { shoppingCart } from "../../atoms/shopping-cart";
 
 import styles from "../../styles/ShoppingCartComponents/ShoppingCartNavbar/main.module.css";
-
-const dummyData = [
-  {
-    name: "Balcones Brimstone Texas Oak Smoked Whiskey 750ml",
-    price: 54.49,
-  },
-  {
-    name: "Tripplek Sake Extract 50ml",
-    price: 124.49,
-  },
-  {
-    name: "Tripplek Sake Extract 75ml",
-    price: 144.49,
-  },
-  {
-    name: "Balcones Brimstone Texas Oak Smoked Whiskey 750ml",
-    price: 54.49,
-  },
-  {
-    name: "Tripplek Sake Extract 50ml",
-    price: 124.49,
-  },
-  {
-    name: "Tripplek Sake Extract 75ml",
-    price: 144.49,
-  },
-  {
-    name: "Balcones Brimstone Texas Oak Smoked Whiskey 750ml",
-    price: 54.49,
-  },
-  {
-    name: "Tripplek Sake Extract 50ml",
-    price: 124.49,
-  },
-  {
-    name: "Tripplek Sake Extract 75ml",
-    price: 144.49,
-  },
-  {
-    name: "Balcones Brimstone Texas Oak Smoked Whiskey 750ml",
-    price: 54.49,
-  },
-  {
-    name: "Tripplek Sake Extract 50ml",
-    price: 124.49,
-  },
-  {
-    name: "Tripplek Sake Extract 75ml",
-    price: 144.49,
-  },
-];
 
 const styleCartModal = {
   position: "absolute",
@@ -79,7 +31,8 @@ const styleCartModal = {
 };
 
 function ShoppingCartNavbar() {
-  const shoppingCartItems = useRecoilValue(shoppingCart);
+  const router = useRouter();
+  const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -88,7 +41,7 @@ function ShoppingCartNavbar() {
   const [totalBilling, setTotalBilling] = useState(0);
 
   function calculateBill() {
-    let allPrices = shoppingCartItems.map((ele) => +ele.price);
+    let allPrices = shoppingCartValue.map((ele) => +ele.price);
     let totalBill = allPrices.reduce((prev, curr) => prev + curr, 0);
     setTotalBilling(+totalBill);
     return +totalBill;
@@ -123,7 +76,13 @@ function ShoppingCartNavbar() {
 
               <div className={styles.products_list}>
                 {/*  */}
-                {shoppingCartItems.map((ele, ind, arr) => {
+                {shoppingCartValue.map((ele, ind, arr) => {
+                  function removeFromCart() {
+                    let oldCart = shoppingCartValue.slice();
+                    oldCart.splice(ind, 1);
+                    setShoppingCart(oldCart);
+                  }
+
                   return (
                     <div className={styles.product} key={ind + Math.random()}>
                       <div className={styles.product_image}>
@@ -134,8 +93,16 @@ function ShoppingCartNavbar() {
                         />
                       </div>
                       <div className={styles.product_details}>
-                        <h2>${ele.price}</h2>
-                        <label>{ele.name}</label>
+                        <div>
+                          <h2>${ele.price}</h2>
+                          <label>{ele.name}</label>
+                        </div>
+                        <div
+                          className={styles.remove_from_cart_icon}
+                          onClick={removeFromCart}
+                        >
+                          <GiCrossMark />
+                        </div>
                       </div>
                     </div>
                   );
@@ -146,7 +113,7 @@ function ShoppingCartNavbar() {
               <h3 className={styles.cart_status}>
                 You have{" "}
                 <div style={{ display: "inline", color: "#f47428" }}>
-                  {shoppingCartItems.length}
+                  {shoppingCartValue.length}
                 </div>{" "}
                 items added in your cart
               </h3>
@@ -158,7 +125,13 @@ function ShoppingCartNavbar() {
 
               <div className={styles.cart_actions}>
                 <button onClick={handleClose}>Continue Shopping</button>
-                <button>Check Out</button>
+                <button
+                  onClick={() => {
+                    router.push("/checkout");
+                  }}
+                >
+                  Check Out
+                </button>
               </div>
             </div>
           </Box>

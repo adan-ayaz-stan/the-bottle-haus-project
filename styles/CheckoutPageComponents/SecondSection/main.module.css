@@ -1,0 +1,154 @@
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0px 10%;
+  background-color: #f6f5f7;
+}
+.instruction_input_box {
+  display: flex;
+  flex: 75%;
+  flex-flow: column;
+  padding: 50px 0;
+}
+.instruction_input_box label {
+  margin: 10px 0;
+  font-family: "Avenir Medium";
+  font-size: 1em;
+}
+.instruction_input_box textarea {
+  min-height: 100px;
+  height: 40%;
+  width: 60%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  font-family: "Avenir Medium";
+  border: solid 1px #f0eef0;
+  resize: none;
+}
+
+.checkout_box {
+  display: flex;
+  flex: 25%;
+  flex-flow: column nowrap;
+  align-items: center;
+  border-top: solid 2px black;
+  padding: 50px 0;
+}
+
+.total_box {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-family: "Avenir Medium";
+}
+
+.notice_label {
+  font-size: 0.9em;
+  color: #8a888a;
+  margin: 0;
+  font-family: "Avenir Light";
+  text-transform: capitalize;
+}
+
+.additional_service_container {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.additional_service_container input {
+  flex: 20%;
+  width: 20px;
+  height: 20px;
+}
+.service_card {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  flex: 80%;
+  background-color: white;
+  border: solid 1px #f0eef0;
+  border-radius: 12px;
+}
+.service_details {
+  text-align: center;
+  font-size: 0.8em;
+}
+.service_details p:first-child {
+  color: darkgray;
+}
+.service_details p:nth-child(2),
+.service_details p:nth-child(3) {
+  color: #b6b5b6;
+  font-size: 0.7em;
+}
+.service_price {
+  font-family: "Avenir Medium";
+  font-size: 1em;
+}
+
+.disclaimer_label {
+  color: #8a888a;
+  font-family: "Avenir Light";
+  font-size: 0.8em;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.checkout_button {
+  width: 100%;
+  padding: 15px 0;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: "Avenir Medium";
+  color: white;
+  background-color: #f3772e;
+  cursor: pointer;
+}
+
+.payment_options {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "p_option_1 p_option_2"
+    "p_option_3 p_option_4";
+}
+
+.p_option_1 {
+  grid-area: p_option_1;
+}
+.p_option_2 {
+  grid-area: p_option_2;
+}
+.p_option_3 {
+  grid-area: p_option_3;
+}
+.p_option_4 {
+  grid-area: p_option_4;
+}
+
+.p_option_1,
+.p_option_2,
+.p_option_3,
+.p_option_4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p_option_1 svg,
+.p_option_2 svg,
+.p_option_3 svg,
+.p_option_4 svg {
+  min-height: 40px;
+  min-width: 40px;
+}

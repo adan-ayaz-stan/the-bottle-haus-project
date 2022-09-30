@@ -73,13 +73,15 @@ function SpecialProduct() {
             onClick={() => {
               function addToCart() {
                 const oldCart = shoppingCartValue;
-                const newItem = [
-                  {
+                const newItem = [];
+                for (let i = 0; i < totalValue; i++) {
+                  newItem.push({
                     name: "Alberta Sauvicnon Blanc Rye Canadian Whiskey 750ml",
                     price: 89.95,
-                  },
-                ];
+                  });
+                }
                 setShoppingCart(oldCart.concat(newItem));
+                setTotalValue(1);
               }
               addToCart();
             }}
