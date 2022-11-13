@@ -1,0 +1,78 @@
+.submain_bottom {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+/* LEFFT SIDE */
+.personal_details {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  top: -30px;
+  width: 40%;
+  border: solid 1px #c2c0c3;
+  border-radius: 14px;
+  background-color: white;
+  padding: 15px;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px;
+  font-family: "Avenir Medium";
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+.heading p:first-child {
+  color: white;
+  background-color: #92bfc2;
+  padding: 0px 15px;
+  border-radius: 15px;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: "Avenir Medium";
+  gap: 10px;
+  align-items: center;
+}
+
+
+.form div {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+
+.form button {
+  margin: 10px 0;
+  padding: 1em;
+  border-radius: 12px;
+  font-family: "Avenir Medium";
+  cursor: pointer;
+}
+
+.return_to_cart_button {
+  background-color: white;
+  border: solid 1px #b3b0b2;
+}
+
+.continue_to_shipping_button {
+  background-color: #f86611;
+  border: none;
+  color: white;
+}
+
+.cart_details {
+  width: 40%;
+  background-color: white;
+  border-radius: 14px;
+}
