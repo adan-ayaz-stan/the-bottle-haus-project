@@ -16,7 +16,7 @@ const FirstSection = () => {
       <h1 className={styles.heading}>
         My{" "}
         <span style={{ WebkitTextStroke: "black 1px", color: "transparent" }}>
-          Cart (3)
+          Cart ({shoppingCartValue.length})
         </span>
       </h1>
 

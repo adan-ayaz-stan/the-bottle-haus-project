@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
+import { checkout } from "../../atoms/checkout-page";
 import { shoppingCart } from "../../atoms/shopping-cart";
 
 import { Checkbox } from "@mui/material";
@@ -17,12 +18,18 @@ import styles from "../../styles/CheckoutPageComponents/SecondSection/main.modul
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const SecondSection = () => {
+  const setCheckout = useSetRecoilState(checkout);
   const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
   const [addShippingProtection, setShippingProtection] = useState(false);
 
-  const totalBill = shoppingCartValue
-    .map((ele, ind) => ele.price)
-    .reduce((prev, curr) => prev + curr, 0);
+  const totalBill =
+    addShippingProtection == true
+      ? shoppingCartValue
+          .map((ele, ind) => ele.price)
+          .reduce((prev, curr) => prev + curr, 3.75)
+      : shoppingCartValue
+          .map((ele, ind) => ele.price)
+          .reduce((prev, curr) => prev + curr, 0);
 
   return (
     <div className={styles.main}>
@@ -30,7 +37,10 @@ const SecondSection = () => {
         <label htmlFor="instruction-text-box">
           Special instructions for seller
         </label>
-        <textarea name="instruction-text-box"></textarea>
+        <textarea
+          name="instruction-text-box"
+          placeholder="e.g. Give me your best stuff..."
+        ></textarea>
       </div>
 
       <div className={styles.checkout_box}>
@@ -65,7 +75,14 @@ const SecondSection = () => {
           items lost, damaged or stolen in transit.{" "}
         </label>
 
-        <button className={styles.checkout_button}>Checkout</button>
+        <button
+          className={styles.checkout_button}
+          onClick={() => {
+            setCheckout((value) => !value.firstStepComplete);
+          }}
+        >
+          Checkout
+        </button>
 
         <div className={styles.payment_options}>
           <div className={styles.p_option_1}>
