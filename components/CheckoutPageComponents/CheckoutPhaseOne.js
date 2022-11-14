@@ -1,11 +1,17 @@
 import stylesTop from "../../styles/CheckoutPageComponents/CheckoutPhaseOne/main-top.module.css";
 import stylesBottom from "../../styles/CheckoutPageComponents/CheckoutPhaseOne/main-bottom.module.css";
-import { TextField } from "@mui/material";
+import { useSetRecoilState } from "recoil";
+
+import { checkout } from "../../atoms/checkout-page";
 
 const CheckoutPhaseOne = () => {
+  const setCheckout = useSetRecoilState(checkout);
+
+  //
+
   return (
     <div className={stylesTop.main}>
-      {/* TOP SECTION */}
+      {/* TOP SECTION | 1 ACCOUNT INFORMATION */}
       <div className={stylesTop.submain_top}>
         <div className={stylesTop.heading}>
           <h2>Checkout</h2>
@@ -21,10 +27,10 @@ const CheckoutPhaseOne = () => {
         </div>
       </div>
 
-      {/* BOTTOM SECTION */}
+      {/* BOTTOM SECTION | ADDRESS AND CART BILLING */}
 
       <div className={stylesBottom.submain_bottom}>
-        {/* LEFT SIDE */}
+        {/* LEFT SIDE | ADDRESS */}
         <div className={stylesBottom.personal_details}>
           <div className={stylesBottom.heading}>
             <p>2</p>
@@ -33,70 +39,42 @@ const CheckoutPhaseOne = () => {
 
           <form className={stylesBottom.form}>
             <div>
-              <TextField
-                id="filled-basic"
-                label="First Name"
-                variant="filled"
-                classes={{
-                  root: stylesBottom.text_field,
-                }}
-              />
-              <TextField id="filled-basic" label="Last Name" variant="filled" />
+              <input placeholder="First Name" />
+              <input placeholder="Last Name" />
             </div>
-            <TextField
-              id="filled-basic"
-              label="Company (optional)"
-              variant="filled"
-              fullWidth
-            />
-            <TextField
-              id="filled-basic"
-              label="Address"
-              variant="filled"
-              fullWidth
-            />
-            <TextField
-              id="filled-basic"
-              label="Apartment, Suite etc. (optional)"
-              variant="filled"
-              fullWidth
-            />
-            <TextField
-              id="filled-basic"
-              label="City"
-              variant="filled"
-              fullWidth
-            />
+            <input placeholder="Company (Optional)" />
+            <input placeholder="Address" />
+            <input placeholder="Apartment, Suite, etc. (Optional)" />
+            <input placeholder="City" />
             <div>
-              <TextField id="filled-basic" label="Country" variant="filled" />
-              <TextField id="filled-basic" label="State" variant="filled" />
-              <TextField id="filled-basic" label="ZIP code" variant="filled" />
+              <input placeholder="Country" />
+              <input placeholder="State" />
+              <input placeholder="Zip Code" />
             </div>
-            <TextField
-              id="filled-basic"
-              label="Phone number for updates and exclusive offers"
-              variant="filled"
-              fullWidth
-            />
+            <input placeholder="Phone Number for updates and exclusive offers" />
 
             <div>
               <button className={stylesBottom.return_to_cart_button}>
                 Return to cart
               </button>
-              <button className={stylesBottom.continue_to_shipping_button}>
+              <button
+                className={stylesBottom.continue_to_shipping_button}
+                onClick={setCheckout((value) => console.log(value))}
+              >
                 Continue to shipping
               </button>
             </div>
           </form>
         </div>
 
-        {/* RIGHT SIDE */}
+        {/* RIGHT SIDE | CART INFORMATION */}
         <div className={stylesBottom.cart_details}>
           <div className={stylesBottom.cart_info}>
             <p>1 item</p>
             <button>Edit</button>
           </div>
           <div className={stylesBottom.product_listing}>
+            {/* MAPPED ELEMENTS */}
             <div className={stylesBottom.product}>
               <div className={stylesBottom.product_image}></div>
               <div className={stylesBottom.product_details}>
@@ -123,7 +101,9 @@ const CheckoutPhaseOne = () => {
 
           <div className={stylesBottom.total_bill}>
             <p>Total Bill</p>
-            <h2>$122.85</h2>
+            <h2>
+              <strong>$122.85</strong>
+            </h2>
           </div>
         </div>
       </div>

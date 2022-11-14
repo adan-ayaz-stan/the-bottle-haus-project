@@ -6,9 +6,11 @@ import Navbar2nd from "../components/IndexPageComponents/Navbar-2nd";
 import FirstSection from "../components/CheckoutPageComponents/FirstSection";
 import SecondSection from "../components/CheckoutPageComponents/SecondSection";
 import CheckoutPhaseOne from "../components/CheckoutPageComponents/CheckoutPhaseOne";
+import CheckoutPhaseTwo from "../components/CheckoutPageComponents/CheckoutPhaseTwo";
 
 const Checkout = () => {
   const checkoutProcessValue = useRecoilValue(checkout);
+
   return (
     <div>
       <Navbar />
