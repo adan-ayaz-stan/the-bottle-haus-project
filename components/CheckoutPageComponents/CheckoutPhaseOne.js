@@ -53,7 +53,15 @@ const CheckoutPhaseOne = () => {
             <input placeholder="Phone Number for updates and exclusive offers" />
 
             <div>
-              <button className={stylesBottom.return_to_cart_button}>
+              <button
+                className={stylesBottom.return_to_cart_button}
+                onClick={() => {
+                  setCheckoutValue({
+                    firstStepComplete: false,
+                    secondStepComplete: false,
+                  });
+                }}
+              >
                 Return to cart
               </button>
               <button

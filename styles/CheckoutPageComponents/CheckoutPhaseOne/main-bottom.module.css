@@ -137,8 +137,11 @@
 .product_image {
   height: 4em;
   width: 4em;
-  border: solid 1px black;
   margin-right: 10px;
+  background-image: url("https://image.shutterstock.com/image-vector/beer-icon-260nw-716928301.jpg");
+  background-position: center;
+  background-size: contain;
+  border-radius: 12px;
 }
 
 .billing_section {

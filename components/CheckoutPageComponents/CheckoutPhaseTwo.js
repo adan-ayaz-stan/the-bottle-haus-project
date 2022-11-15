@@ -4,10 +4,14 @@ import { Checkbox } from "@mui/material";
 import { BsCircle, BsCircleFill } from "react-icons/bs/index";
 
 import styles from "../../styles/CheckoutPageComponents/CheckoutPhaseTwo/main.module.css";
+import { useRecoilState } from "recoil";
+import { checkout } from "../../atoms/checkout-page";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const CheckoutPhaseTwo = (props) => {
+  const [checkoutValue, setCheckoutValue] = useRecoilState(checkout);
+
   const [upsGround, setUpsGround] = useState(true);
   const [upsNextDayAir3Days, setUpsNextDayAir3Days] = useState(false);
   const [upsNextDayAir2Days, setUpsNextDayAir2Days] = useState(false);
@@ -101,7 +105,15 @@ const CheckoutPhaseTwo = (props) => {
 
             {/*  */}
             <div className={styles.buttons_container}>
-              <button className={styles.return_to_cart_button}>
+              <button
+                className={styles.return_to_cart_button}
+                onClick={() => {
+                  setCheckoutValue({
+                    firstStepComplete: true,
+                    secondStepComplete: false,
+                  });
+                }}
+              >
                 Return to information
               </button>
               <button className={styles.continue_to_shipping_button}>
