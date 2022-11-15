@@ -14,7 +14,7 @@
   top: -30px;
   width: 40%;
   border: solid 1px #c2c0c3;
-  border-radius: 14px;
+  border-radius: 22px;
   background-color: white;
   padding: 15px;
 }
@@ -40,15 +40,34 @@
   width: 100%;
   display: flex;
   flex-flow: column nowrap;
-  font-family: "Avenir Medium";
-  gap: 10px;
   align-items: center;
+  font-family: "Avenir Medium";
+  gap: 15px;
+  margin-top: 20px;
 }
 
+.form input {
+  width: 100%;
+  padding: 1em;
+  border-radius: 12px;
+  background-color: #f6f7fa;
+  transition: all ease 0.3s;
+}
+.form input:focus {
+  border: none;
+  outline: none;
+  background-color: #f6f7fa;
+}
+.form input::placeholder {
+  display: block;
+  font-family: "Avenir Medium";
+}
 
 .form div {
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -71,8 +90,85 @@
   color: white;
 }
 
+/* FORM CSS FINSIHED */
+
+/* PRODUCT DETAILS CSS */
+
 .cart_details {
+  height: fit-content;
   width: 40%;
   background-color: white;
   border-radius: 14px;
+  padding: 1em 0;
+}
+
+.cart_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+.cart_info p {
+  font-size: 1.8em;
+}
+.cart_info button {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #7e99c8;
+  padding: 3px 0.6em;
+  border: solid 1px #7e99c8;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.product_listing {
+  height: fit-content;
+  display: flex;
+  flex-flow: column;
+}
+.product {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 1em;
+}
+.product_image {
+  height: 4em;
+  width: 4em;
+  border: solid 1px black;
+  margin-right: 10px;
+}
+
+.billing_section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 1em 0;
+}
+.billing_section div {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+.billing_section div p:first-child {
+  font-family: "Avenir Light";
+}
+.billing_section div p:last-child {
+  font-family: "Avenir Regular";
+}
+
+.total_bill {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+.total_bill p {
+  font-family: "Avenir Regular";
 }

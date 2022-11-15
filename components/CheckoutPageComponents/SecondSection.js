@@ -18,7 +18,7 @@ import styles from "../../styles/CheckoutPageComponents/SecondSection/main.modul
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const SecondSection = () => {
-  const setCheckout = useSetRecoilState(checkout);
+  const [checkoutValue, setCheckout] = useRecoilState(checkout);
   const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
   const [addShippingProtection, setShippingProtection] = useState(false);
 
@@ -78,7 +78,10 @@ const SecondSection = () => {
         <button
           className={styles.checkout_button}
           onClick={() => {
-            setCheckout((value) => !value.firstStepComplete);
+            setCheckout({
+              firstStepComplete: true,
+              secondStepComplete: false,
+            });
           }}
         >
           Checkout

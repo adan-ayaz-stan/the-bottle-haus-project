@@ -1,0 +1,270 @@
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 50px 20%;
+  background-color: #fcf8fa;
+}
+
+.submain_left,
+.submain_right {
+  flex: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 25px 15px;
+  gap: 50px;
+}
+
+/* LEFT SIDE CSS */
+.heading {
+  font-size: 1.7em;
+  font-family: "Avenir Regular";
+  letter-spacing: 2px;
+}
+.heading h2:last-child {
+  color: white;
+  -webkit-text-stroke: black 1px;
+}
+
+/* RIGHT SIDE CSS */
+.container {
+  max-width: 400px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  border: solid 1px #e1dde0;
+  border-radius: 14px;
+}
+
+.container .container_child {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-items: center;
+
+  padding: 25px 15px;
+  gap: 15px;
+}
+
+.step_number {
+  color: #928f91;
+  background-color: #edecee;
+  border-radius: 16px;
+  padding: 5px 15px;
+}
+
+.container_child div h3 {
+  font-family: "Avenir Medium";
+  font-size: 1em;
+}
+.container_child div p {
+  color: gray;
+  font-family: "Avenir Light";
+  font-size: 0.9em;
+}
+
+.container_child button {
+  margin-left: auto;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  font-family: "Avenir Medium";
+  text-transform: uppercase;
+  color: #7894db;
+  background-color: white;
+  border: solid 1px #6282d4;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* LEFT SIDE 2nd DIV CSS */
+
+.shipping_details {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  border: solid 1px #c2c0c3;
+  border-radius: 22px;
+  background-color: white;
+  padding: 15px;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  font-family: "Avenir Medium";
+  gap: 15px;
+  margin-top: 20px;
+}
+.shipping_heading {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 15px;
+  font-family: "Avenir Medium";
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+.shipping_heading p:first-child {
+  color: white;
+  background-color: #92bfc2;
+  padding: 0px 15px;
+  border-radius: 15px;
+}
+.form button {
+  margin: 10px 0;
+  padding: 1em;
+  border-radius: 12px;
+  font-family: "Avenir Medium";
+  cursor: pointer;
+}
+.additional_service_container {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.additional_service_container input {
+  flex: 20%;
+  width: 20px;
+  height: 20px;
+}
+.service_card {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: white;
+  border: solid 1px #f0eef0;
+  border-radius: 12px;
+}
+.service_icon {
+  height: 40px;
+  width: 40px;
+  background-image: url("https://cdn.iconscout.com/icon/free/png-256/ups-282281.png");
+  background-position: center;
+  background-size: contain;
+}
+.service_details {
+  display: flex;
+  flex-flow: column nowrap !important;
+}
+.service_details p:first-child {
+  color: #a19da1;
+  font-size: 1em;
+}
+.service_details p:nth-child(2) {
+  color: #b6b5b6;
+  font-size: 0.7em;
+}
+.service_price {
+  margin-left: auto;
+  font-family: "Avenir Medium";
+  font-size: 1em;
+}
+.buttons_container {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 10px;
+}
+.return_to_cart_button {
+  background-color: white;
+  border: solid 1px #b3b0b2;
+}
+
+.continue_to_shipping_button {
+  background-color: #f86611;
+  border: none;
+  color: white;
+}
+
+/* RIGHT SIDE 2nd DIV */
+.cart_details {
+  height: fit-content;
+  width: 100%;
+  background-color: white;
+  border-radius: 14px;
+  padding: 1em;
+}
+
+.cart_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+.cart_info p {
+  font-size: 1.8em;
+}
+.cart_info button {
+  font-size: 0.9em;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: #6282d4;
+  padding: 5px 0.7em;
+  border: solid 1px #6282d4;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product_listing {
+  height: fit-content;
+  display: flex;
+  flex-flow: column;
+}
+.product {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 1em;
+}
+.product_image {
+  height: 4em;
+  width: 4em;
+  margin-right: 10px;
+  background-image: url("https://image.shutterstock.com/image-vector/beer-icon-260nw-716928301.jpg");
+  background-position: center;
+  background-size: contain;
+  border-radius: 12px;
+}
+
+.billing_section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 1em 0;
+}
+.billing_section div {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em;
+}
+.billing_section div p:first-child {
+  font-family: "Avenir Light";
+}
+.billing_section div p:last-child {
+  font-family: "Avenir Regular";
+}
+
+.total_bill {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+.total_bill p {
+  font-family: "Avenir Regular";
+}

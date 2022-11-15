@@ -1,11 +1,10 @@
 import stylesTop from "../../styles/CheckoutPageComponents/CheckoutPhaseOne/main-top.module.css";
 import stylesBottom from "../../styles/CheckoutPageComponents/CheckoutPhaseOne/main-bottom.module.css";
-import { useSetRecoilState } from "recoil";
-
+import { useRecoilState } from "recoil";
 import { checkout } from "../../atoms/checkout-page";
 
 const CheckoutPhaseOne = () => {
-  const setCheckout = useSetRecoilState(checkout);
+  const [checkoutValue, setCheckoutValue] = useRecoilState(checkout);
 
   //
 
@@ -59,7 +58,12 @@ const CheckoutPhaseOne = () => {
               </button>
               <button
                 className={stylesBottom.continue_to_shipping_button}
-                onClick={setCheckout((value) => console.log(value))}
+                onClick={() => {
+                  setCheckoutValue({
+                    firstStepComplete: true,
+                    secondStepComplete: true,
+                  });
+                }}
               >
                 Continue to shipping
               </button>

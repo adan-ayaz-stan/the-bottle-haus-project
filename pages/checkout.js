@@ -10,6 +10,34 @@ import CheckoutPhaseTwo from "../components/CheckoutPageComponents/CheckoutPhase
 
 const Checkout = () => {
   const checkoutProcessValue = useRecoilValue(checkout);
+  console.log("re-render");
+
+  function ConditionalRendering(recoilStateValue) {
+    console.log(recoilStateValue, "from recoil state function");
+
+    if (recoilStateValue.recoilStateValue.secondStepComplete == true) {
+      console.log("render phase two");
+      return (
+        <>
+          <CheckoutPhaseTwo />
+        </>
+      );
+    }
+    if (recoilStateValue.recoilStateValue.firstStepComplete == true) {
+      console.log("render phase one");
+      return (
+        <>
+          <CheckoutPhaseOne />
+        </>
+      );
+    }
+    return (
+      <>
+        <FirstSection />
+        <SecondSection />
+      </>
+    );
+  }
 
   return (
     <div>
@@ -17,16 +45,7 @@ const Checkout = () => {
       <div style={{ backgroundColor: "#fcf8fa" }}>
         <Navbar2nd />
       </div>
-      {checkoutProcessValue.firstStepComplete == false ? (
-        <>
-          <FirstSection />
-          <SecondSection />
-        </>
-      ) : (
-        <>
-          <CheckoutPhaseOne />
-        </>
-      )}
+      <ConditionalRendering recoilStateValue={checkoutProcessValue} />
     </div>
   );
 };
