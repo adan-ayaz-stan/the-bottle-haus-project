@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { checkout } from "../../atoms/checkout-page";
+import { checkout, checkoutSpecifics } from "../../atoms/checkout-page";
 import { shoppingCart } from "../../atoms/shopping-cart";
 
 import { Checkbox } from "@mui/material";
@@ -18,18 +18,19 @@ import styles from "../../styles/CheckoutPageComponents/SecondSection/main.modul
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const SecondSection = () => {
+  // STEPS RENDERING ATOM
   const [checkoutValue, setCheckout] = useRecoilState(checkout);
+
+  //
+  const [checkoutSpecificsValue, setCheckoutSpecifics] =
+    useRecoilState(checkoutSpecifics);
+
   const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
   const [addShippingProtection, setShippingProtection] = useState(false);
 
-  const totalBill =
-    addShippingProtection == true
-      ? shoppingCartValue
-          .map((ele, ind) => ele.price)
-          .reduce((prev, curr) => prev + curr, 3.75)
-      : shoppingCartValue
-          .map((ele, ind) => ele.price)
-          .reduce((prev, curr) => prev + curr, 0);
+  const totalBill = shoppingCartValue
+    .map((ele, ind) => ele.price)
+    .reduce((prev, curr) => prev + curr, 0);
 
   return (
     <div className={styles.main}>
@@ -46,7 +47,7 @@ const SecondSection = () => {
       <div className={styles.checkout_box}>
         <div className={styles.total_box}>
           <p>Subtotal</p>
-          <p>${totalBill}</p>
+          <p>${Number(totalBill).toFixed(2)}</p>
         </div>
         <label className={styles.notice_label}>
           Shipping & Taxes Calculated At Checkout
@@ -78,9 +79,25 @@ const SecondSection = () => {
         <button
           className={styles.checkout_button}
           onClick={() => {
+            // SETTING BILL VALUES IN ATOMS
+
+            if (addShippingProtection) {
+              setCheckoutSpecifics({
+                totalProductBilling: Number(totalBill).toFixed(2),
+                protectionBilling: 3.75,
+              });
+            } else {
+              setCheckoutSpecifics({
+                totalProductBilling: Number(totalBill).toFixed(2),
+                protectionBilling: 0.0,
+              });
+            }
+
+            // ONTO NEXT SECTION
             setCheckout({
               firstStepComplete: true,
               secondStepComplete: false,
+              thirdStepComplete: false,
             });
           }}
         >

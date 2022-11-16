@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Checkbox } from "@mui/material";
 import { BsCircle, BsCircleFill } from "react-icons/bs/index";
 
 import styles from "../../styles/CheckoutPageComponents/CheckoutPhaseTwo/main.module.css";
-import { useRecoilState } from "recoil";
-import { checkout } from "../../atoms/checkout-page";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  checkout,
+  checkoutCustomerDetails,
+  checkoutSpecifics,
+} from "../../atoms/checkout-page";
+import { shoppingCart } from "../../atoms/shopping-cart";
+import CartInfo from "./miniComponents/CartInfo";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 const CheckoutPhaseTwo = (props) => {
+  // ATOM FOR RENDERING STEPS
   const [checkoutValue, setCheckoutValue] = useRecoilState(checkout);
+
+  const checkoutSpecificsValue = useRecoilValue(checkoutSpecifics);
+  const checkoutCustomerDetailsValue = useRecoilValue(checkoutCustomerDetails);
+  const shoppingCartValue = useRecoilValue(shoppingCart);
 
   const [upsGround, setUpsGround] = useState(true);
   const [upsNextDayAir3Days, setUpsNextDayAir3Days] = useState(false);
@@ -111,12 +122,22 @@ const CheckoutPhaseTwo = (props) => {
                   setCheckoutValue({
                     firstStepComplete: true,
                     secondStepComplete: false,
+                    thirdStepComplete: false,
                   });
                 }}
               >
                 Return to information
               </button>
-              <button className={styles.continue_to_shipping_button}>
+              <button
+                className={styles.continue_to_shipping_button}
+                onClick={() => {
+                  setCheckoutValue({
+                    firstStepComplete: true,
+                    secondStepComplete: true,
+                    thirdStepComplete: true,
+                  });
+                }}
+              >
                 Continue to payment
               </button>
             </div>
@@ -149,44 +170,7 @@ const CheckoutPhaseTwo = (props) => {
           </div>
         </div>
         {/*  */}
-        <div className={styles.cart_details}>
-          <div className={styles.cart_info}>
-            <p>1 item</p>
-            <button>Edit</button>
-          </div>
-          <div className={styles.product_listing}>
-            {/* MAPPED ELEMENTS */}
-            <div className={styles.product}>
-              <div className={styles.product_image}></div>
-              <div className={styles.product_details}>
-                <h3>$53.49</h3>
-                <p>Balcones Brimstone Texas</p>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.billing_section}>
-            <div>
-              <p>Subtotal</p>
-              <p>$54.49</p>
-            </div>
-            <div>
-              <p>Shipping</p>
-              <p>$20</p>
-            </div>
-            <div>
-              <p>Taxes</p>
-              <p>$2.84</p>
-            </div>
-          </div>
-
-          <div className={styles.total_bill}>
-            <p>Total Bill</p>
-            <h2>
-              <strong>$122.85</strong>
-            </h2>
-          </div>
-        </div>
+        <CartInfo />
       </div>
     </div>
   );

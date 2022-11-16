@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { useRouter } from "next/router";
 
 import Backdrop from "@mui/material/Backdrop";
@@ -14,6 +14,7 @@ import sampleImage from "../../cms/images-slider/image-06.jpg";
 import cartIcon from "../../cms/icons/cart.svg";
 
 import { shoppingCart } from "../../atoms/shopping-cart";
+import { checkout, checkoutSpecifics } from "../../atoms/checkout-page";
 
 import styles from "../../styles/ShoppingCartComponents/ShoppingCartNavbar/main.module.css";
 
@@ -32,7 +33,10 @@ const styleCartModal = {
 
 function ShoppingCartNavbar() {
   const router = useRouter();
+
+  const setCheckoutValue = useSetRecoilState(checkout);
   const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
+  const setCheckoutSpecifics = useSetRecoilState(checkoutSpecifics);
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -49,6 +53,14 @@ function ShoppingCartNavbar() {
 
   useEffect(() => {
     calculateBill();
+    let allPrices = shoppingCartValue.map((ele) => +ele.price);
+    let totalBill = allPrices.reduce((prev, curr) => prev + curr, 0);
+    setCheckoutSpecifics((value) => {
+      return {
+        totalProductBilling: +totalBill,
+        protectionBilling: +value.protectionBilling,
+      };
+    });
   });
 
   return (

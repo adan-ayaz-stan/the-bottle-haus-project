@@ -7,6 +7,8 @@ import FirstSection from "../components/CheckoutPageComponents/FirstSection";
 import SecondSection from "../components/CheckoutPageComponents/SecondSection";
 import CheckoutPhaseOne from "../components/CheckoutPageComponents/CheckoutPhaseOne";
 import CheckoutPhaseTwo from "../components/CheckoutPageComponents/CheckoutPhaseTwo";
+import CheckoutPhaseThree from "../components/CheckoutPageComponents/CheckoutPhaseThree";
+
 
 const Checkout = () => {
   const checkoutProcessValue = useRecoilValue(checkout);
@@ -15,6 +17,14 @@ const Checkout = () => {
   function ConditionalRendering(recoilStateValue) {
     console.log(recoilStateValue, "from recoil state function");
 
+    if (recoilStateValue.recoilStateValue.thirdStepComplete == true) {
+      console.log("render phase three");
+      return (
+        <>
+          <CheckoutPhaseThree />
+        </>
+      );
+    }
     if (recoilStateValue.recoilStateValue.secondStepComplete == true) {
       console.log("render phase two");
       return (
