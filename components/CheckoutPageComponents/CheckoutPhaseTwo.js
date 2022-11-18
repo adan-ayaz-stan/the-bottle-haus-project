@@ -4,10 +4,11 @@ import { Checkbox } from "@mui/material";
 import { BsCircle, BsCircleFill } from "react-icons/bs/index";
 
 import styles from "../../styles/CheckoutPageComponents/CheckoutPhaseTwo/main.module.css";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import {
   checkout,
   checkoutCustomerDetails,
+  checkoutDeliveryBilling,
   checkoutSpecifics,
 } from "../../atoms/checkout-page";
 import { shoppingCart } from "../../atoms/shopping-cart";
@@ -15,17 +16,33 @@ import CartInfo from "./miniComponents/CartInfo";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
+const deliveryOptionsDummyData = [
+  {
+    name: "UPS Ground",
+    desc: "2 Buisness Days",
+    price: 18.75,
+    code: "upsg",
+  },
+  {
+    name: "UPS Next Day Air",
+    desc: "3 Buisness Days",
+    price: 28.55,
+    code: "upsnd3",
+  },
+  {
+    name: "UPS Next Day Air",
+    desc: "2 Buisness Days",
+    price: 33.75,
+    code: "upsnd2",
+  },
+];
+
 const CheckoutPhaseTwo = (props) => {
   // ATOM FOR RENDERING STEPS
   const [checkoutValue, setCheckoutValue] = useRecoilState(checkout);
+  const setCheckoutDeliveryBilling = useSetRecoilState(checkoutDeliveryBilling);
 
-  const checkoutSpecificsValue = useRecoilValue(checkoutSpecifics);
-  const checkoutCustomerDetailsValue = useRecoilValue(checkoutCustomerDetails);
-  const shoppingCartValue = useRecoilValue(shoppingCart);
-
-  const [upsGround, setUpsGround] = useState(true);
-  const [upsNextDayAir3Days, setUpsNextDayAir3Days] = useState(false);
-  const [upsNextDayAir2Days, setUpsNextDayAir2Days] = useState(false);
+  const [deliveryOptionSelected, setDeliveryOptionSelected] = useState();
 
   return (
     <div className={styles.main}>
@@ -47,71 +64,32 @@ const CheckoutPhaseTwo = (props) => {
           <form className={styles.form}>
             {/*  */}
             {/* MAPPED ELEMEnTS */}
-            <div className={styles.additional_service_container}>
-              <Checkbox
-                {...label}
-                checked={upsGround}
-                icon={<BsCircle />}
-                checkedIcon={<BsCircleFill style={{ color: "#ebb382" }} />}
-                onClick={(e) => {
-                  setUpsGround(true);
-                  setUpsNextDayAir3Days(false);
-                  setUpsNextDayAir2Days(false);
-                }}
-              />
-              <div className={styles.service_card}>
-                <div className={styles.service_icon}></div>
-                <div className={styles.service_details}>
-                  <p>UPS Ground</p>
-                  <p>2 Buisness Days</p>
+            {deliveryOptionsDummyData.map((ele, ind) => {
+              return (
+                <div className={styles.additional_service_container}>
+                  <Checkbox
+                    {...label}
+                    checked={deliveryOptionSelected == ele.code ? true : false}
+                    icon={<BsCircle />}
+                    checkedIcon={<BsCircleFill style={{ color: "#ebb382" }} />}
+                    onClick={(e) => {
+                      setDeliveryOptionSelected(ele.code);
+                    }}
+                  />
+                  <div className={styles.service_card}>
+                    <div className={styles.service_icon}></div>
+                    <div className={styles.service_details}>
+                      <p>{ele.name}</p>
+                      <p>{ele.desc}</p>
+                    </div>
+                    <div className={styles.service_price}>${ele.price}</div>
+                  </div>
                 </div>
-                <div className={styles.service_price}>$21.75</div>
-              </div>
-            </div>
+              );
+            })}
+
             {/*  */}
-            <div className={styles.additional_service_container}>
-              <Checkbox
-                {...label}
-                checked={upsNextDayAir3Days}
-                icon={<BsCircle />}
-                checkedIcon={<BsCircleFill style={{ color: "#ebb382" }} />}
-                onClick={(e) => {
-                  setUpsGround(false);
-                  setUpsNextDayAir3Days(true);
-                  setUpsNextDayAir2Days(false);
-                }}
-              />
-              <div className={styles.service_card}>
-                <div className={styles.service_icon}></div>
-                <div className={styles.service_details}>
-                  <p>UPS Next Day Air</p>
-                  <p>3 Buisness Days</p>
-                </div>
-                <div className={styles.service_price}>$25.15</div>
-              </div>
-            </div>
-            {/*  */}
-            <div className={styles.additional_service_container}>
-              <Checkbox
-                {...label}
-                checked={upsNextDayAir2Days}
-                icon={<BsCircle />}
-                checkedIcon={<BsCircleFill style={{ color: "#ebb382" }} />}
-                onClick={(e) => {
-                  setUpsGround(false);
-                  setUpsNextDayAir3Days(false);
-                  setUpsNextDayAir2Days(true);
-                }}
-              />
-              <div className={styles.service_card}>
-                <div className={styles.service_icon}></div>
-                <div className={styles.service_details}>
-                  <p>UPS Next Day Air</p>
-                  <p>2 Buisness Days</p>
-                </div>
-                <div className={styles.service_price}>$33.05</div>
-              </div>
-            </div>
+
             {/*  */}
 
             {/*  */}
@@ -131,6 +109,11 @@ const CheckoutPhaseTwo = (props) => {
               <button
                 className={styles.continue_to_shipping_button}
                 onClick={() => {
+                  const selectedOption = deliveryOptionsDummyData.filter(
+                    (ele) => ele.code == deliveryOptionSelected
+                  );
+                  setCheckoutDeliveryBilling(selectedOption[0].price);
+                  //
                   setCheckoutValue({
                     firstStepComplete: true,
                     secondStepComplete: true,
@@ -166,7 +149,19 @@ const CheckoutPhaseTwo = (props) => {
                 94121, United States
               </p>
             </div>
-            <button>Edit</button>
+            <button
+              onClick={() => {
+                setCheckoutValue((value) => {
+                  return {
+                    firstStepComplete: true,
+                    secondStepComplete: false,
+                    thirdStepComplete: false,
+                  };
+                });
+              }}
+            >
+              Edit
+            </button>
           </div>
         </div>
         {/*  */}

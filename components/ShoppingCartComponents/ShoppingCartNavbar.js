@@ -14,7 +14,7 @@ import sampleImage from "../../cms/images-slider/image-06.jpg";
 import cartIcon from "../../cms/icons/cart.svg";
 
 import { shoppingCart } from "../../atoms/shopping-cart";
-import { checkout, checkoutSpecifics } from "../../atoms/checkout-page";
+import { checkoutSpecifics } from "../../atoms/checkout-page";
 
 import styles from "../../styles/ShoppingCartComponents/ShoppingCartNavbar/main.module.css";
 
@@ -34,7 +34,6 @@ const styleCartModal = {
 function ShoppingCartNavbar() {
   const router = useRouter();
 
-  const setCheckoutValue = useSetRecoilState(checkout);
   const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
   const setCheckoutSpecifics = useSetRecoilState(checkoutSpecifics);
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useRecoilState } from "recoil";
 
 import { checkout } from "../../atoms/checkout-page";
@@ -26,6 +27,19 @@ const CheckoutPhaseThree = () => {
   const [sameBillingAddress, setSameBillingAddress] = useState(true);
   const [differentBillingAddress, setDifferentBillingAddress] = useState(false);
 
+  const [paymentDetails, setPaymentDetails] = useState(0);
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    setPaymentDetails(data);
+    console.log(data);
+  };
+
   return (
     <div className={styles.main}>
       {/* LEFT SIDE */} {/* LEFT SIDE */} {/* LEFT SIDE */} {/* LEFT SIDE */}
@@ -41,7 +55,7 @@ const CheckoutPhaseThree = () => {
             <p>Payment</p>
           </div>
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <label style={{ color: "gray", fontSize: ".8em", width: "100%" }}>
               *All payments are safe and encrypted.
             </label>
@@ -52,7 +66,6 @@ const CheckoutPhaseThree = () => {
                   checked={paymentByCC}
                   icon={<BsCircle />}
                   checkedIcon={<BsCircleFill style={{ color: "#1b6254" }} />}
-                  className={styles.checkbox}
                   onClick={() => {
                     setPaymentByCC(true);
                     setPaymentByPayPal(false);
@@ -65,11 +78,54 @@ const CheckoutPhaseThree = () => {
               </div>
               {paymentByCC ? (
                 <>
-                  <input placeholder="Card Number" />
-                  <input placeholder="Name on card" />
+                  <input
+                    placeholder="Card Number"
+                    {...register("cardNumber", {
+                      required: true,
+                      validate: (value) => {
+                        if (
+                          /^4[0-9]{12}(?:[0-9]{3})?$/.test(value) ||
+                          /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/.test(
+                            value
+                          ) ||
+                          /^3[47][0-9]{13}$/.test(value) ||
+                          /^6(?:011|5[0-9]{2})[0-9]{12}$/.test(value)
+                        ) {
+                          return true;
+                        }
+                        return false;
+                      },
+                    })}
+                    style={errors.cardNumber && { outline: "solid 1px red" }}
+                  />
+                  <input
+                    placeholder="Name on card"
+                    {...register("nameOnCard", { required: true })}
+                    style={errors.nameOnCard && { outline: "solid 1px red" }}
+                  />
                   <div>
-                    <input placeholder="Expiration date" />
-                    <input placeholder="Security code" />
+                    <input
+                      placeholder="Expiration date"
+                      {...register("expirationDate", { required: true })}
+                      style={
+                        errors.expirationDate && {
+                          outline: "solid 1px red",
+                          valueAsDate: true,
+                        }
+                      }
+                    />
+                    <input
+                      placeholder="Security code"
+                      {...register("securityCode", {
+                        required: true,
+                        minLength: 3,
+                        maxLength: 3,
+                        valueAsNumber: true,
+                      })}
+                      style={
+                        errors.securityCode && { outline: "solid 1px red" }
+                      }
+                    />
                   </div>
                 </>
               ) : (
@@ -93,12 +149,37 @@ const CheckoutPhaseThree = () => {
               </div>
               {paymentByPayPal ? (
                 <>
-                  <input placeholder="PayPal Wallet" />
+                  <input
+                    type="email"
+                    placeholder="PayPal Wallet"
+                    {...register("paypalWalletNumber", {
+                      required: true,
+                      validate: (value) =>
+                        /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(value),
+                    })}
+                    style={
+                      errors.paypalWalletNumber && {
+                        outline: "solid 1px red",
+                      }
+                    }
+                  />
                 </>
               ) : (
                 <></>
               )}
             </div>
+            {paymentDetails == 0 ? (
+              <div className={styles.buttons_container}>
+                <button
+                  className={styles.continue_to_shipping_button}
+                  type="submit"
+                >
+                  Set CC
+                </button>
+              </div>
+            ) : (
+              ""
+            )}
           </form>
         </div>
 
@@ -167,7 +248,7 @@ const CheckoutPhaseThree = () => {
                   e.preventDefault();
                   setCheckoutValue({
                     firstStepComplete: true,
-                    secondStepComplete: false,
+                    secondStepComplete: true,
                     thirdStepComplete: false,
                   });
                 }}
@@ -178,7 +259,7 @@ const CheckoutPhaseThree = () => {
                 className={styles.continue_to_shipping_button}
                 onClick={(e) => {
                   e.preventDefault();
-                  window.alert("Payment process backend required next.");
+                  window.alert("Custom payment backend required.");
                   // setCheckoutValue({
                   //   firstStepComplete: true,
                   //   secondStepComplete: true,
@@ -218,7 +299,19 @@ const CheckoutPhaseThree = () => {
                 94121, United States
               </p>
             </div>
-            <button>Edit</button>
+            <button
+              onClick={() => {
+                setCheckoutValue((value) => {
+                  return {
+                    firstStepComplete: true,
+                    secondStepComplete: false,
+                    thirdStepComplete: false,
+                  };
+                });
+              }}
+            >
+              Edit
+            </button>
           </div>
           <div className={styles.container_child}>
             <p className={styles.step_number}>3</p>
@@ -226,7 +319,19 @@ const CheckoutPhaseThree = () => {
               <h3>Method</h3>
               <p>UPS Ground $21.75</p>
             </div>
-            <button>Edit</button>
+            <button
+              onClick={() => {
+                setCheckoutValue((value) => {
+                  return {
+                    firstStepComplete: true,
+                    secondStepComplete: true,
+                    thirdStepComplete: false,
+                  };
+                });
+              }}
+            >
+              Edit
+            </button>
           </div>
         </div>
         {/*  */}

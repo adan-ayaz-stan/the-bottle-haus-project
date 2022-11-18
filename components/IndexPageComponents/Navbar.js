@@ -7,8 +7,10 @@ import searchIcon from "../../cms/icons/search.svg";
 import profileIcon from "../../cms/icons/profile.svg";
 import Hamburger from "./Hamburger";
 import ShoppingCartNavbar from "../ShoppingCartComponents/ShoppingCartNavbar";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const router = useRouter();
 
   return (
     <div className={styles.main}>
@@ -38,7 +40,7 @@ export default function Navbar() {
           <Image src={searchIcon} width={23} height={23}></Image>
         </div>
 
-        <ShoppingCartNavbar />
+        {router.asPath == "/checkout" ? "" : <ShoppingCartNavbar />}
       </div>
     </div>
   );

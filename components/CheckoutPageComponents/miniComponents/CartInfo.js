@@ -1,18 +1,36 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { shoppingCart } from "../../../atoms/shopping-cart";
-import { checkoutSpecifics } from "../../../atoms/checkout-page";
+import {
+  checkout,
+  checkoutDeliveryBilling,
+  checkoutSpecifics,
+} from "../../../atoms/checkout-page";
 
 import styles from "./cart-info.module.css";
 
 export default function CartInfo() {
+  const setCheckoutValue = useSetRecoilState(checkout);
   const [shoppingCartValue, setShoppingCart] = useRecoilState(shoppingCart);
   const checkoutSpecificsValue = useRecoilValue(checkoutSpecifics);
+  const checkoutDeliveryBillingValue = useRecoilValue(checkoutDeliveryBilling);
 
   return (
     <div className={styles.cart_details}>
       <div className={styles.cart_info}>
         <p>{shoppingCartValue.length} item(s)</p>
-        <button>Edit</button>
+        <button
+          onClick={() => {
+            setCheckoutValue((value) => {
+              return {
+                firstStepComplete: false,
+                secondStepComplete: false,
+                thirdStepComplete: false,
+              };
+            });
+          }}
+        >
+          Edit
+        </button>
       </div>
       <div className={styles.product_listing}>
         {/* MAPPED ELEMENTS */}
@@ -39,6 +57,15 @@ export default function CartInfo() {
           <p>Protection</p>
           <p>${checkoutSpecificsValue.protectionBilling}</p>
         </div>
+        {checkoutDeliveryBillingValue == 0 ? (
+          ""
+        ) : (
+          <div>
+            <p>Shipping</p>
+            <p>${checkoutDeliveryBillingValue}</p>
+          </div>
+        )}
+
         <div>
           <p>Taxes</p>
           <p>
@@ -58,7 +85,8 @@ export default function CartInfo() {
             {Number(
               +checkoutSpecificsValue.totalProductBilling * 0.17 +
                 +checkoutSpecificsValue.totalProductBilling +
-                checkoutSpecificsValue.protectionBilling
+                checkoutSpecificsValue.protectionBilling +
+                checkoutDeliveryBillingValue
             ).toFixed(2)}
           </strong>
         </h2>
