@@ -39,3 +39,8 @@
   margin-top: 5px;
   cursor: pointer;
 }
+
+.dropdown p {
+  padding: 10px 5px;
+  border-radius: 10px;
+}

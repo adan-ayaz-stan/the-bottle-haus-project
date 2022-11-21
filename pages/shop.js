@@ -1,6 +1,6 @@
 import React from "react";
 
-import dbclient from '../prisma/client'
+import dbclient from "../prisma/client";
 
 import Navbar from "../components/IndexPageComponents/Navbar";
 import Navbar2nd from "../components/IndexPageComponents/Navbar-2nd";
@@ -9,9 +9,10 @@ import Footer from "../components/IndexPageComponents/Footer";
 import styles from "../styles/shop.module.css";
 import SideMenu from "../components/ShopPageComponents/SideMenu";
 import ShoppingWindow from "../components/ShopPageComponents/ShoppingWindow";
+import { useRecoilValue } from "recoil";
+import { priceFilterAtom } from "../atoms/shop-page";
 
-function Shop({ query, brands, categories, products}) {
-
+function Shop({ query, brands, categories }) {
   return (
     <div>
       <Navbar />
@@ -20,12 +21,7 @@ function Shop({ query, brands, categories, products}) {
       </div>
       <div className={styles.submain}>
         <SideMenu query={query} categories={categories} />
-        <ShoppingWindow
-          query={query}
-          brands={brands}
-          products={products}
-          categories={categories}
-        />
+        <ShoppingWindow query={query} brands={brands} categories={categories} />
       </div>
       <Footer />
     </div>
@@ -44,15 +40,11 @@ export async function getServerSideProps(context) {
     // Fetching categories
     const categories = await dbclient.category.findMany({});
 
-    // Fetching all products
-    const products = await dbclient.products.findMany({});
-
     return {
       props: {
         query,
         brands,
         categories,
-        products,
       },
     };
   } catch (e) {
@@ -63,7 +55,6 @@ export async function getServerSideProps(context) {
         query,
         brands: [],
         categories: [],
-        products: [],
         error: {
           ...e,
         },

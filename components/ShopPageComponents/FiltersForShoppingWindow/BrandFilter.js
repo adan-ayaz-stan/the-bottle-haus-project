@@ -2,9 +2,9 @@ import { Checkbox, FormControlLabel } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { dropdownOpen } from "../../../atoms/shop-page";
+import { brandFilterAtom, dropdownOpen } from "../../../atoms/shop-page";
 
 import styles from "../../../styles/ShopPageComponents/FilterForShoppingWindow/brand-filter.module.css";
 
@@ -39,29 +39,20 @@ function BrandFilter({ query, brands }) {
   const [pagedropdownValue, setPagedropdownValue] =
     useRecoilState(dropdownOpen);
 
-  const router = useRouter();
+  const [brandFilterAtomValue, setBrandFilterAtom] =
+    useRecoilState(brandFilterAtom);
 
   const filterSubmitHandler = (e) => {
     e.preventDefault();
     const formel = document.forms.brandFilterForm;
     const formData = new FormData(formel);
-    let data = {};
+    let data = [];
     dummyData.forEach((ele) => {
       if (formData.get(ele.codeName) == "on") {
-        data[ele.codeName] = true;
+        data.push(ele.codeName);
       }
     });
-    console.log(data);
-    router.push({
-      pathname: "/shop",
-      query: {
-        ...query,
-        ...data,
-        ...{
-          filterbybrand: true,
-        },
-      },
-    });
+    setBrandFilterAtom(data);
     setPagedropdownValue({
       priceFilter: false,
       brandFilter: false,
@@ -101,7 +92,13 @@ function BrandFilter({ query, brands }) {
                 >
                   {/* <input type={"checkbox"} name={ele.codeName} /> */}
                   <FormControlLabel
-                    control={<Checkbox />}
+                    control={
+                      brandFilterAtomValue.includes(ele.codeName) == true ? (
+                        <Checkbox defaultChecked />
+                      ) : (
+                        <Checkbox />
+                      )
+                    }
                     label={ele.repName}
                     name={ele.codeName}
                   />

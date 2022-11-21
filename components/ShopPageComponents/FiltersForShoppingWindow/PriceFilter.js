@@ -1,38 +1,36 @@
 import { Slider } from "@mui/material";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { dropdownOpen } from "../../../atoms/shop-page";
+import { dropdownOpen, priceFilterAtom } from "../../../atoms/shop-page";
 
 import styles from "../../../styles/ShopPageComponents/FilterForShoppingWindow/price-filter.module.css";
 
 function PriceFilter({ query }) {
   const [pagedropdownValue, setPagedropdownValue] =
     useRecoilState(dropdownOpen);
+  const setPriceFilterAtom = useSetRecoilState(priceFilterAtom);
 
-  const router = useRouter();
-
-  const [value, setValue] = useState([10, 15000]);
+  const [value, setValue] = useState([10, 200]);
 
   const handleChange = (event, changeValue) => {
     setValue(changeValue);
   };
 
   const filterSubmitHandler = () => {
-    const newEntry = {
-      min: value[0],
-      max: value[1],
-    };
-    router.push({
-      pathname: "/shop",
-      query: { ...query, ...newEntry, ...{ filterbyprice: true } },
-    });
-    setPagedropdownValue({
-      priceFilter: false,
-      brandFilter: false,
-      sortbyFilter: false,
-    });
+    if (value[0] < value[1]) {
+      setPriceFilterAtom({
+        min: +value[0],
+        max: +value[1],
+      });
+      setPagedropdownValue({
+        priceFilter: false,
+        brandFilter: false,
+        sortbyFilter: false,
+      });
+    } else {
+      console.log("Invalid values");
+    }
   };
 
   return (
@@ -56,17 +54,37 @@ function PriceFilter({ query }) {
           <div className={styles.dropdown}>
             <h3 className={styles.heading}>Price Range</h3>
             <p className={styles.range_in_text}>
-              ${value[0]} - ${value[1]}
+              <input
+                type={"number"}
+                min={10}
+                max={199}
+                maxLength={5}
+                value={value[0]}
+                onChange={(e) => {
+                  setValue((value) => [e.target.value, value[1]]);
+                }}
+              />
+              -
+              <input
+                type={"number"}
+                min={11}
+                max={200}
+                maxLength={5}
+                value={value[1]}
+                onChange={(e) => {
+                  setValue((value) => [value[0], e.target.value]);
+                }}
+              />
             </p>
             <label className={styles.price_limit_label}>
-              Maximum price: $15000
+              Maximum price: $200
             </label>
             <Slider
               value={value}
               onChange={handleChange}
               valueLabelDisplay="auto"
               min={10}
-              max={15000}
+              max={200}
               sx={{
                 color: "#ffffff",
                 width: "90%",

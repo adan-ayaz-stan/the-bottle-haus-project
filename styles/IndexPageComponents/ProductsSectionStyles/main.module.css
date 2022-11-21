@@ -121,9 +121,13 @@
 }
 
 @media only screen and (max-width: 1050px) {
+  .product_listing {
+    padding: 0;
+  }
   .product {
     max-height: 40%;
-    max-width: 45%;
+    width: 49%;
+    margin: 2px 0;
   }
   .product h4 {
     font-size: 0.7em;
@@ -131,11 +135,16 @@
   .product p {
     font-size: 0.7em;
   }
+  .product_name {
+    width: 100%;
+    font-size: 0.7em;
+    white-space: normal;
+  }
 }
 
 @media only screen and (max-width: 1050px) {
   .main {
-    padding: 25% 2em 25% 2em;
+    padding: 35% 0.5em 35% 0.5em;
   }
   .main h1 {
     line-height: 100%;

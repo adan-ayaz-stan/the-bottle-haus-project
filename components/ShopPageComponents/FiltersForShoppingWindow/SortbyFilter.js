@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import { useRecoilState } from "recoil";
 
-import { dropdownOpen } from "../../../atoms/shop-page";
+import { dropdownOpen, sortByFilterAtom } from "../../../atoms/shop-page";
 
 import styles from "../../../styles/ShopPageComponents/FilterForShoppingWindow/sortby-filter.module.css";
 
@@ -12,18 +12,13 @@ function SortbyFilter({ query }) {
   const [pagedropdownValue, setPagedropdownValue] =
     useRecoilState(dropdownOpen);
 
+  const [sortByFilterAtomValue, setSortByFilterAtom] =
+    useRecoilState(sortByFilterAtom);
+
   const router = useRouter();
 
   const lowToHighFunctionHandler = () => {
-    router.push({
-      pathname: "/shop",
-      query: {
-        ...query,
-        ...{
-          sortby: "asc",
-        },
-      },
-    });
+    setSortByFilterAtom("asc");
     setPagedropdownValue({
       priceFilter: false,
       brandFilter: false,
@@ -31,15 +26,7 @@ function SortbyFilter({ query }) {
     });
   };
   const highToLowFunctionHandler = () => {
-    router.push({
-      pathname: "/shop",
-      query: {
-        ...query,
-        ...{
-          sortby: "des",
-        },
-      },
-    });
+    setSortByFilterAtom("desc");
     setPagedropdownValue({
       priceFilter: false,
       brandFilter: false,
@@ -67,8 +54,26 @@ function SortbyFilter({ query }) {
         <>
           <div className={styles.dropdown}>
             <h3 className={styles.heading}>Sort by</h3>
-            <p onClick={lowToHighFunctionHandler}>Price - Low to High</p>
-            <p onClick={highToLowFunctionHandler}>Price - High to Low</p>
+            <p
+              onClick={lowToHighFunctionHandler}
+              style={
+                sortByFilterAtomValue == "asc"
+                  ? { outline: "solid 1px green" }
+                  : {}
+              }
+            >
+              Price - Low to High
+            </p>
+            <p
+              onClick={highToLowFunctionHandler}
+              style={
+                sortByFilterAtomValue == "desc"
+                  ? { outline: "solid 1px green" }
+                  : {}
+              }
+            >
+              Price - High to Low
+            </p>
           </div>
         </>
       ) : (

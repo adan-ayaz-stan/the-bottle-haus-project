@@ -41,9 +41,9 @@
 }
 
 .branddiv {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
   margin: 5px 0;
 }

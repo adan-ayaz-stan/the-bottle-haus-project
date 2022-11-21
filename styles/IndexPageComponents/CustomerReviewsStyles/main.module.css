@@ -130,9 +130,15 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 1050px) {
   .main .first_heading,
   .main .second_heading {
     font-size: 3em;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .main {
+    padding: 50px 10px;
   }
 }

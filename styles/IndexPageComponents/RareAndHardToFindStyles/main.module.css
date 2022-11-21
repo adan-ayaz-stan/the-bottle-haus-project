@@ -141,7 +141,7 @@
     font-size: 0.7em;
   }
   .specialAdvertisement .imageMain {
-    top: -25%;
+    top: 0%;
     height: 200%;
     width: 160%;
   }
@@ -163,6 +163,9 @@
     border-radius: 15px 15px 0 0;
   }
   .specialProductsListingContainer .comment {
+    display: none;
+  }
+  .specialProductsListingContainer .productListing {
     display: none;
   }
 }
