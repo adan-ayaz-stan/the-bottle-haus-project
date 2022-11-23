@@ -16,24 +16,26 @@ export default function RareAndHardToFindSection({ RATHFproducts }) {
   return (
     <div className={styles.main}>
       <h1>RARE & HARD TO FIND</h1>
-      <div className={styles.teamComment}>
-        <hr />
-        The Bottle Haus's team of connoisseurs have done all the hard work for
-        you.
-      </div>
-
-      <div className={styles.specialAdvertisement}>
-        <div className={styles.imageMain}>
-          <Image src={sampleImageMain} height={500} width={500}></Image>
+      <div className={styles.topSection}>
+        <div className={styles.teamComment}>
+          <hr />
+          <p>
+            The Bottle Haus's team of connoisseurs have done all the hard work
+            for you.
+          </p>
         </div>
-        <div className={styles.textMain}>
+
+        <div className={styles.mainProductImage}>
+          <Image src={sampleImageMain} layout="fill"></Image>
+        </div>
+        <div className={styles.mainProductLabel}>
           <h3>Louis WarmWind's Special</h3>
           <hr />
           <p>The oldest being over a 100 years old..</p>
         </div>
       </div>
 
-      <div className={styles.specialProductsListingContainer}>
+      <div className={styles.bottomSection}>
         <div className={styles.productListing}>
           {RATHFproducts.map((ele, ind) => {
             function addToCart() {

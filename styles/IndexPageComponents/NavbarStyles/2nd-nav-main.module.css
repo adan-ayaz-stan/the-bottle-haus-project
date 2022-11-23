@@ -26,6 +26,7 @@
     padding: 10px 0;
   }
   .main a {
+    border: solid 1px #bdb8b8;
     margin: 5px 5px;
   }
 }

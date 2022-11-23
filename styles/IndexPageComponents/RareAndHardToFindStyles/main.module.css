@@ -1,285 +1,242 @@
-@font-face {
-  font-family: "Avenir Black";
-  src: url(../../../cms/fonts/Avenir-Black.otf);
-}
-@font-face {
-  font-family: "Avenir Medium";
-  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
-}
-
 .main {
-  position: relative;
-  height: 100vh;
-  background-color: rgb(144, 238, 210);
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0 10%;
+  background-color: #b5d5d7;
 }
 
 .main h1 {
-  letter-spacing: -5px;
   line-height: 2.5em;
+  letter-spacing: -5px;
   text-align: center;
   font-family: "Avenir Black";
   font-weight: 1000;
-  font-size: 7em;
+  font-size: 6em;
   -webkit-text-stroke: 2px white;
   color: transparent;
 }
 
+.topSection {
+  margin: -15% 0 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 3%;
+}
+
+.teamComment,
+.mainProductImage,
+.mainProductLabel {
+  width: 32%;
+}
+
 .teamComment {
-  margin: -20px 10%;
-  font-family: "Avenir Medium";
-  font-weight: 600;
-  color: green;
-  width: 300px;
-}
-.teamComment hr {
-  position: relative;
-  left: -5%;
-  height: 3px;
-  width: 15%;
-  margin-bottom: 15px;
-  background-color: green;
-  border: none;
-  border-radius: 15px;
-}
-
-.specialAdvertisement {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  height: 50%;
-  width: 50%;
-}
-.specialAdvertisement .imageMain {
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  height: 100%;
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-.specialAdvertisement .textMain {
-  position: absolute;
-  right: -35%;
-  bottom: 10%;
-  font-family: "Avenir Medium";
-  color: white;
-}
-.specialAdvertisement .textMain hr {
-  height: 3px;
-  width: 20%;
-  background-color: white;
-  margin-top: 4px;
-  margin-bottom: 8px;
-  border: none;
-  border-radius: 15px;
-}
-
-.specialProductsListingContainer {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
-
-  display: flex;
-  align-items: center;
-  flex-flow: row;
-
-  width: 80%;
-  height: 40%;
-  background-color: white;
-  border-radius: 15px;
-}
-.specialProductsListingContainer .productListing {
-  position: relative;
-  flex: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-flow: row;
-}
-.specialProductsListingContainer .comment {
-  flex: 25%;
   display: flex;
   flex-flow: column;
-  gap: 15px;
-  font-size: 2.5em;
-  font-family: "Avenir Black";
-  text-overflow: clip;
+  align-self: center;
+  gap: 10px;
+  padding: 20px 0 20px 30px;
 }
-.specialProductsListingContainer .comment span:nth-child(1) {
-  color: green;
+.teamComment hr {
+  width: 20%;
+  height: 3px;
+  background-color: #4e7675;
+  border-radius: 999px;
 }
-.specialProductsListingContainer .comment span:nth-child(2) {
-  color: burlywood;
-}
-.specialProductsListingContainer .comment span:nth-child(3) {
-  color: lightblue;
-}
-.specialProductsListingContainer .comment span:nth-child(4) {
-  color: orange;
+.teamComment p {
+  font-size: 1em;
+  font-family: "Avenir Light";
+  font-weight: 1000;
+  padding-left: 10%;
+  color: #4e7675;
 }
 
-@media only screen and (max-width: 1050px) {
-  .main {
-    padding: 2em 0 0 0;
-    min-height: 600px;
-    height: fit-content;
-  }
-  .main h1 {
-    font-size: 3em;
-    line-height: normal;
-    letter-spacing: 0px;
-  }
-  .teamComment {
-    margin: 0 10%;
-    width: 30%;
-    font-size: 0.7em;
-  }
-  .specialAdvertisement .imageMain {
-    top: 0%;
-    height: 200%;
-    width: 160%;
-  }
-  .specialAdvertisement .textMain {
-    width: 50%;
-    right: -30%;
-    bottom: 20%;
-    font-size: 0.5em;
-  }
-  .specialAdvertisement .textMain hr {
-    width: 100%;
-  }
-  .specialAdvertisement .textMain p {
-    text-align: center;
-  }
-  .specialProductsListingContainer {
-    width: 100%;
-    height: fit-content;
-    border-radius: 15px 15px 0 0;
-  }
-  .specialProductsListingContainer .comment {
-    display: none;
-  }
-  .specialProductsListingContainer .productListing {
-    display: none;
-  }
+.mainProductImage {
+  position: relative;
+  height: 50vh;
+}
+.mainProductImage img {
+  object-fit: contain;
+}
+
+.mainProductLabel {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+  align-self: flex-end;
+  color: white;
+  padding: 50px 0;
+}
+.mainProductLabel hr {
+  width: 50%;
+  height: 3px;
+  background-color: white;
+  border-radius: 999px;
+}
+
+.bottomSection {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #f6f5f7;
+  border-radius: 14px 14px 0 0;
+  padding: 50px 20px;
+}
+
+.productListing {
+  width: 75%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
 }
 
 .product {
-  position: relative;
-  min-height: fit-content;
   height: 100%;
   width: 30%;
-
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 10px;
+  border-radius: 18px;
+}
 
-  border-radius: 15px;
+.product_image {
+  position: relative;
+  height: 250px;
   background-color: white;
+}
+.product_image img {
+  object-fit: contain;
+  border-radius: 14px;
+}
 
-  padding: 15px;
-  margin: 10px 0;
-
-  transform: scale(0.8);
+.product_details {
+  height: 100px;
+  padding: 10px;
+}
+.product_name {
+  font-family: monospace;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 1.2em;
+  color: #686869;
+}
+.product_price {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 5px;
+  gap: 10px;
+}
+.product_price p:first-child {
+  font-family: "Avenir Regular";
+  font-weight: 1000;
+}
+.product_price p:last-child {
+  font-family: "Avenir Light";
+  font-weight: 1000;
+  text-decoration: line-through;
+  color: gray;
 }
 
 .add_to_cart_icon {
-  position: relative;
-  height: 40px;
-  width: 40px;
-  align-self: flex-end;
-  border: solid 1px #ededed;
-  border-radius: 5px;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
+  border: solid 1px black;
+  border-radius: 12px;
+  z-index: 100;
 }
 .add_to_cart_icon img {
   object-fit: contain;
 }
 
-.product_image {
-  position: relative;
-  min-height: 200px;
-  min-width: 150px;
-  height: 80%;
-  width: 80%;
-}
-.product_image img {
-  object-fit: contain;
-}
-.product img {
-  border-radius: 15px;
-}
-.product_details {
+.comment {
+  width: 25%;
   display: flex;
   flex-flow: column;
-  height: fit-content;
 }
-.product_details div {
-  display: flex;
-  flex-flow: row;
-  margin-top: 5px;
+.comment span {
+  font-size: 2.5em;
+  font-weight: 100;
+  font-family: "Avenir Regular";
 }
-
-.product_price {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10%;
+.comment span:nth-child(1) {
+  color: #dd8a5d;
 }
-
-.product_price p {
-  display: inline;
-  text-align: center;
+.comment span:nth-child(2) {
+  color: #e1a7a2;
 }
-.product_price p:first-child {
-  font-family: "Avenir Medium";
-  font-weight: 600;
+.comment span:nth-child(3) {
+  color: #4b827c;
 }
-.product_price p:last-child {
-  font-family: "Avenir Light";
-  color: gray;
-  text-decoration: line-through;
-}
-
-.product_name {
-  max-width: 210px;
-  font-family: "Avenir Light";
-  text-align: center;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+.comment span:nth-child(4) {
+  color: #92382d;
 }
 
 @media only screen and (max-width: 1050px) {
-  .product {
-    max-height: 40%;
-    max-width: 45%;
+  .main {
+    height: fit-content;
+    padding: 0;
   }
-  .product h4 {
-    font-size: 0.7em;
+  .main h1 {
+    font-size: 3em;
+    line-height: 1em;
+    margin: 1em 0;
   }
-  .product p {
-    font-size: 0.7em;
+  .topSection {
+    margin: 0;
+    flex-flow: column;
+    align-items: center;
   }
-}
+  .mainProductImage,
+  .mainProductLabel,
+  .teamComment {
+    width: 100%;
+    text-align: center;
+  }
 
-@media only screen and (max-width: 1050px) {
-  .product {
-    max-height: 40%;
-    max-width: 45%;
+  .teamComment {
+    padding: 0;
   }
-  .product h4 {
-    font-size: 0.7em;
+  .teamComment hr {
+    margin: 0 auto;
+    width: 80%;
   }
-  .product p {
-    font-size: 0.7em;
+  .teamComment p {
+    padding: 0 15px;
+  }
+
+  .mainProductLabel {
+    padding: 0;
+    margin-bottom: 2em;
+  }
+  .mainProductLabel hr {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .bottomSection {
+    height: fit-content;
+    padding: 15px 5px;
+  }
+  .add_to_cart_icon {
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+  }
+  .productListing {
+    width: 100%;
+  }
+  .product_image {
+    height: 20vh;
+    border-radius: 22px;
+  }
+  .product_price {
+    display: none;
+  }
+
+  .comment {
+    display: none;
   }
 }

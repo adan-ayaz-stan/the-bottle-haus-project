@@ -2,7 +2,7 @@
   margin: 4em auto;
   padding: 6em 10%;
   background-image: url(../../../cms/product-section-images/background.jpg);
-  background-size: 20%;
+  background-size: 15%;
   background-repeat: repeat;
   clip-path: polygon(
     50% 0%,
@@ -137,7 +137,7 @@
   }
   .product_name {
     width: 100%;
-    font-size: 0.7em;
+    font-size: 0.8em;
     white-space: normal;
   }
 }
@@ -145,6 +145,7 @@
 @media only screen and (max-width: 1050px) {
   .main {
     padding: 35% 0.5em 35% 0.5em;
+    background-size: 70%;
   }
   .main h1 {
     line-height: 100%;
