@@ -1,8 +1,14 @@
 .submain {
-  min-height: 500px; /* CHANGE HEIGHT TO FIT CONTENT */
+  min-height: fit-content; /* CHANGE HEIGHT TO FIT CONTENT */
   display: flex;
   flex-flow: row;
   flex-wrap: nowrap;
   padding: 50px 10%;
   background-color: #f6f5f7;
+}
+
+@media only screen and (max-width: 1050px) {
+  .submain {
+    padding: 50px 5px;
+  }
 }

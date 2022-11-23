@@ -29,3 +29,9 @@
   border-radius: 12px;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 1050px) {
+  .main {
+    display: none;
+  }
+}

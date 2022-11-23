@@ -37,7 +37,7 @@ function PriceFilter({ query }) {
     <div className={styles.main}>
       <p
         style={{
-          padding: "15px 2em",
+          padding: "15px",
         }}
         onClick={() => {
           setPagedropdownValue({

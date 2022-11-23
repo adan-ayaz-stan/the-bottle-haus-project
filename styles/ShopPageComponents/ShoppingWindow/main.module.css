@@ -125,9 +125,23 @@
 }
 
 @media only screen and (max-width: 1050px) {
+  .topbar {
+    flex-flow: column;
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .filter_box {
+    padding: 0;
+  }
+
+  .product_listing {
+    padding: 5px;
+  }
+
   .product {
     max-height: 40%;
-    max-width: 45%;
+    width: 49%;
   }
   .product h4 {
     font-size: 0.7em;

@@ -44,7 +44,7 @@ function BlogSlider() {
         <SwiperSlide className={styles.slider_slide}>
           <div className={styles.slide_content}>
             <div>
-              <h2 className={styles.slide_heading}>Blog Heading</h2>
+              <h2 className={styles.slide_heading}>Blog Heading #1</h2>
               <p className={styles.slide_posted_time}>
                 Posted at 14:37 28/7/2024
               </p>
@@ -59,20 +59,20 @@ function BlogSlider() {
               </a>
             </div>
           </div>
-          <Image
-            src={
-              "https://cdn.pixabay.com/photo/2018/09/01/23/19/tequila-3647876_960_720.jpg"
-            }
-            alt="slide-image"
-            width={400}
-            height={200}
-            className={styles.slide_image}
-          />
+          <div className={styles.slide_image}>
+            <Image
+              src={
+                "https://cdn.pixabay.com/photo/2018/09/01/23/19/tequila-3647876_960_720.jpg"
+              }
+              alt="slide-image"
+              layout="fill"
+            />
+          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slider_slide}>
           <div className={styles.slide_content}>
             <div>
-              <h2 className={styles.slide_heading}>Blog Heading</h2>
+              <h2 className={styles.slide_heading}>Blog Heading #2</h2>
               <p className={styles.slide_posted_time}>
                 Posted at 14:37 28/7/2024
               </p>
@@ -87,20 +87,20 @@ function BlogSlider() {
               </a>
             </div>
           </div>
-          <Image
-            src={
-              "https://cdn.pixabay.com/photo/2016/07/27/00/53/margaritas-1544340_960_720.jpg"
-            }
-            alt="slide-image"
-            width={400}
-            height={200}
-            className={styles.slide_image}
-          />
+          <div className={styles.slide_image}>
+            <Image
+              src={
+                "https://cdn.pixabay.com/photo/2016/07/27/00/53/margaritas-1544340_960_720.jpg"
+              }
+              alt="slide-image"
+              layout="fill"
+            />
+          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slider_slide}>
           <div className={styles.slide_content}>
             <div>
-              <h2 className={styles.slide_heading}>Blog Heading</h2>
+              <h2 className={styles.slide_heading}>Blog Heading #3</h2>
               <p className={styles.slide_posted_time}>
                 Posted at 14:37 28/7/2024
               </p>
@@ -115,20 +115,20 @@ function BlogSlider() {
               </a>
             </div>
           </div>
-          <Image
-            src={
-              "https://cdn.pixabay.com/photo/2020/10/07/02/07/tequila-5633785_960_720.jpg"
-            }
-            alt="slide-image"
-            width={400}
-            height={200}
-            className={styles.slide_image}
-          />
+          <div className={styles.slide_image}>
+            <Image
+              src={
+                "https://cdn.pixabay.com/photo/2020/10/07/02/07/tequila-5633785_960_720.jpg"
+              }
+              alt="slide-image"
+              layout="fill"
+            />
+          </div>
         </SwiperSlide>
         <SwiperSlide className={styles.slider_slide}>
           <div className={styles.slide_content}>
             <div>
-              <h2 className={styles.slide_heading}>Blog Heading</h2>
+              <h2 className={styles.slide_heading}>Blog Heading #4</h2>
               <p className={styles.slide_posted_time}>
                 Posted at 14:37 28/7/2024
               </p>
@@ -143,15 +143,15 @@ function BlogSlider() {
               </a>
             </div>
           </div>
-          <Image
-            src={
-              "https://cdn.pixabay.com/photo/2021/01/04/17/20/alcohol-5888208_960_720.jpg"
-            }
-            alt="slide-image"
-            width={400}
-            height={100}
-            className={styles.slide_image}
-          />
+          <div className={styles.slide_image}>
+            <Image
+              src={
+                "https://cdn.pixabay.com/photo/2021/01/04/17/20/alcohol-5888208_960_720.jpg"
+              }
+              alt="slide-image"
+              layout="fill"
+            />
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>
