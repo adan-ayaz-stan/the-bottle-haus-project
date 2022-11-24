@@ -82,15 +82,13 @@
 }
 
 .productListing {
-  width: 75%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
+  gap: 10px;
 }
 
 .product {
-  height: 100%;
-  width: 30%;
   position: relative;
   display: flex;
   flex-flow: column nowrap;
@@ -183,6 +181,7 @@
     font-size: 3em;
     line-height: 1em;
     margin: 1em 0;
+    letter-spacing: 2px;
   }
   .topSection {
     margin: 0;
@@ -227,6 +226,7 @@
   }
   .productListing {
     width: 100%;
+    padding: 10px;
   }
   .product_image {
     height: 20vh;
