@@ -109,7 +109,7 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .main {
     flex-flow: column;
     gap: 10px;

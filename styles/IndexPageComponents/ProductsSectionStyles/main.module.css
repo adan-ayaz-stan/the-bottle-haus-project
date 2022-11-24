@@ -115,7 +115,7 @@
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .product_listing {
     grid-template-columns: 1fr 1fr;
     padding: 10px;
@@ -134,7 +134,7 @@
   }
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .main {
     padding: 35% 0.5em 35% 0.5em;
     background-size: 70%;

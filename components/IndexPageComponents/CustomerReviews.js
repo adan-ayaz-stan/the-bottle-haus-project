@@ -25,7 +25,7 @@ export default function CustomerReviews() {
       <Swiper
         className={styles.submain}
         spaceBetween={50}
-        slidesPerView={windowWidth > 660 ? 3 : 1}
+        slidesPerView={windowWidth > 800 ? 3 : 1}
       >
         <SwiperSlide>
           <div className={reviewCardStyle.main}>

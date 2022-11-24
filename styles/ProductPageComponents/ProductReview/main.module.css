@@ -64,7 +64,7 @@
   box-shadow: inset 0px 0px 5px gray;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .slider_navigation_container {
     width: 100%;
     position: relative;

@@ -29,7 +29,7 @@ function ProductReview() {
 
       <Swiper
         spaceBetween={20}
-        slidesPerView={windowWidth > 660 ? 3 : 1}
+        slidesPerView={windowWidth > 800 ? 3 : 1}
         modules={[Navigation]}
         navigation={{
           prevEl: "#product-review-slide-prev",

@@ -130,7 +130,7 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 800px) {
   .main .first_heading,
   .main .second_heading {
     font-size: 3em;

@@ -21,7 +21,7 @@
   background-color: #ededed;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .main {
     padding: 10px 0;
   }

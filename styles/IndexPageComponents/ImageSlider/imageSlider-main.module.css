@@ -110,7 +110,7 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .main {
     height: 35vh;
   }

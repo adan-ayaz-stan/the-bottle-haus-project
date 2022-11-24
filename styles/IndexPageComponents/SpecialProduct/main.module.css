@@ -153,7 +153,7 @@
   filter: invert(1);
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .main {
     height: fit-content;
     flex-flow: column;

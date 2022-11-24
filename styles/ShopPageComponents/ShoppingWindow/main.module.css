@@ -117,7 +117,7 @@
   /* white-space: nowrap; */
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 800px) {
   .topbar {
     flex-flow: column;
     gap: 10px;
