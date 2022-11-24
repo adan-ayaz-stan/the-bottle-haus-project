@@ -1,9 +1,12 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 import styles from "../../styles/IndexPageComponents/NavbarStyles/2nd-nav-main.module.css";
 
 export default function Navbar2nd() {
+  const router = useRouter();
+
   const categories = [
     {
       name: "Whiskey",
@@ -47,14 +50,18 @@ export default function Navbar2nd() {
     <>
       <div className={styles.main}>
         {categories.map((ele, ind) => {
-          return (
-            <Link
-              href={`/shop?category=${ele.type}`}
-              key={ind + Math.random() * ind}
-            >
-              <a>{ele.name}</a>
-            </Link>
-          );
+          if (router.asPath == "/shop") {
+            return <a>{ele.name}</a>;
+          } else {
+            return (
+              <Link
+                href={`/shop?category=${ele.type}`}
+                key={ind + Math.random() * ind}
+              >
+                <a>{ele.name}</a>
+              </Link>
+            );
+          }
         })}
       </div>
     </>

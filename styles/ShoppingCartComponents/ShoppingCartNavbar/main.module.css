@@ -18,6 +18,19 @@
   padding: 10px !important;
 }
 
+.styleCartModal {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  background-color: white;
+  box-shadow: 12px;
+  border-radius: 2rem;
+  padding: 1.5em;
+  outline: none;
+}
+
 .cart_container {
   display: flex;
   flex-flow: column nowrap;
@@ -29,7 +42,7 @@
 }
 
 .products_list {
-  max-height: 350px;
+  max-height: 250px;
   display: flex;
   flex-flow: column nowrap;
   gap: 20px;
@@ -134,4 +147,30 @@
 .cart_actions button:last-child {
   color: white;
   background-color: #f47428;
+}
+
+@media only screen and (max-width: 1050px) {
+  .styleCartModal {
+    width: 90%;
+  }
+
+  .products_list {
+    max-height: 350px;
+  }
+  .product_details {
+    padding: 5px;
+  }
+
+  .cart_status {
+    width: 100%;
+    font-size: 1em;
+  }
+
+  .cart_actions {
+    flex-flow: column;
+  }
+  .cart_actions button {
+    padding: 10px;
+    width: 100%;
+  }
 }

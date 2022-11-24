@@ -56,3 +56,23 @@
   background-color: #f6f5f7;
   border-radius: 8px;
 }
+
+@media only screen and (max-width: 1050px) {
+  .main {
+    padding: 20px 10px;
+  }
+  .heading {
+    font-size: 3em;
+  }
+  .product_listing {
+    gap: 20px;
+  }
+  .product {
+    padding: 0 10px;
+    gap: 10px;
+  }
+  .product_name,
+  .product_price {
+    font-size: 1em;
+  }
+}

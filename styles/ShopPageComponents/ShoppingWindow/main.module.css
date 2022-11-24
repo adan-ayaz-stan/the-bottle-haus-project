@@ -129,12 +129,12 @@
   }
 
   .product_listing {
-    padding: 5px;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 10px;
+    gap: 10px;
   }
-
-  .product {
-    max-height: 40%;
-    width: 49%;
+  .product_image {
+    height: 150px;
   }
   .product h4 {
     font-size: 0.7em;

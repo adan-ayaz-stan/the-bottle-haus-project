@@ -274,3 +274,10 @@
 .total_bill p {
   font-family: "Avenir Regular";
 }
+
+@media only screen and (max-width: 1050px) {
+  .main {
+    flex-flow: column-reverse;
+    padding: 25px 10px;
+  }
+}

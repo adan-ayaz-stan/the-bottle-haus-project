@@ -81,7 +81,7 @@ function ShoppingCartNavbar() {
         }}
       >
         <Fade in={open}>
-          <Box sx={styleCartModal}>
+          <Box className={styles.styleCartModal}>
             <div className={styles.cart_container}>
               <h2 className={styles.cart_heading}>Added to cart</h2>
 

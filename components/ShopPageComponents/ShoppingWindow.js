@@ -54,8 +54,12 @@ function ShoppingWindow({ query, brands, categories }) {
   }
 
   useEffect(() => {
-    if (query.category != categoryFilterRecoilValue && categoryFilterRecoilValue == '') {
+    if (
+      query.category != categoryFilterRecoilValue &&
+      categoryFilterRecoilValue == ""
+    ) {
       setCategoryFilterAtom(query.category);
+      console.log("function ran");
     }
     fetchProducts();
   }, [

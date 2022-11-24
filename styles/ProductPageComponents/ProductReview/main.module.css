@@ -63,3 +63,21 @@
 .slider_navigation_container div:hover {
   box-shadow: inset 0px 0px 5px gray;
 }
+
+@media only screen and (max-width: 1050px) {
+  .slider_navigation_container {
+    width: 100%;
+    position: relative;
+    top: 0%;
+    right: 0%;
+    /* transform: translate(0, 100%); */
+    padding: 0 10px;
+    z-index: 100;
+    justify-content: space-around;
+  }
+
+  .slider {
+    padding: 20px;
+    margin: 0;
+  }
+}

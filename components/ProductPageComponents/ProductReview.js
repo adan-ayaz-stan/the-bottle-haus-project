@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
@@ -13,6 +13,13 @@ import "swiper/css";
 import styles from "../../styles/ProductPageComponents/ProductReview/main.module.css";
 
 function ProductReview() {
+  const [windowWidth, setWindowWidth] = useState(1440);
+
+  useEffect(() => {
+    // SETTING WINDOW WIDTH
+    setWindowWidth(window.innerWidth);
+  });
+
   return (
     <div className={styles.main}>
       <div className={styles.heading_container}>
@@ -22,7 +29,7 @@ function ProductReview() {
 
       <Swiper
         spaceBetween={20}
-        slidesPerView={3}
+        slidesPerView={windowWidth > 660 ? 3 : 1}
         modules={[Navigation]}
         navigation={{
           prevEl: "#product-review-slide-prev",

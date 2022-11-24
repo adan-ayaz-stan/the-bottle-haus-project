@@ -8,12 +8,10 @@ import ProductReview from "../../components/ProductPageComponents/ProductReview"
 import Footer from "../../components/IndexPageComponents/Footer";
 
 function ProductPage({ product }) {
-  console.log(product);
 
   return (
     <div>
       <Navbar />
-      <Navbar2nd />
       <ProductSection product={product} />
       <ProductReview />
       <Footer />
