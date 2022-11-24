@@ -121,7 +121,6 @@
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
 }
 
 @media only screen and (max-width: 1050px) {
@@ -148,5 +147,8 @@
   }
   .product p {
     font-size: 0.7em;
+  }
+  .product_name {
+    max-height: 50px;
   }
 }
