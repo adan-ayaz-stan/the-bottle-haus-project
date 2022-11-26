@@ -1,5 +1,6 @@
 .main {
   position: relative;
+  font-family: "URW Geometric Medium";
   border-radius: 12px;
   border: solid 1px #dae0e4;
   cursor: pointer;
@@ -27,20 +28,11 @@
 .heading {
   width: 100%;
   margin: 3px 0;
-  font-family: "Avenir Medium";
-}
-
-.dropdown button {
-  width: 100%;
-  padding: 10px;
-  color: white;
-  background-color: #17625a;
-  border-radius: 5%;
-  margin-top: 5px;
-  cursor: pointer;
+  font-family: "URW Geometric Medium";
 }
 
 .dropdown p {
+  font-family: "URW Geometric Regular";
   padding: 10px 5px;
   border-radius: 10px;
 }

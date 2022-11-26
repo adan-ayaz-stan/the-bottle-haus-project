@@ -1,7 +1,8 @@
 .main {
   position: relative;
-  border-radius: 12px;
+  font-family: "URW Geometric Medium";
   border: solid 1px #dae0e4;
+  border-radius: 12px;
   cursor: pointer;
 }
 
@@ -27,7 +28,7 @@
 .heading {
   width: 100%;
   margin: 3px 0;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
 }
 
 .dropdown button {
@@ -36,6 +37,8 @@
   color: white;
   background-color: #17625a;
   border-radius: 5%;
+  font-family: "URW Geometric Medium";
+  font-size: 1.1em;
   margin-top: 5px;
   cursor: pointer;
 }
@@ -45,5 +48,4 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  margin: 5px 0;
 }

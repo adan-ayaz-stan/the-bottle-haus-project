@@ -18,7 +18,7 @@
 .main h1 {
   line-height: 150%;
   font-size: 3em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   text-align: center;
   text-transform: uppercase;
   border-bottom: 1px silver solid;
@@ -95,20 +95,17 @@
 .product_price p {
   display: inline;
   text-align: center;
-}
-.product_price p:first-child {
-  font-family: "Avenir Medium";
-  font-weight: 600;
+  font-family: "URW Geometric ExtraBold";
 }
 .product_price p:last-child {
-  font-family: "Avenir Light";
   color: gray;
   text-decoration: line-through;
 }
 
 .product_name {
   max-width: 210px;
-  font-family: "Avenir Light";
+  font-family: "Venus Egyptiene";
+  font-size: 1.1em;
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;

@@ -17,12 +17,12 @@
 
 .heading {
   font-size: 1.7em;
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric SemiBold";
   letter-spacing: 2px;
 }
 .heading h2:last-child {
   color: white;
-  -webkit-text-stroke: black 1px;
+  -webkit-text-stroke: black 1.5px;
 }
 
 .account_email {
@@ -40,23 +40,24 @@
   color: #928f91;
   background-color: #edecee;
   border-radius: 16px;
+  font-family: "URW Geometric Medium";
   padding: 5px 15px;
 }
 
 .account_email div h3 {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1em;
 }
 .account_email div p {
   color: gray;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-size: 0.9em;
 }
 
 .account_email button {
   padding: 5px 10px;
   font-size: 0.8em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   text-transform: uppercase;
   color: #7894db;
   background-color: white;
@@ -84,13 +85,14 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 15px;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1.1em;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 .personal_details .heading p:first-child {
   color: white;
   background-color: #92bfc2;
+  font-family: "URW Geometric Medium";
   padding: 0px 15px;
   border-radius: 15px;
 }
@@ -101,7 +103,7 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   gap: 15px;
   margin-top: 20px;
 }
@@ -110,6 +112,8 @@
   width: 100%;
   padding: 1em;
   border-radius: 12px;
+  font-family: "URW Geometric Medium";
+  font-size: 0.9em;
   background-color: #f6f7fa;
   transition: all ease 0.3s;
 }
@@ -120,7 +124,7 @@
 }
 .form input::placeholder {
   display: block;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
 }
 
 .form div {
@@ -135,7 +139,7 @@
   margin: 10px 0;
   padding: 1em;
   border-radius: 12px;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   cursor: pointer;
 }
 

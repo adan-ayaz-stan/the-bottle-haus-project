@@ -12,7 +12,7 @@
 }
 .instruction_input_box label {
   margin: 10px 0;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1em;
 }
 .instruction_input_box textarea {
@@ -22,7 +22,7 @@
   background: #fff;
   border-radius: 12px;
   padding: 10px;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   border: solid 1px #f0eef0;
   resize: none;
 }
@@ -42,14 +42,14 @@
   flex-flow: row;
   justify-content: space-between;
   padding: 10px 0;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
 }
 
 .notice_label {
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #8a888a;
   margin: 0;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   text-transform: capitalize;
 }
 
@@ -78,6 +78,7 @@
 .service_details {
   text-align: center;
   font-size: 0.8em;
+  font-family: "URW Geometric Medium";
 }
 .service_details p:first-child {
   color: darkgray;
@@ -88,13 +89,13 @@
   font-size: 0.7em;
 }
 .service_price {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1em;
 }
 
 .disclaimer_label {
   color: #8a888a;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-size: 0.8em;
   margin: 10px 0;
   text-transform: capitalize;
@@ -106,7 +107,7 @@
   margin: 10px 0;
   border-radius: 8px;
   font-size: 1em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   color: white;
   background-color: #f3772e;
   cursor: pointer;

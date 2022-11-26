@@ -15,7 +15,7 @@ const FirstSection = () => {
     <div className={styles.main}>
       <h1 className={styles.heading}>
         My{" "}
-        <span style={{ WebkitTextStroke: "black 1px", color: "transparent" }}>
+        <span style={{ WebkitTextStroke: "black 1.5px", color: "transparent" }}>
           Cart ({shoppingCartValue.length})
         </span>
       </h1>
@@ -32,7 +32,12 @@ const FirstSection = () => {
           >
             {/* <Image src={sampleImage} alt='product-image' layout='fill' /> */}
           </div>
-          <div className={styles.product_name}>Product</div>
+          <div
+            className={styles.product_name}
+            style={{ fontFamily: "URW Geometric Medium" }}
+          >
+            Product
+          </div>
           <div className={styles.product_price} style={{ fontSize: "1em" }}>
             Price
           </div>

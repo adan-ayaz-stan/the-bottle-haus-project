@@ -14,24 +14,25 @@
   background-color: #ededed;
   border-radius: 25px;
   padding: 20px;
-  font-family: "Avenir Regular";
 }
 
 .review_heading {
-  font-size: 1em;
+  font-size: 1.1em;
+  font-family: "URW Geometric SemiBold";
   font-weight: 600;
   color: #006647;
 }
 
 .customer_review {
-  font-size: 0.8em;
-  font-family: "Avenir Light";
+  font-size: 0.9em;
+  font-family: "URW Geometric Regular";
 }
 
 .customer_name {
   text-align: right;
   color: #aeaeae;
   font-size: 0.9em;
+  font-family: "URW Geometric Medium";
 }
 
 .image_container {
@@ -48,4 +49,3 @@
 .image_container img {
   object-fit: contain;
 }
-

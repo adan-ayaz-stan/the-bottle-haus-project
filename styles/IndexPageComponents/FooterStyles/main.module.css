@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Avenir Medium";
-  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
-}
-@font-face {
-  font-family: "Avenir Light";
-  src: url(../../../cms/fonts/Avenir\ Light.ttf);
-}
-
 .main {
   height: fit-content;
 
@@ -34,18 +25,18 @@
 .middleSection .pointerText h4 {
   flex: 20%;
   font-size: 1.3em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
 }
 .middleSection .pointerText p {
   flex: 70%;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-size: 0.75em;
   color: gray;
 }
 .middleSection .pointerText a {
   flex: 10%;
   display: block;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   text-align: center;
   justify-self: flex-end;
   padding: 10px;
@@ -74,11 +65,11 @@
   margin-top: 0.8em;
   line-height: 1.2em;
   font-size: 1.1em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
 }
 .middleSection .blogLink p {
   flex: 10%;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-size: 0.8em;
   color: gray;
 }
@@ -88,7 +79,7 @@
   flex-flow: row;
   padding: 5% 10%;
   height: fit-content;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   background-color: rgb(23, 98, 90);
 }
 .lastSection .firstDiv {
@@ -97,12 +88,12 @@
 }
 .lastSection .firstDiv h3 {
   display: inline-block;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   font-size: 1.1em;
 }
 .lastSection .firstDiv p {
   display: inline-block;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   font-size: 0.8em;
 }
 
@@ -120,7 +111,7 @@
 }
 .lastSection .secondDiv div:first-child h3 {
   font-size: 1.2em;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-weight: 600;
   color: white;
 }
@@ -160,7 +151,7 @@
 }
 .lastSection .secondDiv div:nth-child(2) h3 {
   color: white;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-size: 1.2em;
 }
 .lastSection .secondDiv div:nth-child(2) p {
@@ -177,13 +168,13 @@
   color: white;
   margin: 0.7em 0;
   font-size: 1.2em;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-weight: 600;
   font-size: 1em;
 }
 .lastSection .secondDiv div:nth-child(4) {
   color: white;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-weight: 600;
   font-size: 1em;
 }

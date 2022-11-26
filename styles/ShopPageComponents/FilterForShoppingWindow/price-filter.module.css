@@ -1,5 +1,6 @@
 .main {
   position: relative;
+  font-family: "URW Geometric Medium";
   border-radius: 12px;
   border: solid 1px #dae0e4;
   cursor: pointer;
@@ -32,7 +33,7 @@
 }
 
 .heading {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
 }
 
 .range_in_text {
@@ -40,24 +41,27 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
 }
 .range_in_text input {
   width: 50px;
   outline: none;
+  font-family: "URW Geometric Medium";
+  padding: 3px;
   border: solid 1px gray;
   border-radius: 4px;
 }
 
 .price_limit_label {
   font-size: 0.6em;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric SemiBold";
 }
 
 .dropdown button {
   width: 100%;
   padding: 10px;
   color: white;
+  font-family: "URW Geometric Medium";
   background-color: #17625a;
   border-radius: 5%;
   margin-top: 5px;

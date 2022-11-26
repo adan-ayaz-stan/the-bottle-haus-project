@@ -1,26 +1,17 @@
-@font-face {
-  font-family: "Avenir Medium";
-  src: url(../cms/fonts/Avenir\ Medium.ttf);
-}
-@font-face {
-  font-family: "Avenir Black";
-  src: url(../cms/fonts/Avenir-Black.otf);
-}
-
 .main {
- margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 .textAfterSlider h2 {
   font-size: 3em;
   text-align: center;
-  font-family: "Avenir Black";
+  font-family: "URW Geometric SemiBold";
 }
 
 .textAfterSlider h3 {
   font-size: 1.5em;
   text-align: center;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
 }
 
 .textAfterSlider {

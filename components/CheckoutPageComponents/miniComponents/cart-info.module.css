@@ -21,10 +21,12 @@
   font-size: 0.9em;
   text-transform: uppercase;
   background-color: transparent;
-  color: #7e99c8;
-  padding: 3px 0.6em;
-  border: solid 1px #7e99c8;
-  border-radius: 14px;
+  color: #6282d4;
+  padding: 5px 0.6em;
+  font-family: "URW Geometric Medium";
+  background-color: white;
+  border: solid 1px #6282d4;
+  border-radius: 8px;
   cursor: pointer;
 }
 
@@ -38,6 +40,7 @@
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  font-family: "URW Geometric Medium";
   padding: 1em;
 }
 .product_image {
@@ -65,10 +68,10 @@
   padding: 0.5em 1em;
 }
 .billing_section div p:first-child {
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Medium";
 }
 .billing_section div p:last-child {
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric SemiBold";
 }
 
 .total_bill {
@@ -79,5 +82,5 @@
   padding: 1em;
 }
 .total_bill p {
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric Medium";
 }

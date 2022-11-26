@@ -8,15 +8,14 @@
   text-align: center;
 }
 .heading_container p {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1em;
   margin: 0;
 }
 .heading_container h2 {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   font-size: 2em;
   margin: 0;
-  margin-top: -10px;
 }
 
 .slider {
@@ -28,6 +27,7 @@
 .slider_slide {
   padding: 50px;
   background-color: #f6f5f7;
+  font-family: "URW Geometric Regular";
   border-radius: 12px;
 }
 
@@ -52,10 +52,10 @@
   justify-content: center;
   font-size: 1em;
   padding: 10px;
-  border-radius: 999px;
   color: gray;
   border: solid 1px #c9d6d5;
   box-shadow: inset 0px 0px 3px gray;
+  border-radius: 999px;
   user-select: none;
   cursor: pointer;
 }

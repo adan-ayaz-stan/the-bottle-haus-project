@@ -14,8 +14,14 @@
 .submain {
   display: flex;
   flex-flow: row nowrap;
+  align-items: center;
   gap: 5px;
   padding: 10px !important;
+}
+
+.submain p {
+  font-size: 1em;
+  font-family: "URW Geometric SemiBold";
 }
 
 .styleCartModal {
@@ -27,7 +33,7 @@
   background-color: white;
   box-shadow: 12px;
   border-radius: 2rem;
-  padding: 1.5em;
+  padding: 2em 2.5em;
   outline: none;
 }
 
@@ -37,7 +43,7 @@
 }
 
 .cart_heading {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1.5em;
 }
 
@@ -76,12 +82,14 @@
   padding: 0 50px 0 0;
 }
 .product_details h2 {
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric Medium";
   font-size: 1.5em;
   margin: 5px;
 }
 .product_details label {
   color: gray;
+  font-family: "Venus Egyptiene";
+  font-size: 1.2em;
 }
 
 .remove_from_cart_icon {
@@ -113,10 +121,11 @@
 }
 
 .cart_total p {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
+  font-size: 1.5em;
 }
 .cart_total h2 {
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric Medium";
   font-size: 1.5em;
 }
 
@@ -132,7 +141,7 @@
 
 .cart_actions button {
   flex: 50%;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1em;
   padding: 15px 0;
   border-radius: 12px;

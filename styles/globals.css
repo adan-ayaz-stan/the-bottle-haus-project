@@ -1,15 +1,31 @@
+/* URW GEOMETRIC */
 @font-face {
-  font-family: "Avenir Medium";
-  src: url(../cms/fonts/Avenir\ Medium.ttf);
+  font-family: "URW Geometric ExtraBold";
+  src: url(../cms/fonts/URW\ Geometric/URWGeometricExtraBold.otf);
 }
 @font-face {
-  font-family: "Avenir Regular";
-  src: url(../cms/fonts/Avenir-Black.otf);
+  font-family: "URW Geometric SemiBold";
+  src: url(../cms/fonts/URW\ Geometric/URWGeometricSemiBold.otf);
 }
 @font-face {
-  font-family: "Avenir Light";
-  src: url(../cms/fonts/Avenir\ Light.ttf);
+  font-family: "URW Geometric Regular";
+  src: url(../cms/fonts/URW\ Geometric/URWGeometricRegular.otf);
 }
+@font-face {
+  font-family: "URW Geometric Medium";
+  src: url(../cms/fonts/URW\ Geometric/URWGeometricMedium.otf);
+}
+@font-face {
+  font-family: "URW Geometric Light";
+  src: url(../cms/fonts/URW\ Geometric/URWGeometricLight.otf);
+}
+
+/* VENUS EGYPTIENE HALBRED FONT */
+@font-face {
+  font-family: "Venus Egyptiene";
+  src: url(../cms/fonts/Venus\ Egyptienne\ W01\ Halbfett/Venus\ Egyptienne\ W01\ Halbfett.ttf);
+}
+
 
 html,
 body {

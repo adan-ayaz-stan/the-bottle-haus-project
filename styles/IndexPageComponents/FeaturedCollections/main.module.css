@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Avenir Medium";
-  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
-}
-@font-face {
-  font-family: "Avenir Regular";
-  src: url(../../../cms/fonts/Avenir-Black.otf);
-}
-
 .main {
   position: relative;
   height: fit-content;
@@ -19,7 +10,7 @@
   width: 100%;
   padding: 10px 0;
   font-size: 2.5em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   margin: 0;
   padding: 0;
   line-height: 1.8em;
@@ -30,12 +21,6 @@
 .container_one h2:last-child {
   color: white;
   -webkit-text-stroke: rgb(0, 102, 71) 1.5px;
-}
-
-.container_two div {
-  font-family: "Avenir Black";
-  font-weight: 1000;
-  text-transform: uppercase;
 }
 
 .container_two {
@@ -148,6 +133,8 @@
 }
 
 .container_two a {
+  font-size: 1.2em;
+  font-family: "URW Geometric Medium";
   transition: all ease 0.4s;
 }
 .container_two a:hover {

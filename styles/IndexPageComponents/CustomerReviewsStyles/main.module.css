@@ -17,7 +17,7 @@
 .main .first_heading {
   text-align: left;
   font-size: 3.5em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   line-height: 110%;
   font-weight: 1000;
   color: rgb(0, 102, 71);
@@ -25,109 +25,12 @@
 .main .second_heading {
   text-align: left;
   font-size: 3.5em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   line-height: 110%;
   font-weight: 500;
   color: transparent;
   -webkit-text-stroke: rgb(0, 102, 71) 1.5px;
   margin-bottom: 1em;
-}
-
-.card {
-  position: relative;
-  display: block;
-  height: 100%;
-  border-radius: 16px;
-  overflow: hidden;
-  text-decoration: none;
-}
-
-.card__image {
-  width: 100%;
-  height: auto;
-}
-
-.card__overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  border-radius: 16px;
-  background-color: lightgreen;
-  transform: translateY(100%);
-  transition: 0.2s ease-in-out;
-}
-
-.card:hover .card__overlay {
-  transform: translateY(0);
-}
-
-.card__header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 2em;
-  padding: 2em;
-  border-radius: 40px 0 0 0;
-  background-color: lightgreen;
-  transform: translateY(-100%);
-  transition: 0.2s ease-in-out;
-}
-
-.card__arc {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  z-index: 1;
-}
-
-.card__arc path {
-  fill: lightgreen;
-  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
-}
-
-.card:hover .card__header {
-  transform: translateY(0);
-}
-
-.card__thumb {
-  flex-shrink: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
-.card__title {
-  font-size: 1em;
-  margin: 0 0 0.3em;
-  color: green;
-}
-
-.card__tagline {
-  display: block;
-  margin: 1em 0;
-  font-family: "MockFlowFont";
-  font-size: 0.8em;
-  color: black;
-}
-
-.card__status {
-  font-size: 0.8em;
-  color: green;
-}
-
-.card__description {
-  padding: 0 2em 2em;
-  margin: 0;
-  color: green;
-  font-family: "Avenir Regular";
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 800px) {

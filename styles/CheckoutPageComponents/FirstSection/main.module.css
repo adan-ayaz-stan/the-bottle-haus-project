@@ -4,7 +4,7 @@
 
 .heading {
   width: fit-content;
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric SemiBold";
   font-size: 3em;
   padding: 10px 50px 10px 0;
   letter-spacing: 2px;
@@ -39,12 +39,13 @@
 
 .product_name {
   width: 40%;
-  font-family: "Avenir Medium";
+  font-family: "Venus Egyptiene";
+  font-size: 1.1em;
 }
 
 .product_price {
   width: 30%;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   font-size: 1.5em;
 }
 

@@ -5,8 +5,9 @@
 }
 
 .heading_container {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric SemiBold";
   font-size: 1.5em;
+  letter-spacing: 1px;
   text-transform: capitalize;
   margin: 3em 20px;
 }
@@ -46,12 +47,13 @@
 }
 .article_posted_time {
   font-size: 0.8em;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   color: gray;
   margin-top: 1.5em;
 }
 .article_heading {
   margin: 10px;
+  font-family: "URW Geometric Medium";
   text-transform: capitalize;
 }
 

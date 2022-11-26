@@ -16,7 +16,7 @@
   display: flex;
   flex-flow: row;
   gap: 20px;
-  background-color: #ededed;
+  background-color: white;
 }
 .slide_content {
   display: flex;
@@ -26,22 +26,26 @@
 }
 .slide_heading {
   text-transform: uppercase;
+  font-family: "URW Geometric SemiBold";
 }
 .slide_posted_time {
   color: gray;
   font-size: 12px;
   margin: 0;
   padding: 0 2px;
+  font-family: "URW Geometric Medium";
 }
 .slide_description {
-  margin: 20px 0;
+  font-family: "URW Geometric Medium";
+  margin: 15px 0;
 }
 .slide_link {
   color: black;
+  font-family: "URW Geometric Medium";
   text-decoration: underline;
 }
 .slide_image {
-  width: 600px;
+  width: 100%;
   height: 100%;
   position: relative;
 }

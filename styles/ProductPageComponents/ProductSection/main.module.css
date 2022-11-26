@@ -5,6 +5,7 @@
   display: flex;
   flex-flow: row;
   margin: 50px 0;
+  font-family: "URW Geometric Medium";
   gap: 50px;
   padding-left: 50px;
 }
@@ -27,20 +28,22 @@
 }
 
 .company_label {
-  color: #d6d5d6;
+  color: #acaaac;
+  font-family: "URW Geometric Regular";
 }
 
 .product_heading {
   color: #282828;
-  font-family: "Avenir Medium";
+  font-family: "Venus Egyptiene";
 }
 
 .cremention_and_price {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  justify-content: left;
   gap: 10%;
+  font-family: "URW Geometric Medium";
   margin: 12px 0;
 }
 .cremention_box {
@@ -71,13 +74,13 @@
   gap: 10%;
 }
 .price_box p:first-child {
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric ExtraBold";
   font-size: 1.5em;
 }
 .price_box p:nth-child(2) {
   color: #b7b6b8;
   text-decoration: line-through;
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric ExtraBold";
 }
 
 .reviews_link {
@@ -91,7 +94,7 @@
 .product_description {
   color: #aba9ab;
   font-size: 0.8em;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   margin: 15px 0;
 }
 
@@ -104,7 +107,7 @@
   font-size: 1em;
   color: white;
   background-color: #f47428;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   border-radius: 0 12px 0 12px;
   cursor: pointer;
 }

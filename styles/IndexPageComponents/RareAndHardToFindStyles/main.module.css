@@ -7,9 +7,8 @@
 
 .main h1 {
   line-height: 2.5em;
-  letter-spacing: -5px;
   text-align: center;
-  font-family: "Avenir Black";
+  font-family: "URW Geometric ExtraBold";
   font-weight: 1000;
   font-size: 6em;
   -webkit-text-stroke: 2px white;
@@ -44,7 +43,7 @@
 }
 .teamComment p {
   font-size: 1em;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-weight: 1000;
   padding-left: 10%;
   color: #4e7675;
@@ -65,6 +64,7 @@
   align-self: flex-end;
   color: white;
   padding: 50px 0;
+  font-family: "URW Geometric Medium";
 }
 .mainProductLabel hr {
   width: 50%;
@@ -112,10 +112,10 @@
   padding: 10px;
 }
 .product_name {
-  font-family: monospace;
+  font-family: "Venus Egyptiene";
   font-weight: 700;
   text-transform: capitalize;
-  font-size: 1.2em;
+  font-size: 1em;
   color: #686869;
 }
 .product_price {
@@ -126,11 +126,10 @@
   gap: 10px;
 }
 .product_price p:first-child {
-  font-family: "Avenir Regular";
-  font-weight: 1000;
+  font-family: "URW Geometric ExtraBold";
 }
 .product_price p:last-child {
-  font-family: "Avenir Light";
+  font-family: "URW Geometric ExtraBold";
   font-weight: 1000;
   text-decoration: line-through;
   color: gray;
@@ -159,7 +158,7 @@
 .comment span {
   font-size: 2.5em;
   font-weight: 100;
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric ExtraBold";
 }
 .comment span:nth-child(1) {
   color: #dd8a5d;

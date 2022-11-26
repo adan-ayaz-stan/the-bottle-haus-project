@@ -17,12 +17,12 @@
 /* LEFT SIDE CSS */
 .heading {
   font-size: 1.7em;
-  font-family: "Avenir Regular";
+  font-family: "URW Geometric SemiBold";
   letter-spacing: 2px;
 }
 .heading h2:last-child {
   color: white;
-  -webkit-text-stroke: black 1px;
+  -webkit-text-stroke: black 1.5px;
 }
 
 /* RIGHT SIDE CSS */
@@ -48,18 +48,19 @@
 
 .step_number {
   color: #928f91;
+  font-family: "URW Geometric Medium";
   background-color: #edecee;
   border-radius: 16px;
   padding: 5px 15px;
 }
 
 .container_child div h3 {
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1em;
 }
 .container_child div p {
   color: gray;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Regular";
   font-size: 0.9em;
 }
 
@@ -67,7 +68,7 @@
   margin-left: auto;
   padding: 5px 10px;
   font-size: 0.8em;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   text-transform: uppercase;
   color: #7894db;
   background-color: white;
@@ -95,7 +96,7 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   gap: 15px;
   margin-top: 20px;
 }
@@ -104,7 +105,7 @@
   display: flex;
   flex-flow: row nowrap;
   gap: 15px;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1.1em;
   margin: 10px 0;
 }
@@ -118,7 +119,7 @@
   margin: 10px 0;
   padding: 1em;
   border-radius: 12px;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   cursor: pointer;
 }
 .additional_service_container {
@@ -165,7 +166,7 @@
 }
 .service_price {
   margin-left: auto;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Medium";
   font-size: 1em;
 }
 .buttons_container {
@@ -174,6 +175,10 @@
   flex-flow: row nowrap;
   justify-content: center;
   gap: 10px;
+}
+.buttons_container button {
+  font-size: 0.9em;
+  font-family: "URW Geometric Medium";
 }
 .return_to_cart_button {
   background-color: white;
@@ -184,89 +189,6 @@
   background-color: #f86611;
   border: none;
   color: white;
-}
-
-/* RIGHT SIDE 2nd DIV */
-.cart_details {
-  height: fit-content;
-  width: 100%;
-  background-color: white;
-  border-radius: 14px;
-  padding: 1em;
-}
-
-.cart_info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-}
-.cart_info p {
-  font-size: 1.8em;
-}
-.cart_info button {
-  font-size: 0.9em;
-  text-transform: uppercase;
-  background-color: transparent;
-  color: #6282d4;
-  padding: 5px 0.7em;
-  border: solid 1px #6282d4;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.product_listing {
-  height: fit-content;
-  display: flex;
-  flex-flow: column;
-}
-.product {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  padding: 1em;
-}
-.product_image {
-  height: 4em;
-  width: 4em;
-  margin-right: 10px;
-  background-image: url("https://image.shutterstock.com/image-vector/beer-icon-260nw-716928301.jpg");
-  background-position: center;
-  background-size: contain;
-  border-radius: 12px;
-}
-
-.billing_section {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  margin: 1em 0;
-}
-.billing_section div {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em 1em;
-}
-.billing_section div p:first-child {
-  font-family: "Avenir Light";
-}
-.billing_section div p:last-child {
-  font-family: "Avenir Regular";
-}
-
-.total_bill {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-}
-.total_bill p {
-  font-family: "Avenir Regular";
 }
 
 @media only screen and (max-width: 800px) {

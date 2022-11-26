@@ -1,12 +1,3 @@
-@font-face {
-  font-family: "Avenir Light";
-  src: url(../../../cms/fonts/Avenir\ Light.ttf);
-}
-@font-face {
-  font-family: "Avenir Medium";
-  src: url(../../../cms/fonts/Avenir\ Medium.ttf);
-}
-
 .main {
   height: 700px;
   position: relative;
@@ -40,12 +31,12 @@
 .product_info__name p {
   color: gray;
   font-weight: 700;
-  font-family: "Avenir Light";
+  font-family: "URW Geometric Medium";
 }
 .product_info__name h2 {
   width: 60%;
   line-height: 1em;
-  font-family: "Avenir Medium";
+  font-family: "Venus Egyptiene";
   font-weight: 400;
 }
 
@@ -62,7 +53,7 @@
   display: flex;
   flex-flow: row;
   align-items: center;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric Regular";
   border: solid 1px lightgray;
   background-color: #eeeeee;
   border-radius: 8px;
@@ -83,7 +74,7 @@
   display: flex;
   flex-flow: row;
   align-items: baseline;
-  font-family: "Avenir Medium";
+  font-family: "URW Geometric ExtraBold";
 }
 .product_info__price_info p:first-child {
   font-size: 1.5em;
@@ -103,6 +94,7 @@
   display: flex;
   flex-flow: row;
   padding: 10px 0;
+  font-family: "URW Geometric Medium";
 }
 .product_info__rating {
   display: flex;
@@ -133,7 +125,8 @@
 .product_info__description {
   height: fit-content;
   width: 75%;
-  font-size: 0.8em;
+  font-size: 1em;
+  font-family: "URW Geometric Regular";
   color: gray;
   text-overflow: ellipsis;
 }
@@ -146,6 +139,7 @@
   background-color: orange;
   padding: 10px 15px;
   font-size: 1.1em;
+  font-family: "URW Geometric Medium";
   border-radius: 8px;
   cursor: pointer;
 }

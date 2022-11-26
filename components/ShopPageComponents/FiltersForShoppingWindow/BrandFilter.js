@@ -83,7 +83,7 @@ function BrandFilter({ query, brands }) {
             onSubmit={filterSubmitHandler}
             id="brandFilterForm"
           >
-            <h3 className={styles.heading}>Brands h3</h3>
+            <h3 className={styles.heading}>Brands</h3>
             {dummyData.map((ele, ind) => {
               return (
                 <div
@@ -92,11 +92,16 @@ function BrandFilter({ query, brands }) {
                 >
                   {/* <input type={"checkbox"} name={ele.codeName} /> */}
                   <FormControlLabel
+                    sx={{
+                      "& .MuiTypography-root": {
+                        fontFamily: "URW Geometric Medium",
+                      },
+                    }}
                     control={
                       brandFilterAtomValue.includes(ele.codeName) == true ? (
                         <Checkbox defaultChecked />
                       ) : (
-                        <Checkbox />
+                        <Checkbox sx={{ fontFamily: "URW Geometric Medium" }} />
                       )
                     }
                     label={ele.repName}
