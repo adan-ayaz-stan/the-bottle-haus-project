@@ -1,18 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useSetRecoilState } from "recoil";
 
 import { Checkbox } from "@mui/material";
 import { BsCircle, BsCircleFill } from "react-icons/bs/index";
 
-import styles from "../../styles/CheckoutPageComponents/CheckoutPhaseTwo/main.module.css";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import {
-  checkout,
-  checkoutCustomerDetails,
-  checkoutDeliveryBilling,
-  checkoutSpecifics,
-} from "../../atoms/checkout-page";
-import { shoppingCart } from "../../atoms/shopping-cart";
 import CartInfo from "./miniComponents/CartInfo";
+
+import styles from "../../styles/CheckoutPageComponents/CheckoutPhaseTwo/main.module.css";
+import { checkout, checkoutDeliveryBilling } from "../../atoms/checkout-page";
 
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
@@ -39,10 +34,12 @@ const deliveryOptionsDummyData = [
 
 const CheckoutPhaseTwo = (props) => {
   // ATOM FOR RENDERING STEPS
-  const [checkoutValue, setCheckoutValue] = useRecoilState(checkout);
+  const setCheckoutValue = useSetRecoilState(checkout);
   const setCheckoutDeliveryBilling = useSetRecoilState(checkoutDeliveryBilling);
 
-  const [deliveryOptionSelected, setDeliveryOptionSelected] = useState();
+  const [deliveryOptionSelected, setDeliveryOptionSelected] = useState(
+    deliveryOptionsDummyData[0].code
+  );
 
   return (
     <div className={styles.main}>
