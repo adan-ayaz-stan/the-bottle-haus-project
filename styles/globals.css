@@ -26,14 +26,12 @@
   src: url(../cms/fonts/Venus\ Egyptienne\ W01\ Halbfett/Venus\ Egyptienne\ W01\ Halbfett.ttf);
 }
 
-
 html,
 body {
   border: 0;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "URW Geometric Medium";
 }
 
 a {

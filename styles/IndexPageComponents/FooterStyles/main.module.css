@@ -15,7 +15,6 @@
   gap: 1%;
 
   padding: 50px 10%;
-  border: solid 1px black;
   background-color: lightcyan;
 }
 .middleSection .pointerText {
@@ -56,6 +55,7 @@
 }
 .middleSection .blogLink .blogLinkImage {
   position: relative;
+  min-height: 100px;
   height: 100%;
   width: 100%;
 }
@@ -70,22 +70,21 @@
   font-family: "URW Geometric SemiBold";
 }
 .middleSection .blogLink p {
-  flex: 10%;
   font-family: "URW Geometric Regular";
   font-size: 0.8em;
   color: gray;
 }
 
 .lastSection {
-  display: flex;
-  flex-flow: row;
-  padding: 5% 10%;
   height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 5% 10%;
   font-family: "URW Geometric Regular";
   background-color: rgb(23, 98, 90);
 }
 .lastSection .firstDiv {
-  flex: 25%;
+  width: 60%;
   color: white;
 }
 .lastSection .firstDiv h3 {
@@ -100,7 +99,6 @@
 }
 
 .lastSection .secondDiv {
-  flex: 50%;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -129,7 +127,6 @@
   gap: 3%;
 }
 .lastSection .secondDiv div:first-child form input {
-  flex: 77%;
   padding: 15px 15px;
   border-radius: 8px;
   background-color: white;
@@ -139,7 +136,6 @@
 }
 
 .lastSection .secondDiv div:first-child form button {
-  flex: 20%;
   background-color: orange;
   padding: 15px 20px;
   border-radius: 8px;
@@ -182,7 +178,6 @@
 }
 
 .lastSection .thirdDiv {
-  flex: 25%;
   text-align: right;
   color: white;
 }
@@ -227,7 +222,10 @@
   }
   .lastSection {
     height: fit-content;
-    flex-flow: column;
+    grid-template-columns: 1fr;
+  }
+  .lastSection .firstDiv {
+    width: 100%;
   }
 }
 
@@ -256,6 +254,6 @@
   }
   .lastSection {
     height: fit-content;
-    flex-flow: column;
+    grid-template-columns: 1fr;
   }
 }
