@@ -1,0 +1,37 @@
+.main {
+  position: absolute;
+  top: 0;
+  left: -25%;
+  height: 100vh;
+  width: 25%;
+  background-color: white;
+  padding: 5% 15px;
+  z-index: 10;
+  transition: all ease 0.4s;
+}
+
+.menu_active {
+  top: 0;
+  left: 0;
+}
+
+.main h2 {
+  width: 100vh;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  transform-origin: left;
+  font-family: "Venus Egyptiene";
+}
+
+@media only screen and (max-width: 800px) {
+  .main {
+    width: 50%;
+    left: -50%;
+    padding-top: 20%;
+  }
+  .menu_active {
+    top: 0;
+    left: 0;
+  }
+}

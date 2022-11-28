@@ -56,6 +56,6 @@ export const sortByFilterAtom = atom({
 });
 
 export const categoryFilterAtom = atom({
-  key: 'category-filter-atom',
-  default: '',
-})
+  key: "category-filter-atom",
+  default: "",
+});

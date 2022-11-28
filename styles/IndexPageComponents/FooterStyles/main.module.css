@@ -9,18 +9,20 @@
 .middleSection {
   height: fit-content;
 
-  display: flex;
-  flex-flow: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
   gap: 1%;
 
   padding: 50px 10%;
+  border: solid 1px black;
   background-color: lightcyan;
 }
 .middleSection .pointerText {
+  width: 100%;
   display: flex;
   flex-flow: column;
   padding: 10px 15px 0px 15px;
-  flex: 16%;
 }
 .middleSection .pointerText h4 {
   flex: 20%;
@@ -34,7 +36,6 @@
   color: gray;
 }
 .middleSection .pointerText a {
-  flex: 10%;
   display: block;
   font-family: "URW Geometric SemiBold";
   text-align: center;
@@ -45,23 +46,24 @@
   color: black;
 }
 .middleSection .blogLink {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 
   position: relative;
-  flex: 27%;
   border-radius: 15px;
 }
 .middleSection .blogLink .blogLinkImage {
   position: relative;
-  flex: 80%;
+  height: 100%;
+  width: 100%;
 }
 .middleSection .blogLink .blogLinkImage img {
   border-radius: 10px;
   object-fit: cover;
 }
 .middleSection .blogLink h4 {
-  flex: 10%;
   margin-top: 0.8em;
   line-height: 1.2em;
   font-size: 1.1em;
@@ -196,12 +198,14 @@
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
   .main {
     height: fit-content;
   }
   .middleSection {
-    flex-flow: column;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
   }
   .middleSection .pointerText p {
     margin-bottom: 1em;
@@ -211,6 +215,7 @@
   }
   .middleSection .blogLink {
     min-height: 25vh;
+    gap: 10px;
     margin-bottom: 1em;
   }
   .middleSection .blogLink h4 {
@@ -218,7 +223,36 @@
   }
   .pointerText,
   .blogLink {
-    flex: 25%;
+    width: 100%;
+  }
+  .lastSection {
+    height: fit-content;
+    flex-flow: column;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .main {
+    height: fit-content;
+  }
+  .middleSection {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 10px;
+  }
+  .middleSection .pointerText p {
+    margin-bottom: 1em;
+  }
+  .middleSection .pointerText {
+    margin-bottom: 2em;
+  }
+  .middleSection .blogLink {
+    min-height: 25vh;
+    gap: 10px;
+    margin-bottom: 1em;
+  }
+  .middleSection .blogLink h4 {
+    margin: 0;
   }
   .lastSection {
     height: fit-content;

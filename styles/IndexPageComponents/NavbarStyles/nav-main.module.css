@@ -1,14 +1,12 @@
-@font-face {
-  font-family: "Avenir Light";
-  src: url(../../../cms/fonts/Avenir\ Light.ttf);
-}
-
 .main {
   position: sticky;
   top: 0;
 
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
+
   width: 100%;
 
   min-height: 80px;
@@ -47,11 +45,6 @@
 /* SUB MENU CSS */
 
 .submenu {
-  position: absolute;
-  top: 50%;
-  right: 150px;
-  transform: translate(0%, -50%);
-
   width: 350px;
   font-size: 0.8em;
   color: black;
@@ -91,6 +84,64 @@
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1000px) {
+  .main {
+    justify-content: space-between;
+    padding: 0 10%;
+  }
+
+  .profile {
+    display: block;
+  }
+  .profileCheckbox {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 50%;
+    right: 45px;
+    transform: translate(-50%, -50%) scale(2);
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .profileCheckbox:checked ~ .submenu {
+    display: flex !important;
+  }
+
+  .submenu {
+    display: none;
+
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 1%;
+    width: fit-content;
+
+    padding: 10px 10px;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: rgba(243, 235, 235, 0.71);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 8px #00000074;
+
+    animation: fade-in 0.4s ease;
+  }
+
+  .submenu div:first-child {
+    flex-flow: column;
+    border: solid 1px #ededed;
+  }
+  .submenu div:first-child a:first-child {
+    border-right: none;
+  }
+  .submenu div:first-child a:nth-child(1) {
+    border-bottom: solid 1px black;
+  }
+
+  .submenu div:nth-child(2) {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .main {
     min-height: 80px;
@@ -118,7 +169,7 @@
     display: none;
 
     position: absolute;
-    top: 170%;
+    top: calc(100% + 10px);
     right: 1%;
     width: fit-content;
 

@@ -27,21 +27,21 @@ export default function Footer() {
         </div>
         <a className={styles.blogLink} href="/blog">
           <div className={styles.blogLinkImage}>
-            <Image src={sampleImage} height={150} width={320}></Image>
+            <Image src={sampleImage} layout="fill"></Image>
           </div>
           <h4>Enjoy $10 off on $50 subtotal</h4>
           <p>01.03.22</p>
         </a>
         <a className={styles.blogLink} href="/blog">
           <div className={styles.blogLinkImage}>
-            <Image src={sampleImage} height={150} width={320}></Image>
+            <Image src={sampleImage} layout="fill"></Image>
           </div>
           <h4>Enjoy $10 off on $50 subtotal</h4>
           <p>22.05.22</p>
         </a>
         <a className={styles.blogLink} href="/blog">
           <div className={styles.blogLinkImage}>
-            <Image src={sampleImage} height={150} width={320}></Image>
+            <Image src={sampleImage} layout="fill"></Image>
           </div>
           <h4>Enjoy $10 off on $50 subtotal</h4>
           <p>15.07.22</p>

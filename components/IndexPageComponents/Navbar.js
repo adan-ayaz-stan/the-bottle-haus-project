@@ -8,6 +8,7 @@ import profileIcon from "../../cms/icons/profile.svg";
 import Hamburger from "./Hamburger";
 import ShoppingCartNavbar from "../ShoppingCartComponents/ShoppingCartNavbar";
 import { useRouter } from "next/router";
+import NavbarSideMenu from "./miniComponents/NavbarSideMenu";
 
 export default function Navbar() {
   const router = useRouter();
@@ -16,6 +17,7 @@ export default function Navbar() {
     <div className={styles.main}>
       {/* HAMBURGER */}
       <Hamburger />
+      <NavbarSideMenu />
 
       {/* LOGO */}
 

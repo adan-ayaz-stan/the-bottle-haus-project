@@ -38,5 +38,5 @@ export const checkoutCustomerDetails = atom({
 // ATOM FOR THE CHECKOUT PHASE 2
 export const checkoutDeliveryBilling = atom({
   key: "checkout-delivery-billing",
-  default: 0,
+  default: 18.75,
 });

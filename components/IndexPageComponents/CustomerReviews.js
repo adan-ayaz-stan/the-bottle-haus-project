@@ -16,6 +16,16 @@ export default function CustomerReviews() {
     setWindowWidth(window.innerWidth);
   });
 
+  function slidesPerViewSetter() {
+    if (windowWidth > 1000) {
+      return 3;
+    }
+    if (windowWidth > 800) {
+      return 2;
+    }
+    return 1;
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.submain}>
@@ -25,7 +35,7 @@ export default function CustomerReviews() {
       <Swiper
         className={styles.submain}
         spaceBetween={50}
-        slidesPerView={windowWidth > 800 ? 3 : 1}
+        slidesPerView={slidesPerViewSetter()}
       >
         <SwiperSlide>
           <div className={reviewCardStyle.main}>

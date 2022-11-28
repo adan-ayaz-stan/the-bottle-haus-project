@@ -112,7 +112,23 @@
   white-space: nowrap;
 }
 
+@media only screen and (max-width: 1000px) {
+  .product_listing {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
 @media only screen and (max-width: 800px) {
+  .main {
+    padding: 35% 0.5em 35% 0.5em;
+    background-size: 70%;
+  }
+  .main h1 {
+    line-height: 100%;
+    font-size: 1.7em;
+    margin-bottom: 10px;
+  }
+
   .product_listing {
     grid-template-columns: 1fr 1fr;
     padding: 10px;
@@ -128,17 +144,5 @@
     width: 100%;
     font-size: 0.8em;
     white-space: normal;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .main {
-    padding: 35% 0.5em 35% 0.5em;
-    background-size: 70%;
-  }
-  .main h1 {
-    line-height: 100%;
-    font-size: 1.7em;
-    margin-bottom: 10px;
   }
 }
