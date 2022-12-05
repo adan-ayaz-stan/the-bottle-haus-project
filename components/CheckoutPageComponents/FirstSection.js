@@ -55,7 +55,7 @@ const FirstSection = () => {
           return (
             <div className={styles.product}>
               <div className={styles.product_image}>
-                <Image src={sampleImage} alt="product-image" layout="fill" />
+                <Image src={ele.img} alt="product-image" layout="fill" />
               </div>
               <div className={styles.product_name}>{ele.name}</div>
               <div className={styles.product_price}>${ele.price}</div>

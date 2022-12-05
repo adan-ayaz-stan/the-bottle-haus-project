@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { shoppingCart } from "../../../atoms/shopping-cart";
 import {
@@ -38,7 +39,9 @@ export default function CartInfo() {
         {shoppingCartValue.map((ele) => {
           return (
             <div className={styles.product}>
-              <div className={styles.product_image}></div>
+              <div className={styles.product_image}>
+                <Image src={ele.img} alt="product-image" layout="fill" />
+              </div>
               <div className={styles.product_details}>
                 <h3>${ele.price}</h3>
                 <p>{ele.name}</p>
