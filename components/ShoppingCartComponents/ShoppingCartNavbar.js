@@ -98,7 +98,7 @@ function ShoppingCartNavbar() {
                     <div className={styles.product} key={ind + Math.random()}>
                       <div className={styles.product_image}>
                         <Image
-                          src={sampleImage}
+                          src={ele.img}
                           alt="product-image"
                           layout="fill"
                         />

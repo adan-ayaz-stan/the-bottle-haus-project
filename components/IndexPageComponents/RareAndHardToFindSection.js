@@ -44,6 +44,7 @@ export default function RareAndHardToFindSection({ RATHFproducts }) {
                 {
                   name: ele.name,
                   price: ele.price.new,
+                  img: ele.img,
                 },
               ];
               setShoppingCart(oldCart.concat(newItem));

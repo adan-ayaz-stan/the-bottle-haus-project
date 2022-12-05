@@ -38,6 +38,7 @@ function ProductSection({ product }) {
       newItem.push({
         name: product.name,
         price: newPrice,
+        img: product.img,
       });
     }
     setShoppingCart(oldCart.concat(newItem));

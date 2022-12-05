@@ -78,6 +78,7 @@ function SpecialProduct() {
                   newItem.push({
                     name: "Alberta Sauvicnon Blanc Rye Canadian Whiskey 750ml",
                     price: 89.95,
+                    img: "https://images.unsplash.com/photo-1557682204-e53b55fd750c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=674&q=80",
                   });
                 }
                 setShoppingCart(oldCart.concat(newItem));

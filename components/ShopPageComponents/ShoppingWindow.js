@@ -105,6 +105,7 @@ function ShoppingWindow({ query, brands, categories }) {
                       {
                         name: ele.name,
                         price: ele.price.new,
+                        img: ele.img,
                       },
                     ];
                     setShoppingCart(oldCart.concat(newItem));

@@ -23,6 +23,7 @@ export default function ProductsSection({ products }) {
               {
                 name: ele.name,
                 price: ele.price.new,
+                img: ele.img,
               },
             ];
             setShoppingCart(oldCart.concat(newItem));
