@@ -26,7 +26,12 @@ export default function RareAndHardToFindSection({ RATHFproducts }) {
         </div>
 
         <div className={styles.mainProductImage}>
-          <Image src={sampleImageMain} layout="fill"></Image>
+          <Image
+            src={
+              "https://i.ibb.co/fkPL9nz/clase-azul-pink-repo-removebg-preview.png"
+            }
+            layout="fill"
+          ></Image>
         </div>
         <div className={styles.mainProductLabel}>
           <h3>Louis WarmWind's Special</h3>
