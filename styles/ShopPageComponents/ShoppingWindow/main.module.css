@@ -143,9 +143,9 @@
   }
 
   .product_listing {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 48% 48%;
     padding: 20px 10px;
-    gap: 10px;
+    gap: 5px;
   }
   .product_image {
     height: 150px;

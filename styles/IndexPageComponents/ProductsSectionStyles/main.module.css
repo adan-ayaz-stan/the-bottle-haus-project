@@ -130,9 +130,9 @@
   }
 
   .product_listing {
-    grid-template-columns: 1fr 1fr;
-    padding: 10px;
-    gap: 10px;
+    grid-template-columns: 48% 48%;
+    padding: 0px;
+    gap: 5px;
   }
   .product h4 {
     font-size: 0.7em;
