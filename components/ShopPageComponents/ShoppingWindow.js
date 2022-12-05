@@ -91,7 +91,9 @@ function ShoppingWindow({ query, brands, categories }) {
       {/* PRODUCTS LISTING */}
       <div className={styles.product_listing}>
         {loading == true ? (
-          <>Loading...</>
+          <div className={styles.loading_container}>
+            <div className={styles.loading_image}>Waiting for network...</div>
+          </div>
         ) : (
           <>
             {products.length == 0
@@ -125,7 +127,7 @@ function ShoppingWindow({ query, brands, categories }) {
                         alt="product-page-link"
                         className={styles.product_image}
                       >
-                        <Image src={sampleImage} layout="fill"></Image>
+                        <Image src={ele.img} layout="fill"></Image>
                       </a>
 
                       <div className={styles.product_details}>

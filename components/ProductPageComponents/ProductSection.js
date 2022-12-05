@@ -47,7 +47,15 @@ function ProductSection({ product }) {
   return (
     <div className={styles.main}>
       <div className={styles.product_image}>
-        <Image src={sampleImage} alt="product-image" layout="fill" />
+        <Image
+          src={product.img}
+          alt="product-image"
+          layout="fill"
+          placeholder="blur"
+          blurDataURL={
+            "https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+          }
+        />
       </div>
       <div className={styles.product_details}>
         <label className={styles.company_label}>The Bottle Haus</label>

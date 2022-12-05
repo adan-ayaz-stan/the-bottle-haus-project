@@ -39,7 +39,13 @@ export default function ProductsSection({ products }) {
                 alt="product-page-link"
                 className={styles.product_image}
               >
-                <Image src={sampleImage} layout="fill"></Image>
+                <Image
+                  src={ele.img}
+                  layout="fill"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif?20151024034921"
+                ></Image>
               </a>
 
               <div className={styles.product_details}>
