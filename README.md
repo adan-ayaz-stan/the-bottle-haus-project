@@ -1,3 +1,5 @@
+The Bottle Haus is an e-commerce platform built using ReactJS and NextJS, featuring a blog and a shopping window for users to browse and add items to their cart.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
